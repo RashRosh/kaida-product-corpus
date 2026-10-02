@@ -205,6 +205,9 @@ for firm in firms:
                 new_products += 1
 
             else:
+                product_index[key]["city"] = city
+                product_index[key]["seller_name"] = seller_name
+                product_index[key]["source_url"] = source_url
                 product_index[key]["last_seen_at"] = observed_at
 
             current_state = (
