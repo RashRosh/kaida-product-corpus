@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 from urllib.parse import quote
 
-from scrapling.fetchers import Fetcher
+from scrapling.fetchers import DynamicFetcher, Fetcher
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -65,6 +65,27 @@ def extract_branch_ids(page):
     return ids, hrefs
 
 
+def fetch_search_page(url: str):
+    page = Fetcher.get(url, timeout=30)
+    if page.status != 200:
+        return page, [], []
+
+    branch_ids, hrefs = extract_branch_ids(page)
+    if branch_ids:
+        return page, branch_ids, hrefs
+
+    # Fallback only when the fast HTTP fetch does not contain rendered firm links.
+    page = DynamicFetcher.fetch(
+        url,
+        real_chrome=True,
+        network_idle=True,
+        wait=1000,
+        timeout=30000,
+    )
+    branch_ids, hrefs = extract_branch_ids(page)
+    return page, branch_ids, hrefs
+
+
 def discover_query(city: str, query: str):
     found = []
     seen = set()
@@ -74,13 +95,12 @@ def discover_query(city: str, query: str):
 
     for page_number in range(1, MAX_PAGES_PER_QUERY + 1):
         url = search_url(city, query, page_number)
-        page = Fetcher.get(url, timeout=30)
+        page, page_ids, hrefs = fetch_search_page(url)
 
         if page.status != 200:
             print(f"  page {page_number}: HTTP {page.status}, stop")
             break
 
-        page_ids, hrefs = extract_branch_ids(page)
         print(f"  page {page_number}: {len(page_ids)} branch ids")
 
         if not page_ids:
