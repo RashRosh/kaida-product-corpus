@@ -24,7 +24,8 @@ SUPPORTED_DECISION_ACTIONS = {
     "CREATE_PRODUCT_CANDIDATE",
     "ALIAS",
 }
-TARGET_OPTIONAL_ACTIONS = {"ALIAS", "ATTRIBUTES_ONLY"}
+TARGET_OPTIONAL_ACTIONS = {"ATTRIBUTES_ONLY"}
+TARGET_REQUIRED_ACTIONS = {"MAP_EXISTING", "ALIAS"}
 TARGET_FORBIDDEN_ACTIONS = {
     "OUT_OF_SCOPE",
     "MALFORMED",
@@ -131,8 +132,8 @@ class Resolver:
                         f"{decision_id}: {condition_field} is not implemented; "
                         "leave it empty or promote the condition to kb/rules.yaml"
                     )
-            if action == "MAP_EXISTING" and not product_id:
-                errors.append(f"{decision_id}: MAP_EXISTING requires product_id")
+            if action in TARGET_REQUIRED_ACTIONS and not product_id:
+                errors.append(f"{decision_id}: {action} requires product_id")
             if action in TARGET_FORBIDDEN_ACTIONS and product_id:
                 errors.append(
                     f"{decision_id}: {action} must not define canonical product_id"
@@ -194,7 +195,7 @@ class Resolver:
         attributes = extract_measurements(raw_title)
         attributes.update(decision.get("attributes", {}))
 
-        if action == "MAP_EXISTING" or (
+        if action in TARGET_REQUIRED_ACTIONS or (
             action in TARGET_OPTIONAL_ACTIONS and decision.get("product_id")
         ):
             return self._product_mapping(
@@ -214,7 +215,6 @@ class Resolver:
             "DEFER": ("UNRESOLVED", entity_class),
             "ATTRIBUTES_ONLY": ("UNRESOLVED", entity_class),
             "CREATE_PRODUCT_CANDIDATE": ("PRODUCT_CANDIDATE", entity_class),
-            "ALIAS": ("UNRESOLVED", entity_class),
         }
         mapping_status, resolved_class = status_by_action[action]
         return Resolution(

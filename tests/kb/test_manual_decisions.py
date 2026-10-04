@@ -96,11 +96,9 @@ def test_each_manual_decision_action_is_executable(
         assert result.legacy_candidate_name == "Legacy candidate"
 
 
-@pytest.mark.parametrize("action", ["ALIAS", "ATTRIBUTES_ONLY"])
-def test_targetless_optional_action_is_unresolved(
-    root: Path, tmp_path: Path, action: str
-):
-    title = f"Решение без цели {action}"
+def test_targetless_attributes_only_is_unresolved(root: Path, tmp_path: Path):
+    action = "ATTRIBUTES_ONLY"
+    title = "Решение без base Product"
     resolver = resolver_with_decisions(
         root, tmp_path, [decision(f"D-{action}", title, action)]
     )
@@ -193,12 +191,17 @@ def test_unimplemented_decision_condition_is_rejected(
     [
         (decision("D-UNKNOWN", "Неизвестное действие", "SURPRISE"), "unsupported action"),
         (decision("D-MAP", "Нет цели", "MAP_EXISTING"), "requires product_id"),
+        (decision("D-ALIAS", "Alias без цели", "ALIAS"), "ALIAS requires product_id"),
         (
             decision("D-DEFER", "Лишняя цель", "DEFER", product_id=APPROVED_PRODUCT_ID),
             "must not define canonical product_id",
         ),
         (
             decision("D-MISSING", "Несуществующая цель", "MAP_EXISTING", product_id="NOPE"),
+            "target Product does not exist",
+        ),
+        (
+            decision("D-ALIAS-MISSING", "Alias с неверной целью", "ALIAS", product_id="NOPE"),
             "target Product does not exist",
         ),
     ],

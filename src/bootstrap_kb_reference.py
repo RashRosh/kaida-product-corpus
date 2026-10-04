@@ -122,6 +122,11 @@ def decision_records(
         )
         product_name = canonical_name if product_id else ""
         rationale = row.get("note", "")
+        if action == "ALIAS" and not product_id:
+            decision_id = row.get("decision_id", "") or "<missing decision_id>"
+            raise ValueError(
+                f"{decision_id}: ALIAS requires an explicit resolvable Product target"
+            )
         if action == "MAP_EXISTING" and not product_id:
             action = "DEFER"
             suffix = "Reference MAP_EXISTING had no unique explicit Product target."

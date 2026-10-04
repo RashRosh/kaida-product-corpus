@@ -1,18 +1,32 @@
-import csv
 from pathlib import Path
 
-from bootstrap_kb_reference import EXPECTED_SHA256, bootstrap, file_sha256
+import pytest
+
+from bootstrap_kb_reference import (
+    EXPECTED_SHA256,
+    bootstrap,
+    decision_records,
+    file_sha256,
+)
 
 
-def test_reference_workbook_hash_and_bootstrap(root: Path, tmp_path: Path):
+def test_reference_workbook_hash_and_bootstrap_fails_on_targetless_alias(
+    root: Path, tmp_path: Path
+):
     workbook = root / "reference" / "KAIDA_Master_KB_Iteration_3.xlsx"
     assert file_sha256(workbook) == EXPECTED_SHA256
-    counts = bootstrap(workbook, tmp_path / "kb")
-    assert counts["PRODUCTS"] == 868
-    assert counts["ALIASES"] == 231
-    assert counts["OBSERVED_NAMES"] == 2733
-    assert counts["UNRESOLVED"] == 1000
-    with (tmp_path / "kb" / "seed" / "products.csv").open(encoding="utf-8", newline="") as handle:
-        statuses = {row["status"] for row in csv.DictReader(handle)}
-    assert "PROVISIONAL_AI" in statuses
-    assert "LEGACY_APPROVED" in statuses
+    with pytest.raises(ValueError, match="RB02-X01.*ALIAS requires"):
+        bootstrap(workbook, tmp_path / "kb")
+
+
+def test_bootstrap_rejects_alias_without_resolvable_product_target():
+    rows = [
+        {
+            "decision_id": "D-ALIAS-MISSING",
+            "subject": "Alias title",
+            "decision": "ALIAS",
+            "canonical_or_old": "Missing Product",
+        }
+    ]
+    with pytest.raises(ValueError, match="ALIAS requires an explicit resolvable"):
+        decision_records(rows, [])
