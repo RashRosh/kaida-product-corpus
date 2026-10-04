@@ -32,7 +32,6 @@ def main() -> None:
     print(f"Products: {counts['exported_products']} / {counts['source_products_total']}")
     print(f"Aliases: {counts['exported_aliases']} / {counts['source_aliases']}")
     print(f"Categories: {counts['categories']}")
-    print(f"Official mappings: {counts['official_mappings']}")
     print(f"Outputs: {args.out}")
 
 

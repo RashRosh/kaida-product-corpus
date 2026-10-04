@@ -24,8 +24,6 @@ RAW_TREE_SHA256 = "2029db154b59b3a155c3caf602ad75c2cc9f90362631d9e042e283debf074
 PRODUCT_EXPORT_STATUS = "LEGACY_APPROVED"
 ALIAS_EXPORT_STATUS = "ACTIVE"
 ALIAS_SAFE_VALUE = "YES"
-OFFICIAL_INCLUDED_RELATIONS = {"EXACT", "BROADER", "NARROWER"}
-OFFICIAL_INCLUDED_VERIFICATION = "CURRENT_VERIFIED"
 
 PRODUCT_FIELDS = [
     "product_id",
@@ -35,11 +33,7 @@ PRODUCT_FIELDS = [
     "category_code",
     "category_ru",
     "category_kk",
-    "parent_product_id",
     "approval_status",
-]
-PRODUCT_REQUIRED_FIELDS = [
-    field for field in PRODUCT_FIELDS if field != "parent_product_id"
 ]
 ALIAS_FIELDS = [
     "alias_id",
@@ -50,18 +44,6 @@ ALIAS_FIELDS = [
     "scope",
 ]
 CATEGORY_FIELDS = ["category_code", "category_ru", "category_kk"]
-OFFICIAL_MAPPING_FIELDS = [
-    "mapping_id",
-    "product_id",
-    "official_source_id",
-    "official_source_name",
-    "official_entity_code",
-    "official_entity_name_ru",
-    "official_entity_name_kk",
-    "relation",
-    "verification_status",
-    "source_version",
-]
 
 
 class ExportValidationError(ValueError):
@@ -96,8 +78,6 @@ def _read_optional_csv(path: Path) -> list[dict[str, str]]:
 def build_package(root: Path, out_dir: Path) -> dict[str, Any]:
     products_path = root / "kb" / "seed" / "products.csv"
     aliases_path = root / "kb" / "seed" / "aliases.csv"
-    official_path = root / "data" / "kb" / "official" / "crosswalk.csv"
-    sources_path = root / "kb" / "official" / "sources.json"
     observations_path = root / "data" / "extracted" / "observations.csv"
     raw_path = root / "data" / "raw"
 
@@ -108,14 +88,11 @@ def build_package(root: Path, out_dir: Path) -> dict[str, Any]:
 
     _, product_rows = read_csv(products_path)
     _, alias_rows = read_csv(aliases_path)
-    official_rows = _read_optional_csv(official_path)
-    source_registry = json.loads(sources_path.read_text(encoding="utf-8"))
 
     products = _export_products(product_rows)
     product_ids = {row["product_id"] for row in products}
     aliases, alias_exclusions = _export_aliases(alias_rows, product_ids)
     categories = _export_categories(products)
-    official_mappings = _export_official_mappings(official_rows, product_ids)
 
     if out_dir.exists():
         shutil.rmtree(out_dir)
@@ -124,7 +101,6 @@ def build_package(root: Path, out_dir: Path) -> dict[str, Any]:
     write_csv(out_dir / "products.csv", PRODUCT_FIELDS, products)
     write_csv(out_dir / "aliases.csv", ALIAS_FIELDS, aliases)
     write_csv(out_dir / "categories.csv", CATEGORY_FIELDS, categories)
-    write_csv(out_dir / "official_mappings.csv", OFFICIAL_MAPPING_FIELDS, official_mappings)
     _write_contract(out_dir / "CONTRACT.md")
 
     manifest = _manifest(
@@ -136,8 +112,6 @@ def build_package(root: Path, out_dir: Path) -> dict[str, Any]:
         aliases,
         alias_exclusions,
         categories,
-        official_mappings,
-        source_registry,
     )
     write_json(out_dir / "manifest.json", manifest)
     validate_package(out_dir)
@@ -151,13 +125,9 @@ def _export_products(rows: list[dict[str, str]]) -> list[dict[str, str]]:
     if unknown:
         raise ExportValidationError(f"Unknown Product statuses: {unknown}")
     products = []
-    approved_ids = {
-        row["product_id"] for row in rows if row["status"] == PRODUCT_EXPORT_STATUS
-    }
     for row in rows:
         if row["status"] != PRODUCT_EXPORT_STATUS:
             continue
-        parent = row.get("parent_product_id", "").strip()
         products.append(
             {
                 "product_id": row["product_id"],
@@ -167,7 +137,6 @@ def _export_products(rows: list[dict[str, str]]) -> list[dict[str, str]]:
                 "category_code": row["category_code"],
                 "category_ru": row["category_ru"],
                 "category_kk": row["category_kk"],
-                "parent_product_id": parent if parent in approved_ids else "",
                 "approval_status": PRODUCT_EXPORT_STATUS,
             }
         )
@@ -223,33 +192,6 @@ def _export_categories(products: list[dict[str, str]]) -> list[dict[str, str]]:
     ]
 
 
-def _export_official_mappings(
-    rows: list[dict[str, str]], product_ids: set[str]
-) -> list[dict[str, str]]:
-    mappings = []
-    seen: set[tuple[str, str, str, str]] = set()
-    for row in rows:
-        if row.get("product_id", "") not in product_ids:
-            continue
-        if row.get("verification_status", "") != OFFICIAL_INCLUDED_VERIFICATION:
-            continue
-        if row.get("relation", "") not in OFFICIAL_INCLUDED_RELATIONS:
-            continue
-        if not row.get("official_entity_code", ""):
-            raise ExportValidationError(f"{row.get('mapping_id')}: missing official entity code")
-        key = (
-            row["product_id"],
-            row["official_source_id"],
-            row["official_entity_code"],
-            row["relation"],
-        )
-        if key in seen:
-            raise ExportValidationError(f"Duplicate official mapping: {key}")
-        seen.add(key)
-        mappings.append({field: row.get(field, "") for field in OFFICIAL_MAPPING_FIELDS})
-    return sorted(mappings, key=lambda row: row["mapping_id"])
-
-
 def _manifest(
     root: Path,
     out_dir: Path,
@@ -259,8 +201,6 @@ def _manifest(
     aliases: list[dict[str, str]],
     alias_exclusions: dict[str, int],
     categories: list[dict[str, str]],
-    official_mappings: list[dict[str, str]],
-    source_registry: dict[str, Any],
 ) -> dict[str, Any]:
     file_hashes = {
         path.name: file_sha256(path)
@@ -272,15 +212,6 @@ def _manifest(
         status: count for status, count in sorted(status_counts.items())
         if status != PRODUCT_EXPORT_STATUS
     }
-    official_sources = [
-        {
-            "official_source_id": source["official_source_id"],
-            "version": source.get("version", ""),
-            "dataset_sha256": source.get("dataset_sha256", ""),
-        }
-        for source in source_registry.get("official_sources", [])
-        if source.get("dataset_sha256")
-    ]
     return {
         "package_name": PACKAGE_NAME,
         "package_schema_version": PACKAGE_SCHEMA_VERSION,
@@ -296,16 +227,10 @@ def _manifest(
             "safe_for_auto_match": ALIAS_SAFE_VALUE,
             "product_must_be_exported": True,
         },
-        "official_mapping_eligibility": {
-            "verification_status": OFFICIAL_INCLUDED_VERIFICATION,
-            "relations": sorted(OFFICIAL_INCLUDED_RELATIONS),
-            "product_must_be_exported": True,
-        },
         "included_datasets": [
             "products.csv",
             "aliases.csv",
             "categories.csv",
-            "official_mappings.csv",
             "CONTRACT.md",
         ],
         "excluded_datasets": [
@@ -319,6 +244,7 @@ def _manifest(
             "legacy workbook",
             "official XLS snapshot",
             "attribute_definitions.csv",
+            "official_mappings.csv",
         ],
         "counts": {
             "source_products_total": len(source_products),
@@ -328,23 +254,16 @@ def _manifest(
             "exported_aliases": len(aliases),
             "aliases_excluded_by_reason": alias_exclusions,
             "categories": len(categories),
-            "official_mappings": len(official_mappings),
         },
         "source_files": {
             "products_sha256": file_sha256(root / "kb" / "seed" / "products.csv"),
             "aliases_sha256": file_sha256(root / "kb" / "seed" / "aliases.csv"),
-            "official_sources_sha256": file_sha256(root / "kb" / "official" / "sources.json"),
-            "official_decisions_sha256": file_sha256(
-                root / "kb" / "official" / "crosswalk_decisions.csv"
-            ),
         },
-        "official_sources": official_sources,
         "file_hashes": file_hashes,
         "ordering": {
             "products.csv": "product_id ascending",
             "aliases.csv": "alias_id ascending",
             "categories.csv": "category_code ascending",
-            "official_mappings.csv": "mapping_id ascending",
         },
     }
 
@@ -367,14 +286,17 @@ def _write_contract(path: Path) -> None:
                 "- products.csv: only LEGACY_APPROVED Products with stable KAIDA-Pxxxx IDs.",
                 "- aliases.csv: ACTIVE aliases with safe_for_auto_match=YES whose Product is exported.",
                 "- categories.csv: category labels used by exported Products.",
-                "- official_mappings.csv: optional provenance mappings; they do not control Product eligibility.",
                 "- manifest.json: provenance, counts, immutable corpus hashes, and package file hashes.",
                 "",
                 "## Explicitly excluded",
                 "",
                 "Raw 2GIS evidence, observations history, unresolved queues, provisional Products,",
                 "manual review queues, raw prices, full legacy workbooks, official XLS snapshots,",
-                "crawler tooling, and WORKING_I3 attribute definitions are not runtime export data.",
+                "official mappings, parent hierarchy, crawler tooling, and WORKING_I3 attribute",
+                "definitions are not runtime export data.",
+                "",
+                "Product hierarchy is omitted from v1 because the first production importer does",
+                "not consume hierarchy as a closed downstream contract.",
                 "",
                 "Attribute definitions are omitted from v1 because the current WORKING_I3 schema",
                 "belongs to the future Offer attribute system, not the first Product identity import.",
@@ -382,7 +304,7 @@ def _write_contract(path: Path) -> None:
                 "## Importer obligations",
                 "",
                 "An importer must validate manifest hashes, schema version, unique Product and alias",
-                "IDs, category consistency, and absence of dangling Product references before import.",
+                "IDs, category consistency, and absence of dangling alias Product references before import.",
                 "",
             ]
         ),
@@ -412,12 +334,10 @@ def validate_package(out_dir: Path) -> dict[str, Any]:
     _, products = read_csv(out_dir / "products.csv")
     _, aliases = read_csv(out_dir / "aliases.csv")
     _, categories = read_csv(out_dir / "categories.csv")
-    _, official_mappings = read_csv(out_dir / "official_mappings.csv")
 
-    _require_fields(products, PRODUCT_REQUIRED_FIELDS, "products.csv")
+    _require_fields(products, PRODUCT_FIELDS, "products.csv")
     _require_fields(aliases, ALIAS_FIELDS, "aliases.csv")
     _require_fields(categories, CATEGORY_FIELDS, "categories.csv")
-    _require_fields(official_mappings, OFFICIAL_MAPPING_FIELDS, "official_mappings.csv")
 
     product_ids = [row["product_id"] for row in products]
     if len(product_ids) != len(set(product_ids)):
@@ -426,13 +346,6 @@ def validate_package(out_dir: Path) -> dict[str, Any]:
     if invalid_product_ids:
         raise ExportValidationError(f"Invalid Product IDs: {invalid_product_ids}")
     product_id_set = set(product_ids)
-
-    parent_refs = {
-        row["parent_product_id"] for row in products if row.get("parent_product_id", "")
-    }
-    dangling_parents = sorted(parent_refs - product_id_set)
-    if dangling_parents:
-        raise ExportValidationError(f"Dangling parent Product references: {dangling_parents}")
 
     alias_ids = [row["alias_id"] for row in aliases]
     if len(alias_ids) != len(set(alias_ids)):
@@ -456,26 +369,9 @@ def validate_package(out_dir: Path) -> dict[str, Any]:
     if unknown_categories:
         raise ExportValidationError(f"Products reference unknown categories: {unknown_categories}")
 
-    official_keys: set[tuple[str, str, str, str]] = set()
-    for row in official_mappings:
-        if row["product_id"] not in product_id_set:
-            raise ExportValidationError(
-                f"Official mapping references missing Product: {row['product_id']}"
-            )
-        key = (
-            row["product_id"],
-            row["official_source_id"],
-            row["official_entity_code"],
-            row["relation"],
-        )
-        if key in official_keys:
-            raise ExportValidationError(f"Duplicate official mapping: {key}")
-        official_keys.add(key)
-
     _assert_sorted(products, "product_id", "products.csv")
     _assert_sorted(aliases, "alias_id", "aliases.csv")
     _assert_sorted(categories, "category_code", "categories.csv")
-    _assert_sorted(official_mappings, "mapping_id", "official_mappings.csv")
 
     return manifest
 

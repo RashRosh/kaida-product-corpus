@@ -11,7 +11,6 @@ production, or carry raw/research evidence downstream.
 ## Build
 
 ```powershell
-.\.venv\Scripts\python.exe .\src\build_official_reconciliation.py
 .\.venv\Scripts\python.exe .\src\build_production_export.py
 ```
 
@@ -38,9 +37,12 @@ Product IDs are preserved.
 `categories.csv` contains only categories used by exported Products. A category
 code with conflicting labels is a validation failure.
 
-`official_mappings.csv` is optional provenance. It includes only
-`CURRENT_VERIFIED` mappings for exported Products with relation `EXACT`,
-`BROADER`, or `NARROWER`. Official mappings do not control Product eligibility.
+Product hierarchy is intentionally omitted from v1. Existing source
+`parent_product_id` values remain internal KB information for a later slice.
+
+Official Source Reconciliation remains part of the closed corpus checkpoint but
+is intentionally omitted from the runtime v1 package. The first Product importer
+does not consume official taxonomy/crosswalk data.
 
 `attribute_definitions.csv` is intentionally omitted from v1 runtime export.
 The current definitions are `WORKING_I3` offer-attribute schema, not a required
@@ -51,25 +53,23 @@ contract for first Product identity import.
 The package excludes raw 2GIS evidence, full observation history, seller/company
 data, unresolved queues, provisional Products, provisional mappings, conflict
 queues, manual review queues, raw prices, price aggregates, source workbooks,
-official XLS snapshots, and crawler tooling.
+official XLS snapshots, official mappings, Product hierarchy, and crawler
+tooling.
 
 ## Verification
 
 `manifest.json` records source checkpoint identity, immutable corpus hashes,
-counts, included/excluded datasets, source file hashes, official source snapshot
-identity, and SHA-256 for each exported package file.
+counts, included/excluded datasets, source file hashes, and SHA-256 for each
+exported package file.
 
 The generator validates:
 
 - manifest file hashes
 - unique Product and alias IDs
 - stable `KAIDA-Pxxxx` Product IDs
-- no dangling alias or parent Product references
+- no dangling alias Product references
 - category label consistency
 - no unknown Product categories
-- no official mappings to missing Products
-- no duplicate conflicting official mappings
 - schema version
 - required fields
 - deterministic row ordering
-
