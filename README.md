@@ -87,7 +87,9 @@ and manual decisions. It does not perform full-title fuzzy merging or call an
 external LLM. Low-confidence and context-incompatible titles stay unresolved.
 Current price statistics use only the latest state; historical price counts are
 reported separately and `price_basis` remains `UNKNOWN` unless source evidence
-states it.
+states it. To include stable deltas without breaking repeat-build determinism,
+place a retained report at `data/kb/previous_build_report.json`; the build reads
+but does not overwrite that file.
 
 ## Unresolved review loop
 

@@ -82,6 +82,20 @@ rules:
       title_regex: "кревет\\w*.*тигр"
       category_any: ["рыб", "морепродукт", "кревет"]
 
+  - id: DAIRY-FOODMASTER-MILK-OFFER
+    priority: 145
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: PRODUCT
+    product_id: KAIDA-P0265
+    confidence: 0.99
+    provenance: "KB_PIPELINE_PROMPT guardrail 2"
+    attributes:
+      brand: FoodMaster
+    when:
+      title_regex: "^молоко foodmaster\\b(?!.*(?:коз|безлактоз|растител|кокос|миндал|овсян)).*$"
+      category_any: ["молоч", "молоко"]
+
   - id: SHRIMP-KING-SUBTYPE
     priority: 150
     enabled: true
@@ -93,6 +107,58 @@ rules:
     when:
       title_regex: "кревет\\w*.*корол"
       category_any: ["рыб", "морепродукт", "кревет"]
+
+  - id: TRANSFORMED-POTATO-FRIES
+    priority: 140
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0826
+    confidence: 0.99
+    provenance: "KB_PIPELINE_PROMPT guardrail 12; provisional Product retained"
+    when:
+      title_regex: "^картофель фри(?:\\s+\\d.*)?$"
+      category_any: ["гарнир", "блюд", "меню", "картоф"]
+
+  - id: TRANSFORMED-POTATO-PUREE
+    priority: 140
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0827
+    confidence: 0.99
+    provenance: "KB_PIPELINE_PROMPT guardrail 12; provisional Product retained"
+    when:
+      title_regex: "^картофельное пюре(?:\\s+\\d.*)?$"
+      category_any: ["гарнир", "блюд", "меню", "картоф"]
+
+  - id: CROISSANT-FILLING-ATTRIBUTE
+    priority: 135
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0693
+    confidence: 0.97
+    provenance: "KB_PIPELINE_PROMPT guardrail 13"
+    capture_attributes:
+      filling: 1
+    when:
+      title_regex: "^круассан с(?:о)? (.+)$"
+      category_any: ["выпеч", "круассан", "пекар"]
+
+  - id: SAMSA-FILLING-ATTRIBUTE
+    priority: 135
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0690
+    confidence: 0.97
+    provenance: "KB_PIPELINE_PROMPT guardrail 13"
+    capture_attributes:
+      filling: 1
+    when:
+      title_regex: "^самса с (.+)$"
+      category_any: ["выпеч", "самса", "пекар"]
 
   - id: CATEGORY-HEADER
     priority: 120

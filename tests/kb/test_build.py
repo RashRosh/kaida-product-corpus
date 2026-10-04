@@ -84,3 +84,6 @@ def test_output_schema_and_regression_gate(builds):
     assert regression["passed"] is True
     assert reports[0]["raw_history_rows"] == 18686
     assert reports[0]["current_latest_rows"] == 18686
+    _, prices = read_csv(temp / "one" / "prices.csv")
+    assert prices
+    assert {row["price_basis"] for row in prices} == {"UNKNOWN"}

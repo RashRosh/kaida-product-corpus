@@ -33,6 +33,14 @@ CALIBRE_RE = re.compile(
     r"(?!\s*(?:г|гр|кг|g|kg|мл|ml|л|l)\b)",
     re.IGNORECASE,
 )
+PROCESS_TERMS = {
+    "варено-копченый": re.compile(r"\bвар[её]но[- ]копч[её]н\w*", re.IGNORECASE),
+    "замороженный": re.compile(r"\b(?:свежеморожен|заморож)\w*", re.IGNORECASE),
+    "копченый": re.compile(r"\bкопч[её]н\w*", re.IGNORECASE),
+    "слабосоленый": re.compile(r"\bслабо[- ]?сол[её]н\w*", re.IGNORECASE),
+    "соленый": re.compile(r"\bсол[её]н\w*", re.IGNORECASE),
+    "охлажденный": re.compile(r"\bохлажд[её]н\w*", re.IGNORECASE),
+}
 
 
 def number(value: str) -> int | float:
@@ -57,6 +65,13 @@ def extract_measurements(title: str | None) -> dict[str, Any]:
             item["value"] = first
         measurements.append(item)
 
+    processes = [
+        name for name, pattern in PROCESS_TERMS.items() if pattern.search(text)
+    ]
+    if "варено-копченый" in processes and "копченый" in processes:
+        processes.remove("копченый")
+    if "слабосоленый" in processes and "соленый" in processes:
+        processes.remove("соленый")
     return {
         "measurements": measurements,
         "percentages": [number(match.group(1)) for match in PERCENT_RE.finditer(text)],
@@ -64,4 +79,5 @@ def extract_measurements(title: str | None) -> dict[str, Any]:
             f"{match.group('first')}/{match.group('second')}"
             for match in CALIBRE_RE.finditer(text)
         ],
+        "process": processes,
     }

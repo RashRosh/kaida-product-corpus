@@ -32,12 +32,15 @@ def load_rules(path: Path) -> list[dict[str, Any]]:
     return sorted(rules, key=lambda item: (-int(item.get("priority", 0)), item["id"]))
 
 
-def _matches(rule: dict[str, Any], raw_title: str, categories: str) -> bool:
+def _matches(
+    rule: dict[str, Any], raw_title: str, categories: str
+) -> re.Match[str] | None | bool:
     when = rule.get("when", {})
     title = normalize(raw_title)
     context = normalize(categories)
     title_regex = when.get("title_regex")
-    if title_regex and not re.search(title_regex, title, re.IGNORECASE):
+    title_match = re.search(title_regex, title, re.IGNORECASE) if title_regex else True
+    if not title_match:
         return False
     category_any = [normalize(value) for value in when.get("category_any", [])]
     if category_any and not any(value in context for value in category_any):
@@ -45,15 +48,20 @@ def _matches(rule: dict[str, Any], raw_title: str, categories: str) -> bool:
     category_none = [normalize(value) for value in when.get("category_none", [])]
     if category_none and any(value in context for value in category_none):
         return False
-    return True
+    return title_match
 
 
 def match_rule(
     rules: list[dict[str, Any]], raw_title: str, categories: str
 ) -> RuleMatch | None:
     for rule in rules:
-        if not rule.get("enabled", True) or not _matches(rule, raw_title, categories):
+        title_match = _matches(rule, raw_title, categories)
+        if not rule.get("enabled", True) or not title_match:
             continue
+        attributes = dict(rule.get("attributes", {}))
+        if isinstance(title_match, re.Match):
+            for key, group_number in rule.get("capture_attributes", {}).items():
+                attributes[key] = title_match.group(int(group_number)).strip()
         return RuleMatch(
             rule_id=rule["id"],
             action=rule["action"],
@@ -62,6 +70,6 @@ def match_rule(
             product_name=rule.get("product_name", ""),
             confidence=float(rule.get("confidence", 0.0)),
             provenance=rule.get("provenance", "kb/rules.yaml"),
-            attributes=rule.get("attributes", {}),
+            attributes=attributes,
         )
     return None
