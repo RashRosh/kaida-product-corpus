@@ -1,0 +1,85 @@
+[
+  {
+    "case_id": "dessert-potato-not-raw-potato",
+    "raw_title": "Картошка",
+    "categories": "Десерты | Пирожные",
+    "expected": {"not_product_id": "KAIDA-P0342"}
+  },
+  {
+    "case_id": "cocoa-drink-not-powder",
+    "raw_title": "Какао 350 мл",
+    "categories": "Горячие напитки",
+    "expected": {
+      "not_product_id": "KAIDA-P0738",
+      "canonical_product_id": "KAIDA-P0844",
+      "entity_class": "READY_DISH"
+    }
+  },
+  {
+    "case_id": "apple-fresh-not-fruit",
+    "raw_title": "Яблоко",
+    "categories": "Фреш | Фреши",
+    "expected": {
+      "not_product_id": "KAIDA-P0432",
+      "canonical_product_id": "KAIDA-P0842"
+    }
+  },
+  {
+    "case_id": "rice-garnish-not-dry-grain",
+    "raw_title": "Рис",
+    "categories": "Гарниры | Готовые блюда",
+    "expected": {
+      "not_product_id": "KAIDA-P0505",
+      "canonical_product_id": "KAIDA-P0828"
+    }
+  },
+  {
+    "case_id": "tarragon-lemonade-not-herb",
+    "raw_title": "Тархун",
+    "categories": "Лимонады",
+    "expected": {
+      "not_product_id": "KAIDA-P0400",
+      "canonical_product_id": "KAIDA-P0721"
+    }
+  },
+  {
+    "case_id": "keta-steak-not-yellowtail",
+    "raw_title": "Стейки кеты",
+    "categories": "Рыба и морепродукты",
+    "expected": {"not_canonical_name": "Стейк лакедры"}
+  },
+  {
+    "case_id": "long-salad-list-malformed",
+    "raw_title": "Салат Оливье, салат Цезарь, салат Греческий, салат Мимоза, салат Винегрет, салат Крабовый, салат Столичный",
+    "categories": "Салаты",
+    "expected": {
+      "mapping_status": "MALFORMED",
+      "entity_class": "MALFORMED"
+    }
+  },
+  {
+    "case_id": "pipe-alone-not-bilingual-proof",
+    "raw_title": "Яблоко | Сыр",
+    "categories": "Прочее",
+    "expected": {"mapping_status": "UNRESOLVED"}
+  },
+  {
+    "case_id": "multi-category-heading-not-product",
+    "raw_title": "Чай, Кофе, Какао",
+    "categories": "Чай, Кофе",
+    "expected": {
+      "mapping_status": "OUT_OF_SCOPE",
+      "entity_class": "CATEGORY_HEADER"
+    }
+  },
+  {
+    "case_id": "promo-heading-not-product",
+    "raw_title": "Promo от Мираторг",
+    "categories": "Каталог",
+    "expected": {
+      "mapping_status": "OUT_OF_SCOPE",
+      "entity_class": "CATEGORY_HEADER",
+      "matched_rule_id": "PROMO-CATALOG-HEADER"
+    }
+  }
+]

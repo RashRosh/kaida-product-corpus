@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "exact-milk-context",
+    "raw_title": "Молоко коровье",
+    "categories": "Молочная продукция",
+    "expected": {
+      "canonical_product_id": "KAIDA-P0265",
+      "mapping_status": "MAPPED",
+      "entity_class": "PRODUCT"
+    }
+  },
+  {
+    "case_id": "tiger-shrimp-subtype",
+    "raw_title": "Креветка тигровая 16/20 1 кг",
+    "categories": "Рыба и морепродукты",
+    "expected": {
+      "canonical_product_id": "KAIDA-P0218",
+      "mapping_status": "MAPPED",
+      "matched_rule_id": "SHRIMP-TIGER-SUBTYPE"
+    }
+  },
+  {
+    "case_id": "dessert-potato-context",
+    "raw_title": "Картошка",
+    "categories": "Десерты | Пирожные",
+    "expected": {
+      "canonical_product_id": "KAIDA-P0817",
+      "mapping_status": "PROVISIONAL_MAPPING",
+      "entity_class": "READY_DISH"
+    }
+  }
+]

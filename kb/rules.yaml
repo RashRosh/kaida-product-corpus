@@ -1,0 +1,126 @@
+version: 1
+rules:
+  - id: GUARD-MULTI-SALAD-LIST
+    priority: 200
+    enabled: true
+    action: MALFORMED
+    entity_class: MALFORMED
+    confidence: 0.99
+    provenance: "KB_PIPELINE_PROMPT guardrail 6/15"
+    when:
+      title_regex: "(?:салат.*[,;|].*){3,}"
+
+  - id: CTX-DESSERT-POTATO
+    priority: 180
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0817
+    confidence: 0.99
+    provenance: "Iteration 3 rule R06; provisional Product retained"
+    when:
+      title_regex: "^картошка(?:\\s+пирожное)?$"
+      category_any: ["десерт", "пирож"]
+
+  - id: CTX-COCOA-DRINK
+    priority: 180
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0844
+    confidence: 0.98
+    provenance: "Iteration 3 rule R08; provisional Product retained"
+    when:
+      title_regex: "^какао(?:\\s+\\d.*)?$"
+      category_any: ["горяч", "напит", "кофе", "меню"]
+
+  - id: CTX-APPLE-FRESH
+    priority: 180
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0842
+    confidence: 0.98
+    provenance: "Iteration 3 negative guardrail; provisional Product retained"
+    when:
+      title_regex: "^(?:яблоко|яблочный фреш)(?:\\s+\\d.*)?$"
+      category_any: ["фреш"]
+
+  - id: CTX-RICE-GARNISH
+    priority: 180
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0828
+    confidence: 0.97
+    provenance: "Iteration 3 negative guardrail; provisional Product retained"
+    when:
+      title_regex: "^(?:рис|рис отварной)(?:\\s+\\d.*)?$"
+      category_any: ["гарнир", "блюд", "меню"]
+
+  - id: CTX-TARRAGON-LEMONADE
+    priority: 180
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: READY_DISH
+    product_id: KAIDA-P0721
+    confidence: 0.97
+    provenance: "Iteration 3 negative guardrail"
+    when:
+      title_regex: "^тархун(?:\\s+\\d.*)?$"
+      category_any: ["лимонад", "напит"]
+
+  - id: SHRIMP-TIGER-SUBTYPE
+    priority: 150
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: PRODUCT
+    product_id: KAIDA-P0218
+    confidence: 0.98
+    provenance: "KB_PIPELINE_PROMPT guardrail 10"
+    when:
+      title_regex: "кревет\\w*.*тигр"
+      category_any: ["рыб", "морепродукт", "кревет"]
+
+  - id: SHRIMP-KING-SUBTYPE
+    priority: 150
+    enabled: true
+    action: MAP_EXISTING
+    entity_class: PRODUCT
+    product_id: KAIDA-P0219
+    confidence: 0.98
+    provenance: "KB_PIPELINE_PROMPT guardrail 10"
+    when:
+      title_regex: "кревет\\w*.*корол"
+      category_any: ["рыб", "морепродукт", "кревет"]
+
+  - id: CATEGORY-HEADER
+    priority: 120
+    enabled: true
+    action: OUT_OF_SCOPE
+    entity_class: CATEGORY_HEADER
+    confidence: 0.99
+    provenance: "KB_PIPELINE_PROMPT guardrail 3"
+    when:
+      title_regex: "^(?:гастрономия|кондитерские изделия|молочные продукты|мясо|овощи фрукты|рыба|напитки|салаты|десерты|готовая еда|чай кофе какао)$"
+
+  - id: NON-FOOD-CATALOG
+    priority: 110
+    enabled: true
+    action: OUT_OF_SCOPE
+    entity_class: OUT_OF_SCOPE
+    confidence: 0.99
+    provenance: "Corpus inspection reusable exclusion"
+    when:
+      category_any: ["коробки", "упаковка", "молды", "формы силиконовые", "инвентарь", "посуда"]
+
+  - id: PROMO-CATALOG-HEADER
+    priority: 105
+    enabled: true
+    action: OUT_OF_SCOPE
+    entity_class: CATEGORY_HEADER
+    confidence: 0.99
+    provenance: "High-impact unresolved review 2026-10-04"
+    when:
+      title_regex: "^promo от\\b"
+      category_any: ["каталог"]
