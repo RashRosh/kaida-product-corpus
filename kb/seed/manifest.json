@@ -5,8 +5,10 @@
     "ATTRIBUTE_DEFINITIONS": 29,
     "DECISION_LOG": 111,
     "MAPPINGS": 1733,
+    "OBSERVED_NAMES": 2733,
     "PRODUCTS": 868,
-    "RULES": 40
+    "RULES": 40,
+    "UNRESOLVED": 1000
   },
   "workbook": "KAIDA_Master_KB_Iteration_3.xlsx"
 }

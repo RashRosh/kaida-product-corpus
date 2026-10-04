@@ -130,4 +130,12 @@ Generated and ignored:
 
 `data/kb/` contains `latest_observations.csv`, `observed_names.csv`,
 `mappings.csv`, `unresolved.csv`, `prices.csv`, `products.csv`, `aliases.csv`,
-`build_report.json`, and `regression_report.json`.
+`build_report.json`, `regression_report.json`, and
+`reconciliation_report.json`.
+
+The reconciliation uses the reference workbook title grain: Unicode NFKC,
+lowercase, `ё→е`, punctuation-to-spaces, and whitespace collapse. Every one of
+the 12,877 normalized observed titles receives exactly one terminal status:
+`APPROVED_MAPPED`, `PROVISIONAL_MAPPED`, `OUT_OF_SCOPE`, or `UNRESOLVED`.
+Price availability is reported as `price_present_rows` and
+`price_present_rate`; it is not a normalized-price or benchmark metric.

@@ -19,6 +19,7 @@ if str(ROOT / "src") not in sys.path:
 
 from kb.io import file_sha256, read_csv, write_csv, write_json  # noqa: E402
 from kb.normalization import identity_key, normalize  # noqa: E402
+from kb.reconciliation import reconcile  # noqa: E402
 from kb.report import counter_dict, run_regressions  # noqa: E402
 from kb.resolver import Resolver  # noqa: E402
 from kb.rules import load_rules  # noqa: E402
@@ -126,6 +127,20 @@ def build(
             }
         )
         mapping_rows.append(row)
+
+    _, reference_mappings = read_csv(kb_dir / "seed" / "reference_mappings.csv")
+    _, reference_observed = read_csv(
+        kb_dir / "seed" / "reference_observed_names.csv"
+    )
+    input_hash_after_resolution = file_sha256(input_path)
+    reconciliation = reconcile(
+        mapping_rows,
+        resolver.products,
+        reference_mappings,
+        reference_observed,
+        input_hash_before,
+        input_hash_after_resolution,
+    )
 
     unresolved_statuses = {"UNRESOLVED", "PROVISIONAL_MAPPING", "PRODUCT_CANDIDATE"}
     unresolved_rows = []
@@ -241,27 +256,27 @@ def build(
     shutil.copyfile(kb_dir / "seed" / "products.csv", out_dir / "products.csv")
     shutil.copyfile(kb_dir / "seed" / "aliases.csv", out_dir / "aliases.csv")
     write_json(out_dir / "regression_report.json", regression)
+    write_json(out_dir / "reconciliation_report.json", reconciliation)
 
-    unique_titles = sorted({row["raw_title"] for row in latest})
-    statuses_by_title: dict[str, set[str]] = defaultdict(set)
-    for row in mapping_rows:
-        statuses_by_title[row["raw_title"]].add(row["mapping_status"])
-    mapped_unique = sum(statuses == {"MAPPED"} for statuses in statuses_by_title.values())
-    unresolved_unique = sum(bool(statuses & unresolved_statuses) for statuses in statuses_by_title.values())
-    mapped_current_rows = sum(
-        int(row["current_count"]) for row in mapping_rows if row["mapping_status"] == "MAPPED"
+    terminal_counts = reconciliation["terminal_status_counts"]
+    terminal_row_counts = Counter()
+    for title_record in reconciliation["titles"]:
+        terminal_row_counts[title_record["pipeline_status"]] += int(
+            title_record["current_row_count"]
+        )
+    price_present_rows = sum(
+        numeric_price(row.get("price", "")) is not None for row in latest
     )
-    unresolved_current_rows = sum(
-        int(row["current_count"])
-        for row in mapping_rows
-        if row["mapping_status"] in unresolved_statuses
-    )
-    out_of_scope_rows = sum(
-        int(row["current_count"])
-        for row in mapping_rows
-        if row["mapping_status"] in {"OUT_OF_SCOPE", "MALFORMED"}
-    )
-    current_price_rows = sum(numeric_price(row.get("price", "")) is not None for row in latest)
+    reconciliation_summary = {
+        key: value
+        for key, value in reconciliation.items()
+        if key not in {"titles", "provisional_product_audit"}
+    }
+    reconciliation_summary["provisional_product_audit"] = {
+        key: value
+        for key, value in reconciliation["provisional_product_audit"].items()
+        if key != "products"
+    }
     report: dict[str, Any] = {
         "input": {
             "path": str(input_path.relative_to(ROOT)) if input_path.is_relative_to(ROOT) else str(input_path),
@@ -269,18 +284,35 @@ def build(
         },
         "raw_history_rows": len(history),
         "current_latest_rows": len(latest),
-        "unique_current_raw_names": len(unique_titles),
+        "unique_observed_titles": reconciliation["unique_observed_titles"],
         "resolution_groups": len(mapping_rows),
-        "mapped_unique_names": mapped_unique,
-        "mapped_current_rows": mapped_current_rows,
-        "unresolved_unique_names": unresolved_unique,
-        "unresolved_current_rows": unresolved_current_rows,
-        "out_of_scope_current_rows": out_of_scope_rows,
-        "mapping_coverage_unique": round(mapped_unique / len(unique_titles), 6) if unique_titles else 0.0,
-        "mapping_coverage_current": round(mapped_current_rows / len(latest), 6) if latest else 0.0,
-        "current_price_rows": current_price_rows,
-        "current_price_coverage": round(current_price_rows / len(latest), 6) if latest else 0.0,
-        "historical_price_rows": sum(numeric_price(row.get("price", "")) is not None for row in history),
+        "terminal_status_counts": terminal_counts,
+        "terminal_status_current_rows": {
+            status: terminal_row_counts.get(status, 0)
+            for status in (
+                "APPROVED_MAPPED",
+                "PROVISIONAL_MAPPED",
+                "OUT_OF_SCOPE",
+                "UNRESOLVED",
+            )
+        },
+        "approved_mapping_rate_by_unique_title": round(
+            terminal_counts["APPROVED_MAPPED"]
+            / reconciliation["unique_observed_titles"],
+            6,
+        ),
+        "approved_mapping_rate_by_current_rows": round(
+            terminal_row_counts["APPROVED_MAPPED"] / len(latest), 6
+        )
+        if latest
+        else 0.0,
+        "price_present_rows": price_present_rows,
+        "price_present_rate": round(price_present_rows / len(latest), 6)
+        if latest
+        else 0.0,
+        "historical_price_present_rows": sum(
+            numeric_price(row.get("price", "")) is not None for row in history
+        ),
         "counts_by_mapping_method": counter_dict([row["mapping_method"] for row in mapping_rows]),
         "counts_by_confidence": counter_dict([row["confidence"] for row in mapping_rows]),
         "counts_by_entity_class": counter_dict([row["entity_class"] for row in mapping_rows]),
@@ -294,17 +326,16 @@ def build(
             "passed_count": regression["passed_count"],
             "failed_count": regression["failed_count"],
         },
+        "reconciliation": reconciliation_summary,
     }
     previous_path = out_dir / "previous_build_report.json"
     if previous_path.exists():
         previous = json.loads(previous_path.read_text(encoding="utf-8"))
         metric_names = [
-            "mapped_unique_names",
-            "mapped_current_rows",
-            "unresolved_unique_names",
-            "unresolved_current_rows",
-            "mapping_coverage_unique",
-            "mapping_coverage_current",
+            "approved_mapping_rate_by_unique_title",
+            "approved_mapping_rate_by_current_rows",
+            "price_present_rows",
+            "price_present_rate",
         ]
         report["comparison_with_previous_report"] = {
             name: round(report[name] - previous.get(name, 0), 6) for name in metric_names
@@ -332,13 +363,11 @@ def main() -> None:
     print("KB build complete")
     print(f"History rows: {report['raw_history_rows']}")
     print(f"Latest rows: {report['current_latest_rows']}")
+    statuses = report["terminal_status_counts"]
+    print(f"Unique observed titles: {report['unique_observed_titles']}")
     print(
-        f"Mapped: {report['mapped_unique_names']} unique / "
-        f"{report['mapped_current_rows']} current rows"
-    )
-    print(
-        f"Unresolved: {report['unresolved_unique_names']} unique / "
-        f"{report['unresolved_current_rows']} current rows"
+        "Terminal statuses: "
+        + ", ".join(f"{key}={value}" for key, value in statuses.items())
     )
     print(f"Regression: {report['regression']['passed_count']}/{report['regression']['case_count']} passed")
     print(f"Outputs: {args.out}")

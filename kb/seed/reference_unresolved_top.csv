@@ -1,0 +1,1001 @@
+rank,impact_score,raw_title,entity_class,categories,observations_count,branches_count,legacy_candidate_name,recommended_action
+1,31.65,Тефтели,READY_DISH,Блюда | Замороженная продукция | Котлеты | Полуфабрикаты,9,8,,DEFINE_READY_PRODUCT_OR_RULE
+2,30.69,Батон наны | Хлеб батон,PRODUCT,Нан өнімдері | Хлебобулочные изделия,8,8,Батон,CHECK_LEGACY_CANDIDATE
+3,30.69,Яблочный пирог | Алма бәліші,PRODUCT,Бәліш | Пирог,8,8,Сок яблочный,CHECK_LEGACY_CANDIDATE
+4,28.14,«Бал» торты | Торт «Медовый»,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+5,28.14,«Вупи пай» торты | Торт «Вупи пай»,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+6,28.14,«Карамель қыз» торты | Торт «Карамельная девочка»,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+7,28.14,«Классикалық тирамису» торты | Торт «Тирамису классический»,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+8,28.14,«Орео» торты | Торт «Орео»,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+9,28.14,«Қаражидек» торты | Торт «Черничный»,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+10,28.14,Алмалы қаттама | Слоенка с яблоком,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+11,28.14,Бенто торт шоколадты-шие | шоколадно-вишневый,READY_DISH,Бенто торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+12,28.14,Ванильді эклер | Ванильный эклер,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+13,28.14,Жаңғақты мини-тарт | Мини-тарт с орехом,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+14,28.14,Көкнәр қосылған тоқаш | Булочка с маком,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+15,28.14,Муравейник,READY_DISH,"Витрина | Десерты | Кондитерские изделия, торты",8,8,,DEFINE_READY_PRODUCT_OR_RULE
+16,28.14,Орман жаңғақты шу | Шу фундучный,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+17,28.14,Пісте шуы | Фисташковое шу,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+18,28.14,Сникерс трайфл,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+19,28.14,Сырные палочки,READY_DISH,Детское меню | Закуски | Закуски к пиву | Прочее,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+20,28.14,Сүзбе қосылған тоқаш | Булочка с творогом,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+21,28.14,Сүзбелі дөңгелек тоқаш | Творожное кольцо,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+22,28.14,Сүзбелі нан | Ватрушка с творогом,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+23,28.14,Сүзбелі қаттама | Слоенка с творогом,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+24,28.14,Тирамису трайфл,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+25,28.14,Флэт Уайт,READY_DISH,Горячие кофейные напитки | Кофе,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+26,28.14,Фраппучино,READY_DISH,Ice Кофе | КОКТЕЙЛЬ | Остальное | Холодный кофе:,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+27,28.14,Хлебная корзина,READY_DISH,Выпечка | Закуски/Салаты | Хлеба,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+28,28.14,Шоколадты торт | Шоколадный торт,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+29,28.14,Шоколадты эклер | Шоколадный эклер,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+30,28.14,Шпинатты торт | Шпинатный торт,READY_DISH,Торт,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+31,28.14,Шу,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+32,28.14,Эскимо,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+33,28.14,Қою сүтті рогалик | Рогалик со сгущенкой,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+34,28.14,Құлпынайлы мини-тарт | Мини-тарт с клубникой,READY_DISH,Пирожное | Тәттілер,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+35,28.14,Ұлу пішінді тоқаш | Булочка Улитка,READY_DISH,Выпечка | Нан өнімдері,8,8,,DEFINE_READY_PRODUCT_OR_RULE
+36,28.03,тартин,READY_DISH,КУХНЯ | Нан өнімдері | Хлебобулочные изделия,10,10,,DEFINE_READY_PRODUCT_OR_RULE
+37,27.64,Чебуреки с фаршем,READY_DISH,Полуфабрикаты | Фастфуд,9,5,,DEFINE_READY_PRODUCT_OR_RULE
+38,26.73,Классический,READY_DISH,Ice Tea | Лимонад | Раф,11,6,,DEFINE_READY_PRODUCT_OR_RULE
+39,25.87,Qulpynai шай | Чай Qulpynai 800 мл,PRODUCT,Чаи | Шай,7,7,Чай чёрный,CHECK_LEGACY_CANDIDATE
+40,25.87,Qulpynai шайы | Чай Qulpynai 300 мл,PRODUCT,Чаи | Шай,7,7,Чай чёрный,CHECK_LEGACY_CANDIDATE
+41,25.87,Бал / Мед (40гр.),PRODUCT,Чаи | Шай,7,7,Мёд цветочный,CHECK_LEGACY_CANDIDATE
+42,25.87,Банан-тұзды карамель | Банан-соленая карамель 450 мл,PRODUCT,Молочные коктейли | Сүтті коктейль,7,7,Банан,CHECK_LEGACY_CANDIDATE
+43,25.87,ОЛИВКОВОЕ МАСЛО AGROLIVE,PRODUCT,растительное масло,7,7,Масло оливковое,CHECK_LEGACY_CANDIDATE
+44,25.58,Бананды кекс | Кекс банановый,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+45,25.58,Баннофи-пай | Баннофи-пай,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+46,25.58,Бауырсақ | Бауырсак (500 гр),PRODUCT,Нан өнімдері | Хлебобулочные изделия,8,8,,FIND_OR_CREATE_PRODUCT
+47,25.58,Вареники,PRODUCT,Детское меню | Полуфабрикаты,8,8,,FIND_OR_CREATE_PRODUCT
+48,25.58,Ет қосылған бәліш | Мясной пирог,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+49,25.58,Пирог «Кара кыз» | «Қара қыз» бәліші,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+50,25.58,Пирог творожно-ягодный | Сүзбе-жидек бәліші,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+51,25.58,Пирог творожный | Сүзбе бәліші,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+52,25.58,Сүзбелі печенье | Печенье с творогом,PRODUCT,Печенье,8,8,,FIND_OR_CREATE_PRODUCT
+53,25.58,Тауық еті қосылған бәліш | Куриный пирог,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+54,25.58,Фин бәліші | Финский пирог,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+55,25.58,Черничный пирог | Қаражидек бәліші,PRODUCT,Бәліш | Пирог,8,8,,FIND_OR_CREATE_PRODUCT
+56,23.71,Меренговый рулет,READY_DISH,Десерты | Торты по предзаказу,7,7,,DEFINE_READY_PRODUCT_OR_RULE
+57,23.71,Наггетсы,READY_DISH,Закуски | Замороженная продукция | Фастфуд,7,7,,DEFINE_READY_PRODUCT_OR_RULE
+58,23.71,Пирог Восточный,READY_DISH,"Витрина | Кондитерские изделия, торты",7,7,,DEFINE_READY_PRODUCT_OR_RULE
+59,23.33,Греческий,READY_DISH,Салаты,6,6,Йогурт греческий,CHECK_LEGACY_CANDIDATE
+60,23.33,Спагетти Карбонара,READY_DISH,Итальянская кухня | Паста | Фреш паста,6,6,Спагетти,CHECK_LEGACY_CANDIDATE
+61,23.33,Чесночный хлеб,READY_DISH,Выпечка | Хлеба,6,6,Хлеб ржаной,CHECK_LEGACY_CANDIDATE
+62,23.33,Яблочный пирог,READY_DISH,Ассортимент сиропов | Десерты | Пироги,6,6,Сок яблочный,CHECK_LEGACY_CANDIDATE
+63,23.33,зеленый салат,READY_DISH,Закуски/Салаты | КУХНЯ | Салаты,6,6,Зелёный лук,CHECK_LEGACY_CANDIDATE
+64,23.02,Банан салмасы бар ақуыз орамасы | Меренговый рулет с банановой начинкой,PRODUCT,Рулет,8,8,Банан,CHECK_LEGACY_CANDIDATE
+65,22.29,Promo от Мираторг,PRODUCT,Каталог,9,9,,FIND_OR_CREATE_PRODUCT
+66,21.56,БИСКВИТ МЕДВЕЖОНОК БАРНИ,PRODUCT,кондитерские изделия,7,7,,FIND_OR_CREATE_PRODUCT
+67,21.56,Орео шейк 450 мл,PRODUCT,Молочные коктейли | Сүтті коктейль,7,7,,FIND_OR_CREATE_PRODUCT
+68,21.34,Манго-маракуйя,READY_DISH,Лимонады | Лимонады 1л | Лимонады: | Фирменные чаи,7,7,Маракуйя,CHECK_LEGACY_CANDIDATE
+69,21.21,Ягодный,PRODUCT,Ice Tea | Ice tea,6,6,Морс ягодный,CHECK_LEGACY_CANDIDATE
+70,20.67,Телятина в сливочном соусе,READY_DISH,Вторые блюда | Европейская кухня,6,4,Телятина,CHECK_LEGACY_CANDIDATE
+71,19.44,Винегрет,READY_DISH,Закуски | Салаты,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+72,19.44,Графские развалины,READY_DISH,Пирожные | ТОРТЫ масовочные | Торты по предзаказу,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+73,19.44,Картофельные дольки,READY_DISH,Гарниры | Дополнительное | Закуски,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+74,19.44,Куриный пирог,READY_DISH,Витрина | Пироги,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+75,19.44,Оливье,READY_DISH,Салаты,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+76,19.44,Суп лапша,READY_DISH,Супы,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+77,19.44,Торт Прага,READY_DISH,"Кондитерские изделия, торты | Торты",6,6,,DEFINE_READY_PRODUCT_OR_RULE
+78,19.44,чечевичный крем-суп,READY_DISH,КУХНЯ | Супы,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+79,19.4,Сүт / Молоко (50мл.),PRODUCT,Чаи | Шай,7,7,Молоко коровье,CHECK_LEGACY_CANDIDATE
+80,19.18,Америкалық шоколадты печенье | Американское шоколадное печенье,PRODUCT,Печенье,8,8,,FIND_OR_CREATE_PRODUCT
+81,19.18,Безе қосылған печенье | Печенье с безе,PRODUCT,Печенье,8,8,,FIND_OR_CREATE_PRODUCT
+82,19.18,Бискотти,PRODUCT,Печенье,8,8,,FIND_OR_CREATE_PRODUCT
+83,19.18,Бискотти шоколадты | шоколадный,PRODUCT,Печенье,8,8,,FIND_OR_CREATE_PRODUCT
+84,19.18,Пісте салмасы бар ақуыз орамасы | Меренговый рулет с фисташковой начинкой,PRODUCT,Рулет,8,8,,FIND_OR_CREATE_PRODUCT
+85,19.18,Таңқурай салмасы бар ақуыз орамасы | Меренговый рулет с малиновой начинкой,PRODUCT,Рулет,8,8,,FIND_OR_CREATE_PRODUCT
+86,19.18,Қаражидек салмасы бар ақуыз орамасы | Меренговый рулет с черничной начинкой,PRODUCT,Рулет,8,8,,FIND_OR_CREATE_PRODUCT
+87,19.18,Құрма қосылған печенье | Печенье с финиками,PRODUCT,Печенье,8,8,,FIND_OR_CREATE_PRODUCT
+88,18.43,Блинчики с мясом,READY_DISH,Выпечка | Завтраки,6,5,,DEFINE_READY_PRODUCT_OR_RULE
+89,18.43,Блинчики с творогом,READY_DISH,Выпечка | Завтраки,6,5,,DEFINE_READY_PRODUCT_OR_RULE
+90,18.43,Имбирный чай,READY_DISH,Горячие напитки (Чай-Какао) | Фирменные чаи | Чай,5,5,Чай чёрный,CHECK_LEGACY_CANDIDATE
+91,18.43,Овсяная каша,READY_DISH,Завтраки | Завтраки от 11:00 до 12:30 | СЛАДКИЕ ЗАВТРАКИ,5,5,Мука овсяная,CHECK_LEGACY_CANDIDATE
+92,18.43,Пшенная каша,READY_DISH,Завтраки | Завтраки от 11:00 до 12:30,5,5,Мука пшеничная,CHECK_LEGACY_CANDIDATE
+93,18.43,Ташкентский чай,READY_DISH,Авторские чаи | Горячие напитки (Чай-Какао) | Фирменные чаи | Чайная карта,5,5,Чай чёрный,CHECK_LEGACY_CANDIDATE
+94,18.43,Фисташка-малина,READY_DISH,Целые торты,5,5,Малина,CHECK_LEGACY_CANDIDATE
+95,18.43,Ягодный микс 1000 ml,READY_DISH,Лимонады,5,5,Морс ягодный,CHECK_LEGACY_CANDIDATE
+96,18.43,Ягодный микс 400 ml,READY_DISH,Лимонады,5,5,Морс ягодный,CHECK_LEGACY_CANDIDATE
+97,17.78,Мохито 1000 мл,READY_DISH,Лимонад,7,7,,DEFINE_READY_PRODUCT_OR_RULE
+98,17.78,Мохито 400 мл,READY_DISH,Лимонад,7,7,,DEFINE_READY_PRODUCT_OR_RULE
+99,17.68,Ванильный милкшейк,PRODUCT,Молочные коктейли | Молочные коктейли:,6,6,,FIND_OR_CREATE_PRODUCT
+100,17.68,Вареники с вишней,PRODUCT,Вареники | Замороженная продукция | Полуфабрикаты,6,6,,FIND_OR_CREATE_PRODUCT
+101,17.68,Клубничный милкшейк,PRODUCT,Молочные коктейли | Молочные коктейли:,6,6,,FIND_OR_CREATE_PRODUCT
+102,17.5,Жасмин,READY_DISH,Листовые чаи | Чай,6,6,Рис жасмин,CHECK_LEGACY_CANDIDATE
+103,16.79,Антрекот стейк,PRODUCT,Говядина,8,2,,FIND_OR_CREATE_PRODUCT
+104,16.75,Котлеты говядина,PRODUCT,Замороженная продукция | Котлеты,5,5,Говядина,CHECK_LEGACY_CANDIDATE
+105,16.75,Котлеты говяжьи,PRODUCT,Полуфабрикаты,5,5,Говяжьи кости,CHECK_LEGACY_CANDIDATE
+106,16.75,Котлеты куриные,PRODUCT,Полуфабрикаты,5,5,Куриные шеи,CHECK_LEGACY_CANDIDATE
+107,16.75,Котлеты курица,PRODUCT,Замороженная продукция | Котлеты,5,5,Курица,CHECK_LEGACY_CANDIDATE
+108,16.75,"Ташкентский чай 0,9",PRODUCT,Авторские чаи,5,5,Чай чёрный,CHECK_LEGACY_CANDIDATE
+109,16.75,"Чай по-казахски 0,4",PRODUCT,Авторские чаи,5,5,Чай чёрный,CHECK_LEGACY_CANDIDATE
+110,16.75,"Чай по-казахски 0,9",PRODUCT,Авторские чаи,5,5,Чай чёрный,CHECK_LEGACY_CANDIDATE
+111,16.17,Солёная карамель,PRODUCT,Ассортимент сиропов | Раф,7,7,,FIND_OR_CREATE_PRODUCT
+112,16.17,ШАМПУНЬ ДЛЯ ВОЛОС,PRODUCT,средства гигиены,7,7,,FIND_OR_CREATE_PRODUCT
+113,16.17,Шәрбәт / Сироп (30 мл.),PRODUCT,Чаи | Шай,7,7,,FIND_OR_CREATE_PRODUCT
+114,15.35,Bumble кофе,READY_DISH,Ice Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+115,15.35,Ice americano,READY_DISH,Ice Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+116,15.35,Ice cream-Cola,READY_DISH,Ice Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+117,15.35,Ачичук,READY_DISH,Салаты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+118,15.35,Боул с курицей,READY_DISH,Боулы | Горячие блюда,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+119,15.35,Буратта с томатами,READY_DISH,Новинки в меню | Салаты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+120,15.35,Ватрушка с творогом,READY_DISH,Витрина | Десерты | ПИРОЖНЫЕ,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+121,15.35,Доппио,READY_DISH,Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+122,15.35,Дубайский,READY_DISH,Целые торты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+123,15.35,Кекс Столичный,READY_DISH,"Кондитерские изделия, торты | ПИРОЖНЫЕ",5,5,,DEFINE_READY_PRODUCT_OR_RULE
+124,15.35,Колд-брю цитрус 330 мл,READY_DISH,Ice Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+125,15.35,Кукис,READY_DISH,Десерты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+126,15.35,Манты с говядиной,READY_DISH,Восточная кухня | Манты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+127,15.35,Матча-тоник с пюре малины,READY_DISH,Ice Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+128,15.35,Маффин,READY_DISH,Десерты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+129,15.35,Моккачино,READY_DISH,Сладкий кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+130,15.35,Овощи На Гриле,READY_DISH,Гарниры,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+131,15.35,Плов Праздничный,READY_DISH,Восточная кухня | Вторые блюда,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+132,15.35,Профитроли,READY_DISH,Витрина | Десерты | Мини десерты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+133,15.35,Пуровер V 60,READY_DISH,Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+134,15.35,Салат Цезарь,READY_DISH,Салаты | Салаты и закуски,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+135,15.35,Салат с баклажанами,READY_DISH,Закуски/Салаты | Салаты и закуски,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+136,15.35,Салат с тунцом,READY_DISH,Салаты,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+137,15.35,"Флэт уайт 0,2",READY_DISH,Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+138,15.35,Хачапури по-аджарски,READY_DISH,Выпечка | Грузинская кухня | ХАЧАПУРИ,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+139,15.11,Ти-бон стейк (говядина),PRODUCT,Говядина,6,2,Говядина,CHECK_LEGACY_CANDIDATE
+140,15.11,Томагавк,PRODUCT,Говядина,6,2,Говяжий томагавк,CHECK_LEGACY_CANDIDATE
+141,14.58,Ассам,READY_DISH,Листовые чаи | Чай,6,6,,DEFINE_READY_PRODUCT_OR_RULE
+142,14.35,Салат Мергенчи,READY_DISH,Салаты,5,4,,DEFINE_READY_PRODUCT_OR_RULE
+143,14.35,Яичница глазунья,READY_DISH,Завтраки,5,4,,DEFINE_READY_PRODUCT_OR_RULE
+144,14.32,"Хлебцы хрустящие с отрубями, Секрет здоровья, 130 г",PRODUCT,Еда | Популярное,6,3,,FIND_OR_CREATE_PRODUCT
+145,13.96,Oreo милкшейк,PRODUCT,Молочные коктейли,5,5,,FIND_OR_CREATE_PRODUCT
+146,13.96,Бариста сет,PRODUCT,БАР | Бариста сет,5,5,,FIND_OR_CREATE_PRODUCT
+147,13.96,Вареники с творогом сладкие,PRODUCT,Вареники | Замороженная продукция,5,5,,FIND_OR_CREATE_PRODUCT
+148,13.96,Восточный пирог,PRODUCT,Пироги,5,5,,FIND_OR_CREATE_PRODUCT
+149,13.96,Манты говяжьи,PRODUCT,Полуфабрикаты,5,5,,FIND_OR_CREATE_PRODUCT
+150,13.96,Пирог с курицей,PRODUCT,Кулинария | Кулинарные изделия,5,5,,FIND_OR_CREATE_PRODUCT
+151,13.96,Чебуреки с мясом и джусаем,PRODUCT,Полуфабрикаты,5,5,,FIND_OR_CREATE_PRODUCT
+152,13.82,Ананас черника 1000 ml,READY_DISH,Лимонады,5,5,Черника,CHECK_LEGACY_CANDIDATE
+153,13.82,Ананас черника 400 ml,READY_DISH,Лимонады,5,5,Черника,CHECK_LEGACY_CANDIDATE
+154,13.82,Грейпфрутовый,READY_DISH,Фреши,5,5,Грейпфрут,CHECK_LEGACY_CANDIDATE
+155,13.82,Киви яблоко 1000 ml,READY_DISH,Лимонады,5,5,Яблоко,CHECK_LEGACY_CANDIDATE
+156,13.82,Киви яблоко 400 ml,READY_DISH,Лимонады,5,5,Яблоко,CHECK_LEGACY_CANDIDATE
+157,13.82,Манго-маракуйя 1000 ml,READY_DISH,Лимонады,5,5,Маракуйя,CHECK_LEGACY_CANDIDATE
+158,13.82,Манго-маракуйя 400 ml,READY_DISH,Лимонады,5,5,Маракуйя,CHECK_LEGACY_CANDIDATE
+159,13.78,"Бельгийские Вафли (Мед, Карамель, Ягодное Компоте)",READY_DISH,Сладкие завтраки,4,4,Мёд цветочный,CHECK_LEGACY_CANDIDATE
+160,13.78,Бешбармак с бараниной,READY_DISH,Вторые блюда,4,4,Баранина для бешбармака,CHECK_LEGACY_CANDIDATE
+161,13.78,Бешбармак с говядиной,READY_DISH,Вторые блюда,4,4,Говядина для бешбармака,CHECK_LEGACY_CANDIDATE
+162,13.78,Бешбармак с кониной,READY_DISH,Вторые блюда,4,4,Конина для бешбармака,CHECK_LEGACY_CANDIDATE
+163,13.78,Блинчики со сгущенным молоком,READY_DISH,Завтраки,4,4,Сгущённое молоко,CHECK_LEGACY_CANDIDATE
+164,13.78,Вафли из цукини с малосольным лососем,READY_DISH,Завтраки,4,4,Цукини,CHECK_LEGACY_CANDIDATE
+165,13.78,Каша рисовая,READY_DISH,Завтраки | Каши: | Сладкие завтраки,4,4,Лапша рисовая,CHECK_LEGACY_CANDIDATE
+166,13.78,Куриные котлетки на подушке из пюре,READY_DISH,Вторые блюда,4,4,Куриные шеи,CHECK_LEGACY_CANDIDATE
+167,13.78,Куриный рулет с моцареллой и рисом в соусе терияки,READY_DISH,Горячие блюда,4,4,Терияки соус,CHECK_LEGACY_CANDIDATE
+168,13.78,Курица карри с рисом пито лепёшкой,READY_DISH,Горячие блюда,4,4,Курица,CHECK_LEGACY_CANDIDATE
+169,13.78,Лепешка с пюре и сыром,READY_DISH,Фастфуд,4,4,Лепёшка,CHECK_LEGACY_CANDIDATE
+170,13.78,Люля из говядины с салатом и питой,READY_DISH,Блюда на гриле,4,4,Говяжья шея,CHECK_LEGACY_CANDIDATE
+171,13.78,Морковча,READY_DISH,Салаты,4,4,Морковь,CHECK_LEGACY_CANDIDATE
+172,13.78,Морс клюква 500 мл,READY_DISH,Напитки,4,4,Клюква,CHECK_LEGACY_CANDIDATE
+173,13.78,Огурцы с чесноком,READY_DISH,Салаты,4,4,Огурец,CHECK_LEGACY_CANDIDATE
+174,13.78,Салат Домашний,READY_DISH,Салаты,4,4,Салат романо,CHECK_LEGACY_CANDIDATE
+175,13.78,Салат Фаттуш,READY_DISH,Салаты,4,4,Салат латук,CHECK_LEGACY_CANDIDATE
+176,13.78,Салат Ширин,READY_DISH,Салаты,4,4,Салат корн,CHECK_LEGACY_CANDIDATE
+177,13.78,Салат с киноа и форелью,READY_DISH,Салаты,4,4,Киноа,CHECK_LEGACY_CANDIDATE
+178,13.78,Сметанник,READY_DISH,Десерты | Пироги,4,4,Сметана,CHECK_LEGACY_CANDIDATE
+179,13.78,"Телятина с грибами ""Муэр""",READY_DISH,Теплые салаты,4,4,Телятина,CHECK_LEGACY_CANDIDATE
+180,13.78,Телятина с перцем и баклажанами,READY_DISH,Теплые салаты,4,4,Телятина,CHECK_LEGACY_CANDIDATE
+181,13.78,Томленая говядина с картофельным пюре,READY_DISH,Горячие блюда,4,4,Говядина,CHECK_LEGACY_CANDIDATE
+182,13.78,Торт Маракуйя,READY_DISH,"Кондитерские изделия, торты",4,4,Маракуйя,CHECK_LEGACY_CANDIDATE
+183,13.78,Торт Трюфель,READY_DISH,"Кондитерские изделия, торты",4,4,Трюфель,CHECK_LEGACY_CANDIDATE
+184,13.78,Шашлычки из говядины с питой,READY_DISH,Блюда на гриле,4,4,Говяжья шея,CHECK_LEGACY_CANDIDATE
+185,13.78,Щи зеленые,READY_DISH,Супы,4,4,Оливки,CHECK_LEGACY_CANDIDATE
+186,12.92,Домашние вареники с картофелем,READY_DISH,Вторые блюда | Европейская кухня,6,4,,DEFINE_READY_PRODUCT_OR_RULE
+187,12.89,"Чипсы из морской капусты, 4,5 г",PRODUCT,Еда | Популярное,6,3,Морская капуста,CHECK_LEGACY_CANDIDATE
+188,12.6,"Карак чай 0,3L",READY_DISH,Смузи | Чай,4,3,Чай чёрный,CHECK_LEGACY_CANDIDATE
+189,12.6,"Фраппучино тары 0,3L",READY_DISH,Горячий кофе | Холодный кофе,4,3,Тары,CHECK_LEGACY_CANDIDATE
+190,12.59,Оссобуко,PRODUCT,Говядина,6,2,,FIND_OR_CREATE_PRODUCT
+191,12.56,Апельсин с облепихой,PRODUCT,Глинтвейн,5,5,Апельсин,CHECK_LEGACY_CANDIDATE
+192,12.56,"Груша мята 0,4",PRODUCT,Авторские чаи,5,5,Груша,CHECK_LEGACY_CANDIDATE
+193,12.56,"Груша мята 0,9",PRODUCT,Авторские чаи,5,5,Груша,CHECK_LEGACY_CANDIDATE
+194,12.56,Жасмин яблоко,PRODUCT,Ice Tea,5,5,Яблоко,CHECK_LEGACY_CANDIDATE
+195,12.56,Зеленый,PRODUCT,Смузи,5,5,Базилик зелёный,CHECK_LEGACY_CANDIDATE
+196,12.56,Куриные нагетсы,PRODUCT,Детское меню | Прочее,5,5,Куриные шеи,CHECK_LEGACY_CANDIDATE
+197,12.56,Малина банан,PRODUCT,Смузи,5,5,Малина,CHECK_LEGACY_CANDIDATE
+198,12.56,"Малина имбирь 0,4",PRODUCT,Авторские чаи,5,5,Малина,CHECK_LEGACY_CANDIDATE
+199,12.56,"Малина имбирь 0,9",PRODUCT,Авторские чаи,5,5,Малина,CHECK_LEGACY_CANDIDATE
+200,12.56,Манго груша,PRODUCT,Ice Tea,5,5,Груша,CHECK_LEGACY_CANDIDATE
+201,12.56,Манго чиа,PRODUCT,Смузи,5,5,Манго,CHECK_LEGACY_CANDIDATE
+202,12.56,Персиковый,PRODUCT,Ice Tea,5,5,Персик,CHECK_LEGACY_CANDIDATE
+203,12.56,Черника банан,PRODUCT,Смузи,5,5,Черника,CHECK_LEGACY_CANDIDATE
+204,12.56,Яблочный,PRODUCT,Глинтвейн,5,5,Уксус яблочный,CHECK_LEGACY_CANDIDATE
+205,12.53,Багет ржано-пшеничный,PRODUCT,Хлебные изделия,4,4,Багет,CHECK_LEGACY_CANDIDATE
+206,12.53,Батон нарезной,PRODUCT,Хлебные изделия,4,4,Батон,CHECK_LEGACY_CANDIDATE
+207,12.53,Блинчики Nesquik творог-банан,PRODUCT,Блинчики,4,4,Творог,CHECK_LEGACY_CANDIDATE
+208,12.53,Блинчики Nesquik творог-шоколад дропсы,PRODUCT,Блинчики,4,4,Творог,CHECK_LEGACY_CANDIDATE
+209,12.53,Блинчики банан-сгущенка,PRODUCT,Блинчики,4,4,Сгущённое молоко,CHECK_LEGACY_CANDIDATE
+210,12.53,Блинчики курица - грибы,PRODUCT,Блинчики,4,4,Курица,CHECK_LEGACY_CANDIDATE
+211,12.53,Блинчики мак вишня,PRODUCT,Блинчики,4,4,Вишня,CHECK_LEGACY_CANDIDATE
+212,12.53,Блинчики с мясом (говядина),PRODUCT,Блинчики,4,4,Говядина,CHECK_LEGACY_CANDIDATE
+213,12.53,Блинчики сладкий творог,PRODUCT,Блинчики,4,4,Творог,CHECK_LEGACY_CANDIDATE
+214,12.53,Блинчики творог-клубника,PRODUCT,Блинчики,4,4,Клубника,CHECK_LEGACY_CANDIDATE
+215,12.53,Блинчики творог-черника,PRODUCT,Блинчики,4,4,Черника,CHECK_LEGACY_CANDIDATE
+216,12.53,Блинчики яблоко в карамели,PRODUCT,Блинчики,4,4,Яблоко,CHECK_LEGACY_CANDIDATE
+217,12.53,Говядина Фрикадельки,PRODUCT,Котлеты,4,4,Говядина,CHECK_LEGACY_CANDIDATE
+218,12.53,Говядина с овощами,PRODUCT,Паназия,4,4,Говядина,CHECK_LEGACY_CANDIDATE
+219,12.53,Жареный рис с хрустящей курочкой,PRODUCT,Паназия,4,4,Рис,CHECK_LEGACY_CANDIDATE
+220,12.53,Куриные Фрикадельки,PRODUCT,Котлеты,4,4,Куриные шеи,CHECK_LEGACY_CANDIDATE
+221,12.53,Курица по-тайски с рисом,PRODUCT,Паназия,4,4,Курица,CHECK_LEGACY_CANDIDATE
+222,12.53,Курица терияки с рисом,PRODUCT,Паназия,4,4,Курица,CHECK_LEGACY_CANDIDATE
+223,12.53,Лепешка Патыр нан,PRODUCT,Хлебные изделия,4,4,Лепёшка,CHECK_LEGACY_CANDIDATE
+224,12.53,Мини багет,PRODUCT,Хлебные изделия,4,4,Багет,CHECK_LEGACY_CANDIDATE
+225,12.53,Мини ржаной багет,PRODUCT,Хлебные изделия,4,4,Багет,CHECK_LEGACY_CANDIDATE
+226,12.53,Мини чебуреки картофель-сыр,PRODUCT,Чебуреки,4,4,Картофель,CHECK_LEGACY_CANDIDATE
+227,12.53,Пельмени Алматинские баранина курица,PRODUCT,Пельмени,4,4,Баранина,CHECK_LEGACY_CANDIDATE
+228,12.53,Пельмени Любительские курица говядина,PRODUCT,Пельмени,4,4,Говядина,CHECK_LEGACY_CANDIDATE
+229,12.53,Пельмени из говядины,PRODUCT,Пельмени,4,4,Говяжья шея,CHECK_LEGACY_CANDIDATE
+230,12.53,Пельмени курица и говядина,PRODUCT,Пельмени,4,4,Говядина,CHECK_LEGACY_CANDIDATE
+231,12.53,Рамен сливочный с курицей,PRODUCT,Паназия,4,4,Крем-сыр,CHECK_LEGACY_CANDIDATE
+232,12.53,Треугольники курица и сыр,PRODUCT,Самса и хачапури,4,4,Курица,CHECK_LEGACY_CANDIDATE
+233,12.53,Хлеб Гречишный,PRODUCT,Хлебные изделия,4,4,Мёд гречишный,CHECK_LEGACY_CANDIDATE
+234,12.53,"Хлеб Ржаное чудо с сухофруктами, с грецким орехом и миндалем",PRODUCT,Линия здоровых хлебов,4,4,Грецкий орех,CHECK_LEGACY_CANDIDATE
+235,12.53,"Хлеб Ржаное чудо с сухофруктами, с грецким орехом и фундуком",PRODUCT,Линия здоровых хлебов,4,4,Грецкий орех,CHECK_LEGACY_CANDIDATE
+236,12.53,Хлеб Сливочный,PRODUCT,Хлебные изделия,4,4,Крем-сыр,CHECK_LEGACY_CANDIDATE
+237,12.53,Хлеб Финский зерновой,PRODUCT,Линия здоровых хлебов,4,4,Кофе в зернах,CHECK_LEGACY_CANDIDATE
+238,12.53,Хлеб бездрожжевой пшенично-ржаной,PRODUCT,Линия здоровых хлебов,4,4,Хлеб пшеничный,CHECK_LEGACY_CANDIDATE
+239,12.53,Хлеб бездрожжевой пшеничный,PRODUCT,Линия здоровых хлебов,4,4,Хлеб пшеничный,CHECK_LEGACY_CANDIDATE
+240,12.53,Хлеб ржаное чудо с сухофруктами и семенами тыквы,PRODUCT,Линия здоровых хлебов,4,4,Хлеб ржаной,CHECK_LEGACY_CANDIDATE
+241,12.53,Цельнозерновой хлеб с сухофруктами и орехами,PRODUCT,Линия здоровых хлебов,4,4,Хлеб цельнозерновой,CHECK_LEGACY_CANDIDATE
+242,11.52,Гуйру лагман,READY_DISH,Вторые блюда | Лагманы,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+243,11.52,Клубничный мохито 1л,READY_DISH,Лимонады,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+244,11.52,Клубничный мохито 375мл,READY_DISH,Лимонады,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+245,11.52,Мохито 1000 ml,READY_DISH,Лимонады,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+246,11.52,Мохито 400 ml,READY_DISH,Лимонады,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+247,11.52,Сироп,READY_DISH,Дополнительно | Дополнительно: | Дополнительное | Допы и Альтернатива | Кофе,5,5,,DEFINE_READY_PRODUCT_OR_RULE
+248,11.48,Алматинский Завтрак,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+249,11.48,Альфредо с курицей и грибами,READY_DISH,Паста фреш,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+250,11.48,Асель,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+251,11.48,Ассорти кавказское,READY_DISH,Закуски,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+252,11.48,Ассорти национальное,READY_DISH,Закуски,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+253,11.48,Ассорти рыбное,READY_DISH,Закуски,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+254,11.48,Ассорти солений,READY_DISH,Закуски,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+255,11.48,Ачичук острый,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+256,11.48,Бамбл-кофе,READY_DISH,Кофе | Холодные напитки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+257,11.48,Бефстроганов с гарниром,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+258,11.48,Блинный торт,READY_DISH,Витрина | Торт,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+259,11.48,Блинчики с бананом,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+260,11.48,Блинчики с вареньем,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+261,11.48,Блинчики со сметаной,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+262,11.48,Блины С Бананом И Шоколадом,READY_DISH,Сладкие завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+263,11.48,Блины Со Сметаной И Медом,READY_DISH,Сладкие завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+264,11.48,Бургер бриошь с куриной котлетой и омлетом,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+265,11.48,Бургер классический к картофелем фри,READY_DISH,Фастфуд,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+266,11.48,Бургер с томленой говядиной,READY_DISH,Фастфуд,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+267,11.48,Вареники с творогом,READY_DISH,Полуфабрикаты | Сладкие завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+268,11.48,Вегетарианский суп,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+269,11.48,Витаминка капустная,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+270,11.48,Витаминка свекольная,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+271,11.48,Гнездо,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+272,11.48,Говяжий шницель,READY_DISH,Горячие блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+273,11.48,Датский завтрак,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+274,11.48,Домино,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+275,11.48,Ерофеевский,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+276,11.48,Жаренные манты с мясом,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+277,11.48,Женское счастье,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+278,11.48,Завтрак с лососем,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+279,11.48,Закуска любимая,READY_DISH,Закуски,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+280,11.48,Картофельные драники с лососем соусом голландес,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+281,11.48,Каша овсяная с гранолой и персиком,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+282,11.48,Каша рисовая с гранолой и бананом,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+283,11.48,Кекс Мраморный,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+284,11.48,Кекс шоколадный с орехом,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+285,11.48,Кесадилья с курицей,READY_DISH,Фастфуд,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+286,11.48,Клаб сэндвич с курицей и картофелем фри,READY_DISH,Фастфуд,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+287,11.48,Котлеты говяжьи по домашнему с пюре,READY_DISH,Горячие блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+288,11.48,Котлеты по-домашнему,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+289,11.48,Котлеты пожарские,READY_DISH,Горячие блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+290,11.48,Крок мадам с копченой индейкой,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+291,11.48,Курочка в сливочном соусе с грибами и рисом,READY_DISH,Горячие блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+292,11.48,Кыз-жибек,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+293,11.48,Лянсай,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+294,11.48,Мампар,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+295,11.48,Мастава,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+296,11.48,Мини панкейки,READY_DISH,Сладкие завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+297,11.48,Мужской каприз,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+298,11.48,Муссовый панчо,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+299,11.48,Мясо по-казахски,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+300,11.48,Набор десертных пирожных,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+301,11.48,Омлет Байский,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+302,11.48,Омлет со страчателлой,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+303,11.48,Орешки,READY_DISH,Витрина | Десерты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+304,11.48,Пирог От тети Сони с клюквой,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+305,11.48,Пирог От тети Сони с малиной,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+306,11.48,Пирог От тети Сони с творогом,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+307,11.48,Пирог От тети Сони со сметаной,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+308,11.48,"Пирожное ""Кофейно-муссовое""",READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+309,11.48,"Пирожное ""Шоколадно-муссовое""",READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+310,11.48,"Пирожное ""Ягодно-муссовое""",READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+311,11.48,Пирожное Буше,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+312,11.48,Пирожное бисквитное,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+313,11.48,Плов Той аши,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+314,11.48,Рулет с орехами,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+315,11.48,Рулет со сгущенкой,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+316,11.48,Рыба по-домашнему,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+317,11.48,Салат с жаренным сыром от бренд-шефа,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+318,11.48,Салат с цыплёнком гриль,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+319,11.48,Салат со стейком,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+320,11.48,Сантавру,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+321,11.48,Свекольный с орехами,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+322,11.48,Селедочка по-домашнему,READY_DISH,Закуски,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+323,11.48,Снежок,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+324,11.48,Суп овощной на мясном бульоне,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+325,11.48,Суп-лапша куриная,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+326,11.48,Сэндвич с куриным шницелем,READY_DISH,Фастфуд,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+327,11.48,"Тарталетки ""Лимонные""",READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+328,11.48,Теплый салат из баклажана с соусом Ассай,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+329,11.48,"Торт ""Шоко-торт""",READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+330,11.48,Торт Бисквитно-кремовый,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+331,11.48,Торт Вуппи Пай,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+332,11.48,Торт Глория,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+333,11.48,Торт Графские развалины,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+334,11.48,Торт Карамельная девочка,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+335,11.48,Торт Кыз-жибек,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+336,11.48,Торт Меруерт,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+337,11.48,Торт Монтблан,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+338,11.48,Торт Панчо,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+339,11.48,Торт Подарочный,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+340,11.48,Торт Сказка,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+341,11.48,Торт Шахеризада,READY_DISH,"Кондитерские изделия, торты",4,4,,DEFINE_READY_PRODUCT_OR_RULE
+342,11.48,Тыквенный крем-суп,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+343,11.48,Фарфалле с лососем,READY_DISH,Паста фреш,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+344,11.48,Фарфалле с томленой говядиной,READY_DISH,Паста фреш,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+345,11.48,Фри,READY_DISH,Гарниры | Сэндвичи и бургеры,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+346,11.48,Фрикасе с гарниром,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+347,11.48,Хашбраун со сметаной,READY_DISH,Гарниры,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+348,11.48,Хинкали,READY_DISH,Горячие блюда | Полуфабрикаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+349,11.48,Чак-чак,READY_DISH,Десерты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+350,11.48,Чебуреки с джусаем,READY_DISH,Домашняя выпечка,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+351,11.48,Чебуреки с курочкой и сыром,READY_DISH,Домашняя выпечка,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+352,11.48,Чечевичный,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+353,11.48,Чучвара (пельмени с говядиной),READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+354,11.48,Шакшука с тартином,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+355,11.48,Шоколадное пирожное,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+356,11.48,Шоколадный бриз,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+357,11.48,Шорпа,READY_DISH,Супы,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+358,11.48,Эклер с заварным кремом,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+359,11.48,Эклер с карамельным кремом,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+360,11.48,Эклер со сливочным кремом,READY_DISH,Пирожные,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+361,11.48,Язык в соусе,READY_DISH,Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+362,11.48,Яичница скрэмбл,READY_DISH,Завтраки,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+363,11.48,сочник с творогом,READY_DISH,Витрина | Выпечка,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+364,11.45,"Смузи молочная голубика 0,3L",PRODUCT,Смузи,4,3,Голубика,CHECK_LEGACY_CANDIDATE
+365,11.08,Торт «Медовый»,READY_DISH,Большие торты | Торты,4,2,Соты медовые,CHECK_LEGACY_CANDIDATE
+366,10.74,"Гель чистящий универсальный, Homestar, 10 в 1, 750 г, в ассортименте",PRODUCT,Бытовая химия | Популярное,6,3,,FIND_OR_CREATE_PRODUCT
+367,10.5,Восточный салат,READY_DISH,Салаты,4,3,,DEFINE_READY_PRODUCT_OR_RULE
+368,10.5,Дамди вегетарианский,READY_DISH,Теплые салаты,4,3,,DEFINE_READY_PRODUCT_OR_RULE
+369,10.5,Дәмді,READY_DISH,Теплые салаты,4,3,,DEFINE_READY_PRODUCT_OR_RULE
+370,10.5,Цезарь аға с курочкой,READY_DISH,Салаты,4,3,,DEFINE_READY_PRODUCT_OR_RULE
+371,10.47,Вареники с картофелем,PRODUCT,Вареники | Замороженная продукция,5,5,,FIND_OR_CREATE_PRODUCT
+372,10.47,Вареники с картофелем и грибами,PRODUCT,Вареники | Замороженная продукция,5,5,,FIND_OR_CREATE_PRODUCT
+373,10.47,Вишневый,PRODUCT,Глинтвейн,5,5,,FIND_OR_CREATE_PRODUCT
+374,10.47,Клубничный улун,PRODUCT,Ice Tea,5,5,,FIND_OR_CREATE_PRODUCT
+375,10.47,"Марокканский 0,4",PRODUCT,Авторские чаи,5,5,,FIND_OR_CREATE_PRODUCT
+376,10.47,"Марокканский 0,9",PRODUCT,Авторские чаи,5,5,,FIND_OR_CREATE_PRODUCT
+377,10.47,Матча,PRODUCT,БАР | Матча,5,5,,FIND_OR_CREATE_PRODUCT
+378,10.47,"Облепиховый 0,4",PRODUCT,Авторские чаи,5,5,,FIND_OR_CREATE_PRODUCT
+379,10.47,"Облепиховый 0,9",PRODUCT,Авторские чаи,5,5,,FIND_OR_CREATE_PRODUCT
+380,10.47,"Ташкентский 0,4",PRODUCT,Авторские чаи,5,5,,FIND_OR_CREATE_PRODUCT
+381,10.44,Sweet chilli,PRODUCT,Соусы,4,4,,FIND_OR_CREATE_PRODUCT
+382,10.44,Вареники с картошкой 500 гр,PRODUCT,Полуфабрикаты,4,4,,FIND_OR_CREATE_PRODUCT
+383,10.44,"Вареники с курицей, грибами моцарелой",PRODUCT,Вареники,4,4,,FIND_OR_CREATE_PRODUCT
+384,10.44,Вареники с мясом,PRODUCT,Вареники,4,4,,FIND_OR_CREATE_PRODUCT
+385,10.44,Голубцы с говядиной,PRODUCT,Голубцы и перцы,4,4,,FIND_OR_CREATE_PRODUCT
+386,10.44,Горчичный,PRODUCT,Соусы,4,4,,FIND_OR_CREATE_PRODUCT
+387,10.44,Дзадзики,PRODUCT,Соусы,4,4,,FIND_OR_CREATE_PRODUCT
+388,10.44,Картофельные зразы с говядиной,PRODUCT,Зразы,4,4,,FIND_OR_CREATE_PRODUCT
+389,10.44,Котлеты кордон блю,PRODUCT,Котлеты,4,4,,FIND_OR_CREATE_PRODUCT
+390,10.44,Котлеты рыбные,PRODUCT,Котлеты,4,4,,FIND_OR_CREATE_PRODUCT
+391,10.44,Лапша ручная на суп,PRODUCT,Тесто,4,4,,FIND_OR_CREATE_PRODUCT
+392,10.44,Манты с джусаем,PRODUCT,Манты,4,4,,FIND_OR_CREATE_PRODUCT
+393,10.44,Манты с картофелем и мясом,PRODUCT,Манты,4,4,,FIND_OR_CREATE_PRODUCT
+394,10.44,Манты с овощами,PRODUCT,Манты,4,4,,FIND_OR_CREATE_PRODUCT
+395,10.44,Манты с рубленной говядиной 1 кг,PRODUCT,Полуфабрикаты,4,4,,FIND_OR_CREATE_PRODUCT
+396,10.44,Манты с рубленным мясом,PRODUCT,Манты,4,4,,FIND_OR_CREATE_PRODUCT
+397,10.44,Манты с тыквой и мясом,PRODUCT,Манты,4,4,,FIND_OR_CREATE_PRODUCT
+398,10.44,Мини чебуреки мясо-джусай,PRODUCT,Чебуреки,4,4,,FIND_OR_CREATE_PRODUCT
+399,10.44,Мини чебуреки с мясом,PRODUCT,Чебуреки,4,4,,FIND_OR_CREATE_PRODUCT
+400,10.44,Мини чебуреки яйцо -джусай,PRODUCT,Чебуреки,4,4,,FIND_OR_CREATE_PRODUCT
+401,10.44,Пельмени Любительские из курицы,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+402,10.44,Пельмени Любительские с говядиной,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+403,10.44,Пельмени говяжьи 500 гр,PRODUCT,Полуфабрикаты,4,4,,FIND_OR_CREATE_PRODUCT
+404,10.44,Пельмени детские,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+405,10.44,Пельмени домашние 500 гр,PRODUCT,Полуфабрикаты,4,4,,FIND_OR_CREATE_PRODUCT
+406,10.44,Пельмени из курицы,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+407,10.44,Пельмени из курицы и сыра,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+408,10.44,Пельмени мусульманские,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+409,10.44,Пельмени с индейкой,PRODUCT,Пельмени,4,4,,FIND_OR_CREATE_PRODUCT
+410,10.44,Перец фаршированный с говядиной,PRODUCT,Голубцы и перцы,4,4,,FIND_OR_CREATE_PRODUCT
+411,10.44,Пирог с капустой,PRODUCT,Кулинарные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+412,10.44,Пирожки с капустой,PRODUCT,Кулинарные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+413,10.44,Пирожки с картошкой,PRODUCT,Кулинарные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+414,10.44,Рогалик Овсяный,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+415,10.44,"Снеки ""Мультизерновые"" 0,125",PRODUCT,Низкокалорийные товары,4,4,,FIND_OR_CREATE_PRODUCT
+416,10.44,"Снеки ""Мультизерновые"" 0,350",PRODUCT,Низкокалорийные товары,4,4,,FIND_OR_CREATE_PRODUCT
+417,10.44,Сухарики со вкусом Сметаны с зеленью,PRODUCT,Сухарные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+418,10.44,Сырный,PRODUCT,Соусы,4,4,,FIND_OR_CREATE_PRODUCT
+419,10.44,Том ям с курицей,PRODUCT,Паназия,4,4,,FIND_OR_CREATE_PRODUCT
+420,10.44,Торт печеночный,PRODUCT,Тесто,4,4,,FIND_OR_CREATE_PRODUCT
+421,10.44,Треугольники с говядиной,PRODUCT,Самса и хачапури,4,4,,FIND_OR_CREATE_PRODUCT
+422,10.44,Хачапури лодочка,PRODUCT,Самса и хачапури,4,4,,FIND_OR_CREATE_PRODUCT
+423,10.44,Хинкали с говядиной,PRODUCT,Хинкали,4,4,,FIND_OR_CREATE_PRODUCT
+424,10.44,"Хлеб ""Аччаролли""",PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+425,10.44,Хлеб Бородинский,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+426,10.44,Хлеб Здоровье,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+427,10.44,Хлеб Иммунити,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+428,10.44,Хлеб Клетчатка с черносливом,PRODUCT,Линия здоровых хлебов,4,4,,FIND_OR_CREATE_PRODUCT
+429,10.44,Хлеб Крестьянский,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+430,10.44,Хлеб Президентский,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+431,10.44,Хлеб Тостовый,PRODUCT,Хлебные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+432,10.44,Хлебцы Зернистые,PRODUCT,Хлебцы,4,4,,FIND_OR_CREATE_PRODUCT
+433,10.44,Хлебцы Морские,PRODUCT,Хлебцы,4,4,,FIND_OR_CREATE_PRODUCT
+434,10.44,Шрирача,PRODUCT,Соусы,4,4,,FIND_OR_CREATE_PRODUCT
+435,10.44,Штрудель с фруктовой начинкой,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+436,10.44,чесночный соус,PRODUCT,Соусы,4,4,,FIND_OR_CREATE_PRODUCT
+437,10.33,Дорадо по-восточному,READY_DISH,Вторые блюда,4,4,Дорадо,CHECK_LEGACY_CANDIDATE
+438,10.33,Облепиха-апельсин,READY_DISH,Авторсике чаи | Авторский чай,4,4,Апельсин,CHECK_LEGACY_CANDIDATE
+439,10.33,Рибай на кости (300 гр.),READY_DISH,Блюда на гриле,4,4,Баранина на кости,CHECK_LEGACY_CANDIDATE
+440,10.33,Ти-бон стейк с молодым картофелем (300 гр.),READY_DISH,Блюда на гриле,4,4,Картофель молодой,CHECK_LEGACY_CANDIDATE
+441,10.07,Клаб,PRODUCT,Говядина,4,2,Краб,CHECK_LEGACY_CANDIDATE
+442,9.84,Тауык Тандыр,READY_DISH,Заказные блюда | Новинки в меню,5,3,,DEFINE_READY_PRODUCT_OR_RULE
+443,9.45,Batch brew с гранатовым соком,READY_DISH,Кофе,3,3,Сок гранатовый,CHECK_LEGACY_CANDIDATE
+444,9.45,Авокадо тост на солодовом хлебе с клюквой,READY_DISH,ЗАВТРАКИ,3,3,Авокадо,CHECK_LEGACY_CANDIDATE
+445,9.45,"Апельсиновый с облепихой 1,6L",READY_DISH,Чай,3,3,Сок апельсиновый,CHECK_LEGACY_CANDIDATE
+446,9.45,"Апельсиновый чай с мятой 1,6L",READY_DISH,Чай,3,3,Чай чёрный,CHECK_LEGACY_CANDIDATE
+447,9.45,Батат фри,READY_DISH,Закуски/Салаты,3,3,Батат,CHECK_LEGACY_CANDIDATE
+448,9.45,Бенто Малина,READY_DISH,Торты,3,3,Малина,CHECK_LEGACY_CANDIDATE
+449,9.45,Блины со сгущенкой и кедровым орехом,READY_DISH,Сладкие завтраки,3,3,Кедровый орех,CHECK_LEGACY_CANDIDATE
+450,9.45,Буррата с томатами,READY_DISH,Закуски | Салаты и закуски,3,3,Буррата,CHECK_LEGACY_CANDIDATE
+451,9.45,Зелёный Лун Цзинь,READY_DISH,КИТАЙСКИЙ ЧАЙ,3,3,Зелёный лук,CHECK_LEGACY_CANDIDATE
+452,9.45,Йогурт с гранолой,READY_DISH,Пирожные,3,3,Йогурт,CHECK_LEGACY_CANDIDATE
+453,9.45,Картофельный драник с кониной,READY_DISH,Сытные завтраки,3,3,Крахмал картофельный,CHECK_LEGACY_CANDIDATE
+454,9.45,Картофельный драник с лососем,READY_DISH,Сытные завтраки,3,3,Крахмал картофельный,CHECK_LEGACY_CANDIDATE
+455,9.45,Каша овсяная,READY_DISH,Завтраки | Каши:,3,3,Мука овсяная,CHECK_LEGACY_CANDIDATE
+456,9.45,Красный (чёрный) Цзинь Цзюнь Мэй,READY_DISH,Китайский чай,3,3,Лук красный,CHECK_LEGACY_CANDIDATE
+457,9.45,Мини буррата с помидорами,READY_DISH,Закуски/Салаты,3,3,Буррата,CHECK_LEGACY_CANDIDATE
+458,9.45,Мини пирог яблочный,READY_DISH,Витрина,3,3,Сок яблочный,CHECK_LEGACY_CANDIDATE
+459,9.45,Мороженое,READY_DISH,MINI MENU | Десерты,3,3,Мороженое пломбир,CHECK_LEGACY_CANDIDATE
+460,9.45,Облепиховый чай,READY_DISH,Горячие напитки (Чай-Какао) | Фирменные чаи,3,3,Чай чёрный,CHECK_LEGACY_CANDIDATE
+461,9.45,Салат Греческий,READY_DISH,Салаты | Салаты и закуски,3,3,Йогурт греческий,CHECK_LEGACY_CANDIDATE
+462,9.45,Салат с запечённой свеклой и муссом фета,READY_DISH,Закуски/Салаты,3,3,Фета,CHECK_LEGACY_CANDIDATE
+463,9.45,Синнабон с грецким орехом,READY_DISH,Выпечка,3,3,Грецкий орех,CHECK_LEGACY_CANDIDATE
+464,9.45,Скрэмбл с сулугуни и трюфелем,READY_DISH,ЗАВТРАКИ,3,3,Сулугуни,CHECK_LEGACY_CANDIDATE
+465,9.45,Спагетти в соусе наполи и страчателлой,READY_DISH,Паста,3,3,Спагетти,CHECK_LEGACY_CANDIDATE
+466,9.45,Стейк из конины,READY_DISH,Горячее | Хоспер,3,3,Говяжий стейк,CHECK_LEGACY_CANDIDATE
+467,9.45,Тирамису Фундук,READY_DISH,Торты,3,3,Фундук,CHECK_LEGACY_CANDIDATE
+468,9.45,Тост с риетом из тунца и авокадо,READY_DISH,Сытные завтраки,3,3,Авокадо,CHECK_LEGACY_CANDIDATE
+469,9.45,Удон с говядиной,READY_DISH,Горячие блюда | Паназиатская кухня | Паста,3,3,Лапша удон,CHECK_LEGACY_CANDIDATE
+470,9.45,Фетучини с курицей и грибами,READY_DISH,Итальянская кухня,3,3,Фетучини,CHECK_LEGACY_CANDIDATE
+471,9.45,Французский омлет с сыром маасдам и взбитым маслом,READY_DISH,ЗАВТРАКИ,3,3,Маасдам,CHECK_LEGACY_CANDIDATE
+472,9.45,"Фрапучино банан 0,4L",READY_DISH,Холодный кофе,3,3,Банан,CHECK_LEGACY_CANDIDATE
+473,9.45,"Чай глинтвейн 1,6L",READY_DISH,Чай,3,3,Чай чёрный,CHECK_LEGACY_CANDIDATE
+474,9.45,Чиа йогурт с домашней гранолой,READY_DISH,Сладкие завтраки,3,3,Йогурт,CHECK_LEGACY_CANDIDATE
+475,9.45,Чиабатта с сыром чеддер и куриной грудкой,READY_DISH,СЭНДВИЧИ,3,3,Чеддер,CHECK_LEGACY_CANDIDATE
+476,9.45,Чиабатта с томатами и куриной грудкой,READY_DISH,СЭНДВИЧИ,3,3,Куриная грудка,CHECK_LEGACY_CANDIDATE
+477,9.45,Шашлык из куриных крыльев,READY_DISH,Фастфуд | Шашлыки,3,3,Куриное крыло,CHECK_LEGACY_CANDIDATE
+478,9.45,Шашлык из курицы,READY_DISH,Горячее | Шашлыки | Шашлычки,3,3,Курица для шашлыка,CHECK_LEGACY_CANDIDATE
+479,9.45,Шу малина,READY_DISH,Пирожные,3,3,Малина,CHECK_LEGACY_CANDIDATE
+480,9.45,"Эко чай 1,6L",READY_DISH,Чай,3,3,Чай чёрный,CHECK_LEGACY_CANDIDATE
+481,9.45,Яблочный кекс,READY_DISH,Пирожные,3,3,Уксус яблочный,CHECK_LEGACY_CANDIDATE
+482,9.45,Яйца по-турецки с лососем,READY_DISH,Сытные завтраки,3,3,Куриные яйца,CHECK_LEGACY_CANDIDATE
+483,9.45,Яйцо бенедикт с жая,READY_DISH,Сытные завтраки,3,3,Жая,CHECK_LEGACY_CANDIDATE
+484,9.39,Куриные бедра фаршированные,PRODUCT,Прочее,4,4,Куриное бедро,CHECK_LEGACY_CANDIDATE
+485,9.39,Печенье Кокосовое,PRODUCT,Печенье,4,4,Масло кокосовое,CHECK_LEGACY_CANDIDATE
+486,9.39,Сухари Гренки,PRODUCT,Сухарные изделия,4,4,Сухари,CHECK_LEGACY_CANDIDATE
+487,9.39,"Сухари панировочные 0,350",PRODUCT,Сухарные изделия,4,4,Сухари,CHECK_LEGACY_CANDIDATE
+488,9.39,Сухари панировочные 1 кг,PRODUCT,Сухарные изделия,4,4,Сухари,CHECK_LEGACY_CANDIDATE
+489,9.39,Сухарики со вкусом Красной икры,PRODUCT,Сухарные изделия,4,4,Красная икра,CHECK_LEGACY_CANDIDATE
+490,9.39,Тесто для лагмана,PRODUCT,Тесто,4,4,Тесто для бешбармака,CHECK_LEGACY_CANDIDATE
+491,9.39,Тесто на бешбармак,PRODUCT,Тесто,4,4,Говядина для бешбармака,CHECK_LEGACY_CANDIDATE
+492,8.61,Ашлям-фу,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+493,8.61,Бризоль,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+494,8.61,Брускетта с лососем,READY_DISH,Брускетта | Закуски/Салаты,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+495,8.61,Вегетарианский гуйру лагман,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+496,8.61,Гуйру ганфан,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+497,8.61,Каурма лагман,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+498,8.61,Лагман по-домашнему,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+499,8.61,Лазуро,READY_DISH,Вторые блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+500,8.61,Маргарита,READY_DISH,Итальянская кухня | Пицца,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+501,8.61,Матча-тоник,READY_DISH,Кофе | Матча,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+502,8.61,Мохито,READY_DISH,БЕЗАЛКОГОЛЬНЫЕ НАПИТКИ | Лимонады,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+503,8.61,Томлёные рёбра,READY_DISH,Горячие блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+504,8.61,Цезарь с куриным шницелем,READY_DISH,Горячие блюда,4,4,,DEFINE_READY_PRODUCT_OR_RULE
+505,8.59,"Смузи манго-имбирь 0,3L",PRODUCT,Смузи,4,3,Имбирь корень,CHECK_LEGACY_CANDIDATE
+506,8.59,Алмалы даршын бәліші-пирог яблочный с миндалем,PRODUCT,Пироги,3,3,Сок яблочный,CHECK_LEGACY_CANDIDATE
+507,8.59,Бедро цыпленка с рисом басмати и овощами,PRODUCT,Основное меню,3,3,Рис басмати,CHECK_LEGACY_CANDIDATE
+508,8.59,Зеленая аджика,PRODUCT,Соусы,3,3,Аджика,CHECK_LEGACY_CANDIDATE
+509,8.59,Зеленая греча с соусом песто и пармезаном,PRODUCT,ОСНОВНОЕ МЕНЮ,3,3,Песто,CHECK_LEGACY_CANDIDATE
+510,8.59,Котлета из судака с молодым картофелем,PRODUCT,ОСНОВНОЕ МЕНЮ,3,3,Картофель молодой,CHECK_LEGACY_CANDIDATE
+511,8.59,Куриные котлеты с картофельными ньокки,PRODUCT,Основное меню,3,3,Куриные шеи,CHECK_LEGACY_CANDIDATE
+512,8.59,Курица миланезе со сливочным Орзо,PRODUCT,Основное меню,3,3,Курица,CHECK_LEGACY_CANDIDATE
+513,8.59,Печенье курага-орех,PRODUCT,Печенье,3,3,Курага,CHECK_LEGACY_CANDIDATE
+514,8.59,"Спелый банан 0,3L",PRODUCT,Молочные коктейли,3,3,Банан,CHECK_LEGACY_CANDIDATE
+515,8.59,Цитрусовый чай с Лун Цзинь,PRODUCT,Авторские Чаи,3,3,Чай чёрный,CHECK_LEGACY_CANDIDATE
+516,8.59,Шашлык из куриного филе,PRODUCT,Шашлыки,3,3,Куриное филе,CHECK_LEGACY_CANDIDATE
+517,8.59,Шницель с салатом романо,PRODUCT,ОСНОВНОЕ МЕНЮ,3,3,Салат романо,CHECK_LEGACY_CANDIDATE
+518,8.39,Нью Йорк,PRODUCT,Говядина,4,2,,FIND_OR_CREATE_PRODUCT
+519,8.39,Филе миньон,PRODUCT,Говядина,4,2,,FIND_OR_CREATE_PRODUCT
+520,8.39,Чураско стейк,PRODUCT,Говядина,4,2,,FIND_OR_CREATE_PRODUCT
+521,7.87,4 сыра,READY_DISH,Итальянская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+522,7.87,"Batch Brew 0,3L",READY_DISH,Горячий кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+523,7.87,Batch brew,READY_DISH,Кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+524,7.87,"Ice Coffee Boom 0,4L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+525,7.87,"Ice capuccino 0,4L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+526,7.87,"Ice coffee 0,4L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+527,7.87,"Ice latte 0,4L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+528,7.87,"Ice мокко 0,4L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+529,7.87,Red velvet кіші,READY_DISH,Маленькие торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+530,7.87,Whoopie торт (кіші),READY_DISH,Маленькие торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+531,7.87,АМАРЕТТО,READY_DISH,Ice Latte | ТОРТЫ масовочные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+532,7.87,"Бамбл кофе 0,3L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+533,7.87,Банановый эклер,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+534,7.87,Белковый омлет с кабачками,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+535,7.87,Белый Шоу Мэй,READY_DISH,КИТАЙСКИЙ ЧАЙ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+536,7.87,Берлинер,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+537,7.87,Блины с медовым маслом,READY_DISH,Сладкие завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+538,7.87,Брускетта с овощами,READY_DISH,Закуски/Салаты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+539,7.87,Витаминный салат,READY_DISH,Закуски/Салаты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+540,7.87,Восточные сладости,READY_DISH,Десерты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+541,7.87,Глазунья с овощами,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+542,7.87,"Грушевый с корицей 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+543,7.87,Драник с лососем и сливочным муссом,READY_DISH,ЗАВТРАКИ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+544,7.87,Картофельное фри,READY_DISH,Закуски/Салаты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+545,7.87,Каша овсянная с бананом,READY_DISH,Сладкие завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+546,7.87,Каша пшенная с тыквой и миндалём,READY_DISH,Сладкие завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+547,7.87,Каша рисовая с клубникой,READY_DISH,Сладкие завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+548,7.87,Клубничный торт,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+549,7.87,Куриный бифштекс с трюфельным соусом и яицом,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+550,7.87,Куриный бульон с лапшой,READY_DISH,Супы,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+551,7.87,Лимонное ризотто с лососем,READY_DISH,Паста,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+552,7.87,Лимонный тарт,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+553,7.87,Мадлены в ассортименте,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+554,7.87,"Малиновый 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+555,7.87,Манты с мясом,READY_DISH,Блюда | Вторые блюда,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+556,7.87,"Масала 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+557,7.87,Микс тортов 1,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+558,7.87,Микс тортов 2,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+559,7.87,Мини Муравейник,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+560,7.87,Мини пирог восточный,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+561,7.87,Мини пирог с вишней,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+562,7.87,Мини пирог с грушей,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+563,7.87,Мини пирог творожный,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+564,7.87,Мини пирог творожный с изюмом,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+565,7.87,"Мокко 0,3L",READY_DISH,Горячий кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+566,7.87,"Мокко 0,4L",READY_DISH,Горячий кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+567,7.87,Молочный ломтик,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+568,7.87,Монт Бланк,READY_DISH,Холодные напитки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+569,7.87,"Облепиховый с грейпфрутом 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+570,7.87,Овощи гриль,READY_DISH,Гарниры | Дополнительное,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+571,7.87,Омлет с мортаделлой,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+572,7.87,Ореховая гранола с творогом и йогуртом,READY_DISH,СЛАДКИЕ ЗАВТРАКИ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+573,7.87,Панкейки с банановым кремом и смородиновым джемом,READY_DISH,СЛАДКИЕ ЗАВТРАКИ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+574,7.87,Панна Котта с клубникой,READY_DISH,Сладкие завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+575,7.87,Пирог с вишней,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+576,7.87,Пирог с персиком,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+577,7.87,Пирог с творогом,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+578,7.87,Пирог с яблоком,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+579,7.87,Пирожное Snickers,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+580,7.87,Плов ташкентский,READY_DISH,Блюда | Заказные блюда,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+581,7.87,"По-казахски 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+582,7.87,Пюре,READY_DISH,Гарниры,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+583,7.87,Раф,READY_DISH,Кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+584,7.87,"Раф кофе 0,3L",READY_DISH,Горячий кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+585,7.87,Русская закуска,READY_DISH,Закуски | На компанию | Холодные закуски,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+586,7.87,"С клубникой и чабрецом 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+587,7.87,"С малиной и имбирем 1,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+588,7.87,"С сосновыми шишками 0,6L",READY_DISH,Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+589,7.87,Салат по-грузински,READY_DISH,Грузинская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+590,7.87,Салат с лососем,READY_DISH,Салаты | Салаты и закуски,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+591,7.87,Сборный завтрак с крокетами,READY_DISH,ЗАВТРАКИ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+592,7.87,Сендвич с томлёной говядиной в соусе барбекю,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+593,7.87,Сендвич с тунцом,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+594,7.87,Синнабон классика,READY_DISH,Выпечка,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+595,7.87,Скандинавский завтрак,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+596,7.87,Скрэмбл тост с грибами,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+597,7.87,Стейк пиканья с яйцом и овощами гриль,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+598,7.87,Сэндвич с индейкой,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+599,7.87,Сүзбелі тарт бадам,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+600,7.87,Сәбізді торт (кіші),READY_DISH,Маленькие торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+601,7.87,Творожные панкейки с клубникой,READY_DISH,Сладкие завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+602,7.87,Творожный тарт,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+603,7.87,Тирамису Шоколад,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+604,7.87,Тирамису классический,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+605,7.87,Том Ям,READY_DISH,Супы | Тайские,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+606,7.87,Трайфл Милка,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+607,7.87,Трайфл Сникерс,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+608,7.87,Трилече,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+609,7.87,Тёплый салат с кониной и шпинатом,READY_DISH,Закуски/Салаты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+610,7.87,Улун Да Хун Пао,READY_DISH,КИТАЙСКИЙ ЧАЙ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+611,7.87,Фарфалле с курицей и грибами,READY_DISH,Итальянская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+612,7.87,Феттучини Альфредо с курицей,READY_DISH,Паста,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+613,7.87,Феттучини с лососем,READY_DISH,Паста,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+614,7.87,"Флет уайт 0,3L",READY_DISH,Горячий кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+615,7.87,Флэт уайт 250мл,READY_DISH,Кофе | Кофейная карта,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+616,7.87,Французский завтрак,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+617,7.87,"Фрапучино в асcортименте 0,4L",READY_DISH,Холодный кофе,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+618,7.87,Хачапури по-имеретински,READY_DISH,Грузинская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+619,7.87,Хачапури с мясом,READY_DISH,Грузинская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+620,7.87,Хачапури с фаршем,READY_DISH,Грузинская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+621,7.87,Ходзича облако,READY_DISH,Холодные напитки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+622,7.87,Цезарь салат с курицей,READY_DISH,Закуски/Салаты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+623,7.87,Чайный сет 1,READY_DISH,Чайные сеты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+624,7.87,Чайный сет 2,READY_DISH,Чайные сеты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+625,7.87,Чайный сет 3,READY_DISH,Чайные сеты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+626,7.87,Чак-Чак Национальный,READY_DISH,Десерты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+627,7.87,Чечевичный суп с йогуртом,READY_DISH,Супы,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+628,7.87,Чиабатта JULIUS,READY_DISH,СЭНДВИЧИ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+629,7.87,Шакшука,READY_DISH,Завтраки | КУХНЯ,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+630,7.87,Шакшука с яйцом пашот и сыром,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+631,7.87,Шеф бургер,READY_DISH,Бургеры | Горячее,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+632,7.87,Шоколадный бенто торт,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+633,7.87,Шоколадный капкейк,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+634,7.87,Шоколадный тарт,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+635,7.87,Шоколадты маффин,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+636,7.87,Шпинатный торт,READY_DISH,Торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+637,7.87,Шпинатный торт (кіші),READY_DISH,Маленькие торты,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+638,7.87,Шу классический,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+639,7.87,Эклер ванильный,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+640,7.87,Эклер шоколад,READY_DISH,Пирожные,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+641,7.87,Эспрпессо-тоник,READY_DISH,Холодные напитки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+642,7.87,Яйцо бенедикт с лососем,READY_DISH,Сытные завтраки,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+643,7.83,Булочка Любительская,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+644,7.83,Булочка Плюшка,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+645,7.83,Вареники с капустой,PRODUCT,Вареники,4,4,,FIND_OR_CREATE_PRODUCT
+646,7.83,Вареники с черникой,PRODUCT,Вареники,4,4,,FIND_OR_CREATE_PRODUCT
+647,7.83,Заправка для голубцов,PRODUCT,Голубцы и перцы,4,4,,FIND_OR_CREATE_PRODUCT
+648,7.83,Картофельные зразы с грибами,PRODUCT,Зразы,4,4,,FIND_OR_CREATE_PRODUCT
+649,7.83,Картофельные зразы с капустой,PRODUCT,Зразы,4,4,,FIND_OR_CREATE_PRODUCT
+650,7.83,Крутики со сгущенкой,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+651,7.83,Курочка с арахисом по-китайски,PRODUCT,Новинки в меню,4,4,,FIND_OR_CREATE_PRODUCT
+652,7.83,Меренга с арахисом,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+653,7.83,Мини Шоко-сушки,PRODUCT,Сушки,4,4,,FIND_OR_CREATE_PRODUCT
+654,7.83,Мини Шоко-сушки с глазурью,PRODUCT,Сушки,4,4,,FIND_OR_CREATE_PRODUCT
+655,7.83,Мини-сушки Малютка,PRODUCT,Сушки,4,4,,FIND_OR_CREATE_PRODUCT
+656,7.83,Мини-штрудель,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+657,7.83,Паштет деликатесный,PRODUCT,Прочее,4,4,,FIND_OR_CREATE_PRODUCT
+658,7.83,Перец фаршированный с грибами,PRODUCT,Голубцы и перцы,4,4,,FIND_OR_CREATE_PRODUCT
+659,7.83,Песочное кольцо,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+660,7.83,Печенье Американер,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+661,7.83,Печенье Грильяж,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+662,7.83,"Печенье Овсяное 0,4",PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+663,7.83,Печенье Фантазия,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+664,7.83,Печенье Шоколадный Американер,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+665,7.83,"Печенье овсяное весовое 2,6",PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+666,7.83,Печенье песочное Минутка,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+667,7.83,Пряники Шоколадные,PRODUCT,Пряники,4,4,,FIND_OR_CREATE_PRODUCT
+668,7.83,Разноцветное безе,PRODUCT,Печенье,4,4,,FIND_OR_CREATE_PRODUCT
+669,7.83,Рулет Домашний,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+670,7.83,Рулет Салем,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+671,7.83,"Сдоба ""Бис""",PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+672,7.83,Сдоба «Парижанка»,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+673,7.83,Сдоба Розанчик,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+674,7.83,Сухарики к бульону,PRODUCT,Сухарные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+675,7.83,Сухарики со вкусом Бекона,PRODUCT,Сухарные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+676,7.83,Сушки Ванильные,PRODUCT,Сушки,4,4,,FIND_OR_CREATE_PRODUCT
+677,7.83,"Сушки с маком 0,4",PRODUCT,Сушки,4,4,,FIND_OR_CREATE_PRODUCT
+678,7.83,"Сушки с маком 0,7",PRODUCT,Сушки,4,4,,FIND_OR_CREATE_PRODUCT
+679,7.83,Улитка с изюмом,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+680,7.83,Улитка с изюмом с шоколадной глазурью,PRODUCT,Булочные изделия,4,4,,FIND_OR_CREATE_PRODUCT
+681,7.16,Kids Box с бургером,PRODUCT,Детское меню,3,3,,FIND_OR_CREATE_PRODUCT
+682,7.16,"M&M's 0,3L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+683,7.16,Банановый пирог маленький,PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+684,7.16,Банановый тарт большой,PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+685,7.16,Бефстроганов с кониной,PRODUCT,Основное меню,3,3,,FIND_OR_CREATE_PRODUCT
+686,7.16,Боул с черным рисом,PRODUCT,SPECIAL,3,3,,FIND_OR_CREATE_PRODUCT
+687,7.16,Бургер говяжий с картошкой фри,PRODUCT,Основное меню,3,3,,FIND_OR_CREATE_PRODUCT
+688,7.16,"Вишневый 0,4L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+689,7.16,"Классический 0,4L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+690,7.16,"Клубничный 0,4L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+691,7.16,"Клубничный микс 0,3L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+692,7.16,Куриный бульон с тортеллини,PRODUCT,ОСНОВНОЕ МЕНЮ,3,3,,FIND_OR_CREATE_PRODUCT
+693,7.16,Лесные ягоды,PRODUCT,Фирменные чаи,3,3,,FIND_OR_CREATE_PRODUCT
+694,7.16,"Матча с сырной пенкой 0,4L",PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+695,7.16,Мясной пирог,PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+696,7.16,"Орео 0,3L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+697,7.16,Пельмени цветные без бульона,PRODUCT,Детское меню,3,3,,FIND_OR_CREATE_PRODUCT
+698,7.16,Пельмени цветные с бульоном,PRODUCT,Детское меню,3,3,,FIND_OR_CREATE_PRODUCT
+699,7.16,"Смузи ягодный 0,4L",PRODUCT,Смузи,3,3,,FIND_OR_CREATE_PRODUCT
+700,7.16,Сузьма,PRODUCT,Соусы,3,3,,FIND_OR_CREATE_PRODUCT
+701,7.16,Суп с куриными фрикадельками,PRODUCT,Детское меню,3,3,,FIND_OR_CREATE_PRODUCT
+702,7.16,Сырная пенка,PRODUCT,Допы и Альтернатива | Растительное молоко,3,3,,FIND_OR_CREATE_PRODUCT
+703,7.16,Творожно-ягодный пирог с малиной,PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+704,7.16,Творожный пирог (бол),PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+705,7.16,Творожный пирог (мал),PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+706,7.16,Томлёные щёки с орзо в грибном соусе,PRODUCT,Основное меню,3,3,,FIND_OR_CREATE_PRODUCT
+707,7.16,Филе конины с картофельным драником и шпинатом,PRODUCT,Основное меню,3,3,,FIND_OR_CREATE_PRODUCT
+708,7.16,Финский пирог,PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+709,7.16,Шашлык из шампиньонов,PRODUCT,Шашлыки,3,3,,FIND_OR_CREATE_PRODUCT
+710,7.16,"Шоколадный 0,4L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+711,7.16,"Шоколадный батончик 0,3L",PRODUCT,Молочные коктейли,3,3,,FIND_OR_CREATE_PRODUCT
+712,7.16,Шоколадный пирог,PRODUCT,Пироги,3,3,,FIND_OR_CREATE_PRODUCT
+713,7.09,Брауни-Банан,READY_DISH,Витрина,3,3,Банан,CHECK_LEGACY_CANDIDATE
+714,7.09,Картофель по домашнему,READY_DISH,Гарниры | Горячее,3,3,Картофель,CHECK_LEGACY_CANDIDATE
+715,7.09,Картошка BAL,READY_DISH,Витрина,3,3,Картофель,CHECK_LEGACY_CANDIDATE
+716,7.09,Мадлен (нутелла/малина),READY_DISH,Витрина,3,3,Малина,CHECK_LEGACY_CANDIDATE
+717,7.09,Стейк из утки,READY_DISH,Горячее | Хоспер,3,3,Стейк зубатки,CHECK_LEGACY_CANDIDATE
+718,7.09,творожная запеканка,READY_DISH,Десерты | КУХНЯ,3,3,Творожная масса,CHECK_LEGACY_CANDIDATE
+719,6.93,Bumble coffee,READY_DISH,Ice coffee | Кофе,3,2,,DEFINE_READY_PRODUCT_OR_RULE
+720,6.93,Баноффи Пай,READY_DISH,Десерты | Пироги,3,2,,DEFINE_READY_PRODUCT_OR_RULE
+721,6.93,РОМАШКА,READY_DISH,ПЕЧЕНЬЕ | ПИРОЖНЫЕ | Чай,3,2,,DEFINE_READY_PRODUCT_OR_RULE
+722,6.93,с курицей,READY_DISH,Клаб сэндвичи | ПИРОГИ | Панини,3,2,,DEFINE_READY_PRODUCT_OR_RULE
+723,6.77,1кг,PRODUCT,Вареники | Манты с тыквой | Пельмени | Хинкали,4,1,,FIND_OR_CREATE_PRODUCT
+724,6.44,Альтернативное молоко,PRODUCT,БАР | Дополнительно,3,3,Молоко коровье,CHECK_LEGACY_CANDIDATE
+725,6.44,Боул JULIUS с куриной грудкой,PRODUCT,ОСНОВНОЕ МЕНЮ,3,3,Куриная грудка,CHECK_LEGACY_CANDIDATE
+726,6.44,Боул с Киноа,PRODUCT,SPECIAL,3,3,Киноа,CHECK_LEGACY_CANDIDATE
+727,6.44,"Вода Bonaqua 0,5L",PRODUCT,Вода-соки,3,3,Вода питьевая,CHECK_LEGACY_CANDIDATE
+728,6.44,Зеленый боул,PRODUCT,Здоровое питание,3,3,Зелёный лук,CHECK_LEGACY_CANDIDATE
+729,6.44,Кунжутное печенье,PRODUCT,Печенье,3,3,Масло кунжутное,CHECK_LEGACY_CANDIDATE
+730,6.44,Лосось с картофелем и брокколи,PRODUCT,Основное меню,3,3,Брокколи,CHECK_LEGACY_CANDIDATE
+731,6.44,Малина-мята,PRODUCT,Авторсике чаи,3,3,Малина,CHECK_LEGACY_CANDIDATE
+732,6.44,"Смузи груша-руккола 0,3L",PRODUCT,Смузи,3,3,Руккола,CHECK_LEGACY_CANDIDATE
+733,6.44,"Смузи малина-груша 0,3L",PRODUCT,Смузи,3,3,Малина,CHECK_LEGACY_CANDIDATE
+734,6.44,"Смузи манго ананас 0,4L",PRODUCT,Смузи,3,3,Ананас,CHECK_LEGACY_CANDIDATE
+735,6.44,"Смузи манго клубника 0,4L",PRODUCT,Смузи,3,3,Клубника,CHECK_LEGACY_CANDIDATE
+736,6.44,"Смузи шпинат-сельдерей 0,3L",PRODUCT,Смузи,3,3,Шпинат,CHECK_LEGACY_CANDIDATE
+737,6.44,безлактозное молоко,PRODUCT,БАР | Допы и Альтернатива,3,3,Молоко безлактозное,CHECK_LEGACY_CANDIDATE
+738,6.1,"SEN SOY Чипсы нори из морс капусты 4,5 г",PRODUCT,Бакалея,3,1,Морс ягодный,CHECK_LEGACY_CANDIDATE
+739,5.91,4 сезона,READY_DISH,Итальянская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+740,5.91,Di Roma,READY_DISH,Итальянская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+741,5.91,Green Pine,READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+742,5.91,Herbal Spark,READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+743,5.91,Булочка с ванильным кремом,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+744,5.91,Булочка с шоколадом,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+745,5.91,Булочки с маком,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+746,5.91,Ганфан по-домашнему,READY_DISH,Вторые блюда,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+747,5.91,"Грейпфрутовый фрэш 0,3L",READY_DISH,Фреши,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+748,5.91,Имбирный,READY_DISH,Фирменные чаи | Чай,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+749,5.91,Кейк попс,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+750,5.91,Кекс морковный,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+751,5.91,"Классический мохито 0,4L",READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+752,5.91,"Клубничный мохито 0,4L",READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+753,5.91,"Клубничный с лаймом и мятой 0,4L",READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+754,5.91,Клубничный с лаймом и мятой 1L,READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+755,5.91,"Морковный фрэш 0,3L",READY_DISH,Фреши,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+756,5.91,Нарын,READY_DISH,Вторые блюда | Национальная кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+757,5.91,Нью Йорк стейк,READY_DISH,Горячие блюда | Хоспер,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+758,5.91,Оджахури,READY_DISH,Грузинская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+759,5.91,Равиоли,READY_DISH,Итальянская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+760,5.91,Стейк из цыпленка,READY_DISH,Горячее | Хоспер,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+761,5.91,"Ташкентский Ice Tea 0,4L",READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+762,5.91,Ташкентский Ice Tea 1L,READY_DISH,Лимонады,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+763,5.91,Тропический,READY_DISH,Лимонады | Смузи,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+764,5.91,ХАНСКИЙ КУЫРДАК,READY_DISH,Заказные блюда | Национальная кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+765,5.91,Харчо,READY_DISH,Грузинская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+766,5.91,Чикен Масала,READY_DISH,Паназиатская кухня,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+767,5.91,Шу с заварным кремом,READY_DISH,Витрина,3,3,,DEFINE_READY_PRODUCT_OR_RULE
+768,5.54,Ice Latte Гранат 450мл,READY_DISH,Сезонные напитки,2,2,Гранат,CHECK_LEGACY_CANDIDATE
+769,5.54,Горный,READY_DISH,Чай,2,2,Мёд горный,CHECK_LEGACY_CANDIDATE
+770,5.54,Дубайский пломбир,READY_DISH,Десерты,2,2,Мороженое пломбир,CHECK_LEGACY_CANDIDATE
+771,5.54,Каша Овсянная,READY_DISH,Завтраки | Сладкие завтраки,2,2,Мука овсяная,CHECK_LEGACY_CANDIDATE
+772,5.54,Каша гречневая,READY_DISH,Завтраки | Каши:,2,2,Мука гречневая,CHECK_LEGACY_CANDIDATE
+773,5.54,Крылышки BBQ,READY_DISH,Салаты и закуски,2,2,Куриное крыло,CHECK_LEGACY_CANDIDATE
+774,5.54,Куриные наггетсы,READY_DISH,Закуски | Холодные закуски,2,2,Куриные шеи,CHECK_LEGACY_CANDIDATE
+775,5.54,Курица в кисло-сладком соусе,READY_DISH,Вторые блюда,2,2,Курица,CHECK_LEGACY_CANDIDATE
+776,5.54,Курица с кунжутом,READY_DISH,Вторые блюда,2,2,Курица,CHECK_LEGACY_CANDIDATE
+777,5.54,Морковный,READY_DISH,Салаты | Торты по предзаказу,2,2,Морковь,CHECK_LEGACY_CANDIDATE
+778,5.54,Половина торта «Пломбир»,READY_DISH,Половинки тортов,2,2,Мороженое пломбир,CHECK_LEGACY_CANDIDATE
+779,5.54,Раф арахисовый урбеч 360мл,READY_DISH,Фирменные напитки,2,2,Урбеч,CHECK_LEGACY_CANDIDATE
+780,5.54,Соус ореховый / красный,READY_DISH,КУХНЯ,2,2,Лук красный,CHECK_LEGACY_CANDIDATE
+781,5.54,Сырная лепешка /1шт,READY_DISH,КУХНЯ,2,2,Лепёшка,CHECK_LEGACY_CANDIDATE
+782,5.54,Тары шай 360мл,READY_DISH,Горячие напитки,2,2,Тары,CHECK_LEGACY_CANDIDATE
+783,5.54,Торт «Пломбир»,READY_DISH,Торты,2,2,Мороженое пломбир,CHECK_LEGACY_CANDIDATE
+784,5.54,Фунчоза с говядиной,READY_DISH,Салаты,2,2,Фунчоза,CHECK_LEGACY_CANDIDATE
+785,5.54,Чай клубника-малина-мята 360мл,READY_DISH,Горячие напитки,2,2,Клубника,CHECK_LEGACY_CANDIDATE
+786,5.54,Чай сенча с мятой и чабрецом 360мл,READY_DISH,Горячие напитки,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+787,5.54,Шоколадный трюфель,READY_DISH,Десерты,2,2,Трюфель,CHECK_LEGACY_CANDIDATE
+788,5.54,Ягодный микс,READY_DISH,Лимонады | Лимонады 1л,2,2,Морс ягодный,CHECK_LEGACY_CANDIDATE
+789,5.54,Ягодный чай,READY_DISH,Горячие напитки (Чай-Какао) | Чайная карта,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+790,5.54,Яйцо,READY_DISH,КУХНЯ,2,2,Куриные яйца,CHECK_LEGACY_CANDIDATE
+791,5.54,Яйцо /1 шт,READY_DISH,КУХНЯ,2,2,Куриные яйца,CHECK_LEGACY_CANDIDATE
+792,5.54,говяжьи щечки,READY_DISH,КУХНЯ,2,2,Говяжьи щёки,CHECK_LEGACY_CANDIDATE
+793,5.54,куриные котлеты,READY_DISH,КУХНЯ,2,2,Куриные шеи,CHECK_LEGACY_CANDIDATE
+794,5.54,фреш паста карбонара (с пастрами из говядины),READY_DISH,КУХНЯ,2,2,Говяжья шея,CHECK_LEGACY_CANDIDATE
+795,5.37,"Coca cola, Fanta, Sprite 0,25L",PRODUCT,Вода-соки,3,3,,FIND_OR_CREATE_PRODUCT
+796,5.37,"Ice matcha boom 0,4L",PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+797,5.37,"Ice matcha latte 0,4L",PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+798,5.37,Kids Box с наггетсами,PRODUCT,Детское меню,3,3,,FIND_OR_CREATE_PRODUCT
+799,5.37,"Matcha latte 0,4L",PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+800,5.37,Whoopie (вупи пай),PRODUCT,Печенье,3,3,,FIND_OR_CREATE_PRODUCT
+801,5.37,Арахисовое печенье,PRODUCT,Печенье,3,3,,FIND_OR_CREATE_PRODUCT
+802,5.37,Боул с индейкой,PRODUCT,Здоровое питание,3,3,,FIND_OR_CREATE_PRODUCT
+803,5.37,Боул с тунцом,PRODUCT,Здоровое питание,3,3,,FIND_OR_CREATE_PRODUCT
+804,5.37,"Детский сок Piko 0,2L",PRODUCT,Вода-соки,3,3,,FIND_OR_CREATE_PRODUCT
+805,5.37,"Куриный шницель ""Цезарь""",PRODUCT,Основное меню,3,3,,FIND_OR_CREATE_PRODUCT
+806,5.37,Матча Ceremonial Grade +700,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+807,5.37,Матча Гато,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+808,5.37,Матча Солёное Ванильное Облако,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+809,5.37,Матча Тай,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+810,5.37,Матча Шоколад,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+811,5.37,"Матча с апельсиновым фрешем 0,4L",PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+812,5.37,Матча-бамбл,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+813,5.37,Матча-тропик,PRODUCT,Матча,3,3,,FIND_OR_CREATE_PRODUCT
+814,5.37,Меренговый рулет с малиной,PRODUCT,Меренговые рулеты,3,3,,FIND_OR_CREATE_PRODUCT
+815,5.37,Меренговый рулет со смородиной,PRODUCT,Меренговые рулеты,3,3,,FIND_OR_CREATE_PRODUCT
+816,5.37,Песочное печенье,PRODUCT,Печенье,3,3,,FIND_OR_CREATE_PRODUCT
+817,5.37,Печенье шоколадное,PRODUCT,Печенье,3,3,,FIND_OR_CREATE_PRODUCT
+818,5.37,"Протеиновый смузи 0,4L",PRODUCT,Смузи,3,3,,FIND_OR_CREATE_PRODUCT
+819,5.37,Творожное,PRODUCT,Печенье,3,3,,FIND_OR_CREATE_PRODUCT
+820,5.37,Фокачча Veggie Vibe,PRODUCT,SPECIAL,3,3,,FIND_OR_CREATE_PRODUCT
+821,5.37,Фокачча с пастрами,PRODUCT,SPECIAL,3,3,,FIND_OR_CREATE_PRODUCT
+822,5.37,Шарики из индейки,PRODUCT,Детское меню,3,3,,FIND_OR_CREATE_PRODUCT
+823,5.37,Шведские фрикадельки,PRODUCT,Основное меню,3,3,,FIND_OR_CREATE_PRODUCT
+824,5.08,"Трафарет ""С Днем рождения""",PRODUCT,,4,1,,FIND_OR_CREATE_PRODUCT
+825,5.08,FOOD MASTER Творожный продукт живой 18% 90 г,PRODUCT,Молочная продукция,3,1,,FIND_OR_CREATE_PRODUCT
+826,5.08,В сливочном соусе,PRODUCT,Готовим крабов | Готовим креветки | Готовим морепродуктыы,3,1,,FIND_OR_CREATE_PRODUCT
+827,5.08,В соусе Том-Ям,PRODUCT,Готовим крабов | Готовим креветки | Готовим морепродуктыы,3,1,,FIND_OR_CREATE_PRODUCT
+828,5.04,Аджика из спелых томатов,PRODUCT,Соусы,2,2,Аджика,CHECK_LEGACY_CANDIDATE
+829,5.04,Апашкин чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+830,5.04,Аткан Чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+831,5.04,Байский чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+832,5.04,"Йогурт 1,5% 0,3 ПЭТ",PRODUCT,Товары,2,2,Йогурт,CHECK_LEGACY_CANDIDATE
+833,5.04,"Йогурт Immunivit 2,8%, 0,18л",PRODUCT,Товары,2,2,Йогурт,CHECK_LEGACY_CANDIDATE
+834,5.04,"Кефир Живой 2,5%",PRODUCT,Товары,2,2,Кефир,CHECK_LEGACY_CANDIDATE
+835,5.04,"Кефир Живой 3,2%",PRODUCT,Товары,2,2,Кефир,CHECK_LEGACY_CANDIDATE
+836,5.04,Клубника замороженная 1кг,PRODUCT,Замороженные ягоды | Сухофрукты,2,2,Клубника,CHECK_LEGACY_CANDIDATE
+837,5.04,Котлеты гамбургерные говядина - 0.1,PRODUCT,Говядина,2,2,Говядина,CHECK_LEGACY_CANDIDATE
+838,5.04,Котлеты гамбургерные говядина - 0.15,PRODUCT,Говядина,2,2,Говядина,CHECK_LEGACY_CANDIDATE
+839,5.04,Курочка в соусе терияки,PRODUCT,Новинки в меню,2,2,Терияки соус,CHECK_LEGACY_CANDIDATE
+840,5.04,Кырма Чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+841,5.04,Махаббат чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+842,5.04,Медовая дыня 450мл,PRODUCT,Молочные коктейли,2,2,Дыня,CHECK_LEGACY_CANDIDATE
+843,5.04,Национальный чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+844,5.04,"Паста творожная Immunivit 9%, 0,1кг",PRODUCT,Товары,2,2,Творожная масса,CHECK_LEGACY_CANDIDATE
+845,5.04,"Простокваша к\молочный продукт 3,5%, 0,38л",PRODUCT,Товары,2,2,Простокваша,CHECK_LEGACY_CANDIDATE
+846,5.04,Скумбрия х\к,PRODUCT,Рыба | Солено-копченая рыба,2,2,Скумбрия,CHECK_LEGACY_CANDIDATE
+847,5.04,"Сметана Immunivit 20%, 0,15кг",PRODUCT,Товары,2,2,Сметана,CHECK_LEGACY_CANDIDATE
+848,5.04,"Сметана Immunivit 20%, 0,38 кг",PRODUCT,Товары,2,2,Сметана,CHECK_LEGACY_CANDIDATE
+849,5.04,Смородиновый чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+850,5.04,"Творог Immunivit 0%, 0,22кг",PRODUCT,Товары,2,2,Творог,CHECK_LEGACY_CANDIDATE
+851,5.04,"Творог Immunivit 9%, 0,22кг",PRODUCT,Товары,2,2,Творог,CHECK_LEGACY_CANDIDATE
+852,5.04,"Творог Immunivit зерновой 9%, 0,1кг",PRODUCT,Товары,2,2,Творог,CHECK_LEGACY_CANDIDATE
+853,5.04,Ти-бон стейк (говядина) - 0.5,PRODUCT,Говядина,2,2,Говядина,CHECK_LEGACY_CANDIDATE
+854,5.04,Фирменный чай NAVAT,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+855,5.04,Фруктовый Чай,PRODUCT,Фирменные чаи,2,2,Чай фруктовый,CHECK_LEGACY_CANDIDATE
+856,5.04,Ханский чай,PRODUCT,Фирменные чаи,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+857,5.04,авторский чай /500 мл,PRODUCT,БАР,2,2,Чай чёрный,CHECK_LEGACY_CANDIDATE
+858,4.62,5 Таежных ягод 450мл,READY_DISH,Лимонады,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+859,4.62,Bumble coffee 350мл,READY_DISH,Сезонные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+860,4.62,Espresso tonic 350мл,READY_DISH,Сезонные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+861,4.62,Ice Cherry 450мл,READY_DISH,Сезонные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+862,4.62,Ice Spanish Peach 450мл,READY_DISH,Сезонные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+863,4.62,Ice Tea Peach 450мл,READY_DISH,Сезонные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+864,4.62,Айс ти,READY_DISH,Напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+865,4.62,Айс-Кофе,READY_DISH,Кофе | Остальное,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+866,4.62,Американский завтрак,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+867,4.62,Арт десерт «Кофе» 1 шт.,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+868,4.62,Арт десерт «Фисташка»,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+869,4.62,Ассорти бокс,READY_DISH,Салаты и закуски,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+870,4.62,Ассорти сухофруктов,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+871,4.62,Безглютеновая паста /80 гр,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+872,4.62,Бельгийские вафли,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+873,4.62,Бенедикт с лососем,READY_DISH,Завтраки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+874,4.62,Восточный завтрак,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+875,4.62,Вяленое ассорти,READY_DISH,Закуски к пенному,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+876,4.62,Глинтвейн 360мл,READY_DISH,Горячие напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+877,4.62,Голубцы,READY_DISH,Горячие блюда | Замороженная продукция,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+878,4.62,Горячая закуска к пенному,READY_DISH,Закуски к пенному,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+879,4.62,Гриль салат с индейкой,READY_DISH,Салаты и закуски,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+880,4.62,Десерт «Ананасовый мусс-кейк»,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+881,4.62,Десерт «Ананасовый мусс-кейк»-4шт,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+882,4.62,Десерт Павлова,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+883,4.62,Добавьте ингредиенты и соберите свой завтрак,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+884,4.62,Жаренные манты с картофелем,READY_DISH,Вторые блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+885,4.62,Завтрак из 3-х яиц,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+886,4.62,Завтрак марафонца,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+887,4.62,Запеченные косточки,READY_DISH,Салаты и закуски,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+888,4.62,Казан-кебаб с фри бараниной,READY_DISH,Вторые блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+889,4.62,Карак шай 250мл,READY_DISH,Горячие напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+890,4.62,Карак шай 360мл,READY_DISH,Горячие напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+891,4.62,Котлета по-киевски,READY_DISH,Горячее | Горячие блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+892,4.62,Кунафе по рецепту от Анвара Бабаджанова,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+893,4.62,Куриный суп с лапшой,READY_DISH,Супы,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+894,4.62,Манты с картофелем и курочкой,READY_DISH,Вторые блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+895,4.62,Манты с тыквой,READY_DISH,Блюда | Восточная кухня,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+896,4.62,Манты с тыквой/ с джусаем по сезону,READY_DISH,Вторые блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+897,4.62,Марокканский,READY_DISH,Чай,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+898,4.62,Микс салата /30 гр,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+899,4.62,Мини бургеры,READY_DISH,Закуски | Сэндвичи и бургеры,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+900,4.62,Моккачино 250мл,READY_DISH,Кофейная карта,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+901,4.62,Моккачино 360мл,READY_DISH,Кофейная карта,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+902,4.62,Моккачино 480мл,READY_DISH,Кофейная карта,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+903,4.62,Мороженое фруктами,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+904,4.62,Национальные сладости,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+905,4.62,Омлет,READY_DISH,Завтраки | Завтраки от 11:00 до 12:30,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+906,4.62,Орео шейк 360мл,READY_DISH,Детские напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+907,4.62,Орешки количество 18 шт,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+908,4.62,Орешки количество-9 шт,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+909,4.62,ПРАГА,READY_DISH,ТОРТЫ масовочные | Торты по предзаказу,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+910,4.62,Пирожное «Milka»,READY_DISH,Пирожное,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+911,4.62,Пирожное «Медовый»,READY_DISH,Пирожное,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+912,4.62,Пирожное «Эклер-4шт»,READY_DISH,Пирожное,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+913,4.62,Пирожное «Эклер-профитроли»-9 шт,READY_DISH,Пирожное,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+914,4.62,Пирожное Шу,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+915,4.62,Пирожное “Прага”,READY_DISH,Пирожное,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+916,4.62,Плов Узгенский,READY_DISH,Заказные блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+917,4.62,Половина торта «Блинный”,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+918,4.62,Половина торта «Карамельно-медовый»,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+919,4.62,Половина торта «Карамельно-ореховый»,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+920,4.62,Половина торта «Королевский»,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+921,4.62,Половина торта «Прага»,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+922,4.62,Половина торта «Фисташковый»,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+923,4.62,Половина торта «Шоколадно-блинный»,READY_DISH,Половинки тортов,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+924,4.62,Припущенные овощи,READY_DISH,Гарниры,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+925,4.62,РАФАЭЛЛО,READY_DISH,ПАНКЕЙКТЕР | ТОРТЫ масовочные,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+926,4.62,Рамён,READY_DISH,Супы,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+927,4.62,Раф 250мл,READY_DISH,Кофейная карта,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+928,4.62,Раф 360мл,READY_DISH,Кофейная карта,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+929,4.62,Раф 480мл,READY_DISH,Кофейная карта,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+930,4.62,Раф классический,READY_DISH,Горячие кофейные напитки | Кофе,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+931,4.62,Раф лаванда 360мл,READY_DISH,Фирменные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+932,4.62,Раф цитрусовый 360мл,READY_DISH,Фирменные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+933,4.62,Ройбуш карамельный,READY_DISH,Чай,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+934,4.62,Рыба в кисло-сладком соусе,READY_DISH,Вторые блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+935,4.62,Рыба запеченная,READY_DISH,Заказные блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+936,4.62,САЛАТ МАЛИБУ,READY_DISH,Салаты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+937,4.62,Салат коул слоу,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+938,4.62,Салат с хрустящими баклажанами,READY_DISH,Салаты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+939,4.62,Со смородиной,READY_DISH,Чай,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+940,4.62,Соленья,READY_DISH,Салаты и закуски,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+941,4.62,Соте из курицы,READY_DISH,Горячее,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+942,4.62,Стейк Нью-Йорк,READY_DISH,Горячие блюда | Мясные Стейки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+943,4.62,Сырное плато,READY_DISH,Закуски | На компанию,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+944,4.62,Сытный завтрак,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+945,4.62,ТВОРОЖНЫЙ,READY_DISH,Пироги | ТОРТЫ масовочные,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+946,4.62,Ташкентский,READY_DISH,Чай,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+947,4.62,Теплый салат с кониной,READY_DISH,Салаты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+948,4.62,Той Бешбармак с кониной,READY_DISH,Заказные блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+949,4.62,Том ям с морепродуктами,READY_DISH,Супы,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+950,4.62,Торт «Блинный»,READY_DISH,Большие торты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+951,4.62,Торт «Карамельно-медовый»,READY_DISH,Торты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+952,4.62,Торт «Карамельно-ореховый»,READY_DISH,Торты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+953,4.62,Торт «Королевский»,READY_DISH,Торты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+954,4.62,Торт «Фисташковый»,READY_DISH,Торты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+955,4.62,Торт «Шоколадный блинный»,READY_DISH,Большие торты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+956,4.62,Трайфл «Whoopie pie»,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+957,4.62,Трайфл «Карамельный»,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+958,4.62,Трайфл «Три шоколада»,READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+959,4.62,Турецкий завтрак,READY_DISH,Завтраки от 11:00 до 12:30 | Сытные завтраки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+960,4.62,Тёплый салат с брынзой,READY_DISH,Салаты и закуски,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+961,4.62,Тұран кофе 360мл,READY_DISH,Фирменные напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+962,4.62,Фирменный завтрак,READY_DISH,Завтраки: | Сытные завтраки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+963,4.62,Фирменный плов NAVAT,READY_DISH,Заказные блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+964,4.62,Фитнес завтрак,READY_DISH,Завтраки: | Фитнес,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+965,4.62,Фруктовое ассорти (по сезону),READY_DISH,Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+966,4.62,Хан Плов,READY_DISH,Заказные блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+967,4.62,Холодная закуска к пенному,READY_DISH,Закуски к пенному,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+968,4.62,Цезарь с курицей,READY_DISH,Салаты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+969,4.62,Чечевичный суп,READY_DISH,Супы,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+970,4.62,Эрл грей,READY_DISH,Чай,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+971,4.62,завтрак восстановления,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+972,4.62,суп лапша с фрикадельками,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+973,4.62,теплый салат с индейкой,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+974,4.62,фреш паста с курицей и грибами,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+975,4.62,фреш паста с лососем,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+976,4.62,фреш паста с томленой говядиной,READY_DISH,КУХНЯ,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+977,4.62,хворост,READY_DISH,Выпечка | Десерты,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+978,4.62,чебуреки,READY_DISH,Выпечка | Горячие блюда,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+979,4.62,Қазақ шай 360мл,READY_DISH,Горячие напитки,2,2,,DEFINE_READY_PRODUCT_OR_RULE
+980,4.47,ЙОГУРТОВОЕ,READY_DISH,НА БАНКЕТЫ | ПИРОЖНЫЕ,2,1,Йогурт,CHECK_LEGACY_CANDIDATE
+981,4.47,Копченый лосось,READY_DISH,Острые суши | Суши,2,1,Тихоокеанский лосось,CHECK_LEGACY_CANDIDATE
+982,4.47,ШАРЛИН,READY_DISH,НА БАНКЕТЫ | ПИРОЖНЫЕ,2,1,Марлин,CHECK_LEGACY_CANDIDATE
+983,4.2,Rainbow Unicorn 450мл,PRODUCT,Молочные коктейли,2,2,,FIND_OR_CREATE_PRODUCT
+984,4.2,Бамбл кофе /400 мл,PRODUCT,БАР,2,2,,FIND_OR_CREATE_PRODUCT
+985,4.2,Бургер классик,PRODUCT,Бургеры,2,2,,FIND_OR_CREATE_PRODUCT
+986,4.2,Бургер с кусочками курицы,PRODUCT,Бургеры,2,2,,FIND_OR_CREATE_PRODUCT
+987,4.2,Бургер халапеньо,PRODUCT,Бургеры,2,2,,FIND_OR_CREATE_PRODUCT
+988,4.2,Ваниль 450мл,PRODUCT,Молочные коктейли,2,2,,FIND_OR_CREATE_PRODUCT
+989,4.2,Грибной бургер,PRODUCT,Бургеры,2,2,,FIND_OR_CREATE_PRODUCT
+990,4.2,Донер в батоне ассорти,PRODUCT,Донер/Бургет/Сеты | Донеры,2,2,,FIND_OR_CREATE_PRODUCT
+991,4.2,Донер в батоне говяжий,PRODUCT,Донер/Бургет/Сеты | Донеры,2,2,,FIND_OR_CREATE_PRODUCT
+992,4.2,К завтраку вы можете выбрать фильтр кофе или чайник чая ассам/сенча,PRODUCT,Остальное,2,2,,FIND_OR_CREATE_PRODUCT
+993,4.2,Кавказский,PRODUCT,Соусы,2,2,,FIND_OR_CREATE_PRODUCT
+994,4.2,Комбо,PRODUCT,Бургеры,2,2,,FIND_OR_CREATE_PRODUCT
+995,4.2,Криспи бургер,PRODUCT,Бургеры,2,2,,FIND_OR_CREATE_PRODUCT
+996,4.2,Кунг Пао,PRODUCT,Воки | Курица,2,2,,FIND_OR_CREATE_PRODUCT
+997,4.2,Маковый пирог,PRODUCT,Пироги,2,2,,FIND_OR_CREATE_PRODUCT
+998,4.2,"Напиток сывороточный ЛактоАс, 0,5%, 0,5л",PRODUCT,Товары,2,2,,FIND_OR_CREATE_PRODUCT
+999,4.2,Персиковый пирог,PRODUCT,Пироги,2,2,,FIND_OR_CREATE_PRODUCT
+1000,4.2,Портерхаус,PRODUCT,Говядина,2,2,,FIND_OR_CREATE_PRODUCT

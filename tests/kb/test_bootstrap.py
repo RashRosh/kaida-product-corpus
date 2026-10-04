@@ -10,6 +10,8 @@ def test_reference_workbook_hash_and_bootstrap(root: Path, tmp_path: Path):
     counts = bootstrap(workbook, tmp_path / "kb")
     assert counts["PRODUCTS"] == 868
     assert counts["ALIASES"] == 231
+    assert counts["OBSERVED_NAMES"] == 2733
+    assert counts["UNRESOLVED"] == 1000
     with (tmp_path / "kb" / "seed" / "products.csv").open(encoding="utf-8", newline="") as handle:
         statuses = {row["status"] for row in csv.DictReader(handle)}
     assert "PROVISIONAL_AI" in statuses

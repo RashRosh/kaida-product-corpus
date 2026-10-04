@@ -29,6 +29,8 @@ SEED_EXPORTS = {
     "ALIASES": "aliases.csv",
     "ATTRIBUTE_DEFINITIONS": "attribute_definitions.csv",
     "MAPPINGS": "reference_mappings.csv",
+    "OBSERVED_NAMES": "reference_observed_names.csv",
+    "UNRESOLVED": "reference_unresolved_top.csv",
     "RULES": "reference_rules.csv",
     "DECISION_LOG": "reference_decision_log.csv",
 }

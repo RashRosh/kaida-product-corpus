@@ -19,6 +19,7 @@ OUTPUTS = {
     "products.csv",
     "aliases.csv",
     "build_report.json",
+    "reconciliation_report.json",
     "regression_report.json",
 }
 
@@ -84,6 +85,50 @@ def test_output_schema_and_regression_gate(builds):
     assert regression["passed"] is True
     assert reports[0]["raw_history_rows"] == 18686
     assert reports[0]["current_latest_rows"] == 18686
+    assert reports[0]["price_present_rows"] == 16977
+    assert reports[0]["price_present_rate"] == pytest.approx(16977 / 18686, abs=1e-6)
+    assert "current_price_coverage" not in reports[0]
     _, prices = read_csv(temp / "one" / "prices.csv")
     assert prices
     assert {row["price_basis"] for row in prices} == {"UNKNOWN"}
+
+
+def test_reconciliation_invariants(builds):
+    temp, _ = builds
+    report = json.loads(
+        (temp / "one" / "reconciliation_report.json").read_text(encoding="utf-8")
+    )
+    assert report["unique_observed_titles"] == 12877
+    assert report["terminal_status_total"] == 12877
+    assert sum(report["terminal_status_counts"].values()) == 12877
+    assert set(report["terminal_status_counts"]) == {
+        "APPROVED_MAPPED",
+        "PROVISIONAL_MAPPED",
+        "OUT_OF_SCOPE",
+        "UNRESOLVED",
+    }
+    assert len(report["titles"]) == 12877
+    assert len({row["normalized_title"] for row in report["titles"]}) == 12877
+    assert all(report["invariants"].values())
+    assert sum(row["count"] for row in report["reference_to_pipeline"]) == 12877
+
+
+def test_approved_out_of_scope_and_provisional_separation(builds):
+    temp, _ = builds
+    report = json.loads(
+        (temp / "one" / "reconciliation_report.json").read_text(encoding="utf-8")
+    )
+    _, products = read_csv(temp / "one" / "products.csv")
+    products_by_id = {row["product_id"]: row for row in products}
+    for row in report["titles"]:
+        if row["pipeline_status"] == "APPROVED_MAPPED":
+            product = products_by_id[row["canonical_product_id"]]
+            assert product["status"] == "LEGACY_APPROVED"
+            assert product["decision_source"]
+        if row["pipeline_status"] == "OUT_OF_SCOPE":
+            assert row["canonical_product_id"] == ""
+    provisional = report["provisional_product_audit"]
+    assert provisional["product_count"] == 81
+    assert provisional["approved_violation_count"] == 0
+    assert provisional["passed"] is True
+    assert all(item["approved_terminal_title_count"] == 0 for item in provisional["products"])

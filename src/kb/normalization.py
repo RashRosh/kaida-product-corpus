@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 
 
 NON_WORD_RE = re.compile(r"[^\w\s]", re.UNICODE)
@@ -19,7 +20,7 @@ PACK_COUNT_RE = re.compile(r"(?<!\d)\d+\s*[xх×]\s*\d+(?:[.,]\d+)?")
 
 def normalize(text: str | None) -> str:
     """Match the legacy lowercase/ё/punctuation/whitespace semantics exactly."""
-    value = (text or "").lower().replace("ё", "е")
+    value = unicodedata.normalize("NFKC", text or "").lower().replace("ё", "е")
     value = NON_WORD_RE.sub(" ", value)
     return WHITESPACE_RE.sub(" ", value).strip()
 
