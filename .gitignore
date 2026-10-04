@@ -8,6 +8,8 @@ data/extracted/*
 !data/extracted/.gitkeep
 data/kb/*
 !data/kb/.gitkeep
+dist/*
+!dist/.gitkeep
 .python/
 .tools/
 .venv.broken-*/
