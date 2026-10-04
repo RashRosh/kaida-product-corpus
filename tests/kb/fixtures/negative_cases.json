@@ -81,5 +81,14 @@
       "entity_class": "CATEGORY_HEADER",
       "matched_rule_id": "PROMO-CATALOG-HEADER"
     }
+  },
+  {
+    "case_id": "same-title-milk-packaging-out-of-scope",
+    "raw_title": "Молоко коровье",
+    "categories": "Коробки, упаковка",
+    "expected": {
+      "mapping_status": "OUT_OF_SCOPE",
+      "entity_class": "OUT_OF_SCOPE"
+    }
   }
 ]

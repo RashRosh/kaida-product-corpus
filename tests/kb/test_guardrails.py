@@ -21,3 +21,9 @@ def test_regression_fixtures(resolver, root: Path, filename: str):
                 assert getattr(result, field) == expected[field], case["case_id"]
         assert result.canonical_product_id != expected.get("not_product_id"), case["case_id"]
         assert result.canonical_name != expected.get("not_canonical_name"), case["case_id"]
+
+
+def test_no_fuzzy_matching_in_kb_critical_path(root: Path):
+    critical_files = [root / "src" / "build_kb.py", *(root / "src" / "kb").glob("*.py")]
+    source = "\n".join(path.read_text(encoding="utf-8") for path in critical_files)
+    assert "SequenceMatcher" not in source

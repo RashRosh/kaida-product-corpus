@@ -113,20 +113,34 @@ def decision_records(
     for row in rows:
         authority = row.get("authority", "")
         canonical_name = row.get("canonical_or_old", "").strip()
-        product_id = product_ids_by_name.get(canonical_name, "")
+        reference_product_id = product_ids_by_name.get(canonical_name, "")
+        action = action_for(row.get("decision", ""))
+        product_id = (
+            reference_product_id
+            if action in {"MAP_EXISTING", "ALIAS", "ATTRIBUTES_ONLY"}
+            else ""
+        )
+        product_name = canonical_name if product_id else ""
+        rationale = row.get("note", "")
+        if action == "MAP_EXISTING" and not product_id:
+            action = "DEFER"
+            suffix = "Reference MAP_EXISTING had no unique explicit Product target."
+            rationale = f"{rationale} {suffix}".strip()
         records.append(
             {
                 "decision_id": row.get("decision_id", ""),
                 "scope": row.get("subject", ""),
                 "category_condition": "",
                 "context_condition": "",
-                "action": action_for(row.get("decision", "")),
+                "action": action,
                 "product_id": product_id,
-                "product_name": canonical_name,
+                "product_name": product_name,
+                "reference_product_id": reference_product_id,
+                "reference_product_name": canonical_name,
                 "attributes": {},
                 "confidence": "HIGH" if authority == "USER" else "PROVISIONAL",
                 "provenance": row.get("source", ""),
-                "rationale": row.get("note", ""),
+                "rationale": rationale,
                 "created_at": "",
                 "version": "iteration-3",
                 "authority": authority,

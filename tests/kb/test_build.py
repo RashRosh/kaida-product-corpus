@@ -8,6 +8,7 @@ import pytest
 
 from build_kb import build
 from kb.io import file_sha256, read_csv
+from kb.reconciliation import terminal_current_row_counts, terminal_title_records
 
 
 OUTPUTS = {
@@ -65,6 +66,24 @@ def test_build_is_byte_deterministic(builds):
     assert {path.name for path in two.iterdir()} == OUTPUTS
     for name in OUTPUTS:
         assert (one / name).read_bytes() == (two / name).read_bytes(), name
+
+
+def test_consecutive_builds_in_same_directory_are_byte_identical(
+    root: Path, tmp_path: Path
+):
+    out = tmp_path / "repeated"
+    args = (
+        root / "data" / "extracted" / "observations.csv",
+        out,
+        root / "kb",
+        root / "tests" / "kb" / "fixtures",
+        0,
+    )
+    build(*args)
+    first = {name: (out / name).read_bytes() for name in OUTPUTS}
+    build(*args)
+    second = {name: (out / name).read_bytes() for name in OUTPUTS}
+    assert first == second
 
 
 def test_output_schema_and_regression_gate(builds):
@@ -132,3 +151,34 @@ def test_approved_out_of_scope_and_provisional_separation(builds):
     assert provisional["approved_violation_count"] == 0
     assert provisional["passed"] is True
     assert all(item["approved_terminal_title_count"] == 0 for item in provisional["products"])
+
+
+def test_mixed_context_title_keeps_row_metrics_separate(resolver):
+    approved = resolver.resolve("Молоко коровье", "Молочные продукты").to_dict()
+    excluded = resolver.resolve("Молоко коровье", "Коробки, упаковка").to_dict()
+    approved.update({"categories": "Молочные продукты", "current_count": 2})
+    excluded.update({"categories": "Коробки, упаковка", "current_count": 3})
+    rows = [approved, excluded]
+
+    title_records = terminal_title_records(rows, resolver.products)
+    row_counts = terminal_current_row_counts(rows)
+
+    assert len(title_records) == 1
+    assert title_records[0]["pipeline_status"] == "APPROVED_MAPPED"
+    assert row_counts == {
+        "APPROVED_MAPPED": 2,
+        "PROVISIONAL_MAPPED": 0,
+        "OUT_OF_SCOPE": 3,
+        "UNRESOLVED": 0,
+    }
+    assert sum(row_counts.values()) == 5
+
+
+def test_build_report_row_metrics_cover_every_current_row(builds):
+    _, reports = builds
+    report = reports[0]
+    counts = report["terminal_status_current_rows"]
+    assert sum(counts.values()) == report["current_latest_rows"]
+    assert report["approved_mapping_rate_by_current_rows"] == pytest.approx(
+        counts["APPROVED_MAPPED"] / report["current_latest_rows"], abs=1e-6
+    )

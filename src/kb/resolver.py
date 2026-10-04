@@ -15,6 +15,22 @@ from .rules import RuleMatch, match_rule
 
 
 APPROVED_PRODUCT_STATUSES = {"LEGACY_APPROVED"}
+SUPPORTED_DECISION_ACTIONS = {
+    "MAP_EXISTING",
+    "OUT_OF_SCOPE",
+    "MALFORMED",
+    "DEFER",
+    "ATTRIBUTES_ONLY",
+    "CREATE_PRODUCT_CANDIDATE",
+    "ALIAS",
+}
+TARGET_OPTIONAL_ACTIONS = {"ALIAS", "ATTRIBUTES_ONLY"}
+TARGET_FORBIDDEN_ACTIONS = {
+    "OUT_OF_SCOPE",
+    "MALFORMED",
+    "DEFER",
+    "CREATE_PRODUCT_CANDIDATE",
+}
 
 
 @dataclass
@@ -60,6 +76,7 @@ class Resolver:
         _, reference_mappings = read_csv(kb_dir / "seed" / "reference_mappings.csv")
         self.decisions = read_jsonl(kb_dir / "manual_decisions.jsonl")
         self.products = {row["product_id"]: row for row in products}
+        self._validate_decisions()
         self.canonical_index: dict[str, list[dict[str, str]]] = {}
         for product in products:
             self.canonical_index.setdefault(
@@ -83,9 +100,135 @@ class Resolver:
 
         self.decision_index: dict[str, list[dict[str, Any]]] = {}
         for decision in self.decisions:
-            scope = normalize(str(decision.get("scope", "")))
-            if scope:
-                self.decision_index.setdefault(scope, []).append(decision)
+            for raw_scope in str(decision.get("scope", "")).splitlines():
+                scope = normalize(raw_scope)
+                if scope:
+                    self.decision_index.setdefault(scope, []).append(decision)
+
+    def _validate_decisions(self) -> None:
+        seen_ids: set[str] = set()
+        errors = []
+        for line_number, decision in enumerate(self.decisions, start=1):
+            decision_id = str(decision.get("decision_id", "")).strip()
+            action = str(decision.get("action", "")).strip()
+            product_id = str(decision.get("product_id", "")).strip()
+            if not decision_id:
+                errors.append(f"line {line_number}: decision_id is required")
+            elif decision_id in seen_ids:
+                errors.append(f"{decision_id}: duplicate decision_id")
+            seen_ids.add(decision_id)
+            if action not in SUPPORTED_DECISION_ACTIONS:
+                errors.append(
+                    f"{decision_id or f'line {line_number}'}: unsupported action {action!r}; "
+                    f"supported actions: {', '.join(sorted(SUPPORTED_DECISION_ACTIONS))}"
+                )
+                continue
+            if not str(decision.get("scope", "")).strip():
+                errors.append(f"{decision_id}: scope is required")
+            for condition_field in ("category_condition", "context_condition"):
+                if str(decision.get(condition_field, "")).strip():
+                    errors.append(
+                        f"{decision_id}: {condition_field} is not implemented; "
+                        "leave it empty or promote the condition to kb/rules.yaml"
+                    )
+            if action == "MAP_EXISTING" and not product_id:
+                errors.append(f"{decision_id}: MAP_EXISTING requires product_id")
+            if action in TARGET_FORBIDDEN_ACTIONS and product_id:
+                errors.append(
+                    f"{decision_id}: {action} must not define canonical product_id"
+                )
+            if product_id and product_id not in self.products:
+                errors.append(
+                    f"{decision_id}: target Product does not exist: {product_id}"
+                )
+            attributes = decision.get("attributes", {})
+            if not isinstance(attributes, dict):
+                errors.append(f"{decision_id}: attributes must be an object")
+        if errors:
+            raise ValueError("Invalid manual_decisions.jsonl:\n- " + "\n- ".join(errors))
+
+    def _selected_decision(self, normalized_title: str) -> dict[str, Any] | None:
+        decisions = self.decision_index.get(normalized_title, [])
+        if not decisions:
+            return None
+        authority_rank = {"USER": 2, "AI_PROVISIONAL": 1}
+        best_rank = max(authority_rank.get(item.get("authority", ""), 0) for item in decisions)
+        highest = [
+            item
+            for item in decisions
+            if authority_rank.get(item.get("authority", ""), 0) == best_rank
+        ]
+        signatures = {
+            (
+                item["action"],
+                item.get("product_id", ""),
+                json.dumps(item.get("attributes", {}), sort_keys=True),
+            )
+            for item in highest
+        }
+        if len(signatures) > 1:
+            decision_ids = sorted(item["decision_id"] for item in highest)
+            return {
+                "decision_id": "CONFLICT:" + ",".join(decision_ids),
+                "action": "DEFER",
+                "product_id": "",
+                "product_name": "",
+                "reference_product_name": "",
+                "attributes": {},
+                "confidence": "PROVISIONAL",
+                "provenance": "Conflicting manual decisions",
+                "authority": "CONFLICT",
+            }
+        return sorted(highest, key=lambda item: item["decision_id"])[0]
+
+    def _from_decision(
+        self,
+        decision: dict[str, Any],
+        raw_title: str,
+        entity_class: str,
+    ) -> Resolution:
+        action = decision["action"]
+        decision_id = decision["decision_id"]
+        provenance = decision.get("provenance", "manual_decisions.jsonl")
+        confidence = 1.0 if decision.get("confidence") == "HIGH" else 0.5
+        attributes = extract_measurements(raw_title)
+        attributes.update(decision.get("attributes", {}))
+
+        if action == "MAP_EXISTING" or (
+            action in TARGET_OPTIONAL_ACTIONS and decision.get("product_id")
+        ):
+            return self._product_mapping(
+                raw_title,
+                entity_class,
+                decision["product_id"],
+                f"MANUAL_{action}",
+                confidence,
+                provenance,
+                decision_id,
+                attributes,
+            )
+
+        status_by_action = {
+            "OUT_OF_SCOPE": ("OUT_OF_SCOPE", "OUT_OF_SCOPE"),
+            "MALFORMED": ("MALFORMED", "MALFORMED"),
+            "DEFER": ("UNRESOLVED", entity_class),
+            "ATTRIBUTES_ONLY": ("UNRESOLVED", entity_class),
+            "CREATE_PRODUCT_CANDIDATE": ("PRODUCT_CANDIDATE", entity_class),
+            "ALIAS": ("UNRESOLVED", entity_class),
+        }
+        mapping_status, resolved_class = status_by_action[action]
+        return Resolution(
+            raw_title=raw_title,
+            normalized_title=normalize(raw_title),
+            entity_class=resolved_class,
+            mapping_status=mapping_status,
+            mapping_method=f"MANUAL_{action}",
+            confidence=confidence,
+            provenance=provenance,
+            matched_rule_id=decision_id,
+            attributes=attributes,
+            legacy_candidate_name=decision.get("reference_product_name", ""),
+        )
 
     def _product_mapping(
         self,
@@ -175,6 +318,10 @@ class Resolver:
         if rule:
             return self._from_rule(rule, raw_title, categories, entity_class)
 
+        decision = self._selected_decision(normalized)
+        if decision:
+            return self._from_decision(decision, raw_title, entity_class)
+
         if entity_class in {"MALFORMED", "CATEGORY_HEADER", "OUT_OF_SCOPE"}:
             status = "OUT_OF_SCOPE" if entity_class == "CATEGORY_HEADER" else entity_class
             return Resolution(
@@ -187,21 +334,6 @@ class Resolver:
                 provenance=class_reason,
                 attributes=attributes,
             )
-
-        for decision in self.decision_index.get(normalized, []):
-            if decision.get("authority") != "USER" or decision.get("confidence") != "HIGH":
-                continue
-            if decision.get("action") == "MAP_EXISTING" and decision.get("product_id"):
-                return self._product_mapping(
-                    raw_title,
-                    entity_class,
-                    decision["product_id"],
-                    "MANUAL_DECISION",
-                    1.0,
-                    decision.get("provenance", "manual_decisions.jsonl"),
-                    decision.get("decision_id", ""),
-                    attributes,
-                )
 
         candidates = []
         for mapping in self.reference_mapping_index.get(normalized, []):

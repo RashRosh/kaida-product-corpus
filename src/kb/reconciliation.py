@@ -18,6 +18,27 @@ APPROVED_PRODUCT_STATUS = "LEGACY_APPROVED"
 NON_PRODUCT_MAPPING_STATUSES = {"OUT_OF_SCOPE", "MALFORMED"}
 
 
+def row_terminal_status(mapping_status: str) -> str:
+    """Translate one context-aware resolution group to a terminal status."""
+    if mapping_status == "MAPPED":
+        return "APPROVED_MAPPED"
+    if mapping_status == "PROVISIONAL_MAPPING":
+        return "PROVISIONAL_MAPPED"
+    if mapping_status in NON_PRODUCT_MAPPING_STATUSES:
+        return "OUT_OF_SCOPE"
+    return "UNRESOLVED"
+
+
+def terminal_current_row_counts(
+    mapping_rows: list[dict[str, Any]],
+) -> dict[str, int]:
+    """Count current source rows without collapsing distinct title contexts."""
+    counts: Counter[str] = Counter()
+    for row in mapping_rows:
+        counts[row_terminal_status(row["mapping_status"])] += int(row["current_count"])
+    return {status: counts.get(status, 0) for status in TERMINAL_STATUSES}
+
+
 def terminal_title_records(
     mapping_rows: list[dict[str, Any]], products: dict[str, dict[str, str]]
 ) -> list[dict[str, Any]]:

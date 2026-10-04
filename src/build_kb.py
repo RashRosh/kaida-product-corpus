@@ -19,7 +19,7 @@ if str(ROOT / "src") not in sys.path:
 
 from kb.io import file_sha256, read_csv, write_csv, write_json  # noqa: E402
 from kb.normalization import identity_key, normalize  # noqa: E402
-from kb.reconciliation import reconcile  # noqa: E402
+from kb.reconciliation import reconcile, terminal_current_row_counts  # noqa: E402
 from kb.report import counter_dict, run_regressions  # noqa: E402
 from kb.resolver import Resolver  # noqa: E402
 from kb.rules import load_rules  # noqa: E402
@@ -259,10 +259,10 @@ def build(
     write_json(out_dir / "reconciliation_report.json", reconciliation)
 
     terminal_counts = reconciliation["terminal_status_counts"]
-    terminal_row_counts = Counter()
-    for title_record in reconciliation["titles"]:
-        terminal_row_counts[title_record["pipeline_status"]] += int(
-            title_record["current_row_count"]
+    terminal_row_counts = terminal_current_row_counts(mapping_rows)
+    if sum(terminal_row_counts.values()) != len(latest):
+        raise RuntimeError(
+            "Context-aware terminal current-row counts do not sum to latest rows"
         )
     price_present_rows = sum(
         numeric_price(row.get("price", "")) is not None for row in latest
@@ -287,15 +287,7 @@ def build(
         "unique_observed_titles": reconciliation["unique_observed_titles"],
         "resolution_groups": len(mapping_rows),
         "terminal_status_counts": terminal_counts,
-        "terminal_status_current_rows": {
-            status: terminal_row_counts.get(status, 0)
-            for status in (
-                "APPROVED_MAPPED",
-                "PROVISIONAL_MAPPED",
-                "OUT_OF_SCOPE",
-                "UNRESOLVED",
-            )
-        },
+        "terminal_status_current_rows": terminal_row_counts,
         "approved_mapping_rate_by_unique_title": round(
             terminal_counts["APPROVED_MAPPED"]
             / reconciliation["unique_observed_titles"],
