@@ -6,3 +6,9 @@ data/raw/*
 !data/raw/.gitkeep
 data/extracted/*
 !data/extracted/.gitkeep
+data/kb/*
+!data/kb/.gitkeep
+.python/
+.tools/
+.venv.broken-*/
+.venv.external-base/

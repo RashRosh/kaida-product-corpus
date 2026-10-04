@@ -1,0 +1,30 @@
+attribute_id,key,value_type,unit,scope,identity_role,can_create_product,description,example,status
+ATTR-001,brand,string,,ALL,OFFER_ONLY,NO,Бренд/производитель,FoodMaster,WORKING_I3
+ATTR-002,variety,string,,CATEGORY_SPECIFIC,OFFER_OR_PRODUCT_RULE,CONTEXT,Сорт/разновидность,яблоко Голден,WORKING_I3
+ATTR-003,subtype,string,,CATEGORY_SPECIFIC,PRODUCT_OR_ATTRIBUTE_BY_RULE,CONTEXT,Устойчивый подтип,креветка тигровая,WORKING_I3
+ATTR-004,species,string,,MEAT|FISH,PRODUCT_IDENTITY,YES,Биологический вид,"курица, кета",WORKING_I3
+ATTR-005,source_species,string,,CAVIAR,PRODUCT_IDENTITY_CHILD,YES,Вид рыбы-источника икры,"кета, осётр",WORKING_I3
+ATTR-006,cut_form,enum,,MEAT|FISH,PRODUCT_IDENTITY_IF_BUYER_RELEVANT,CONTEXT,Разделка/форма,"fillet, steak, wing",WORKING_I3
+ATTR-007,process,enum,,ALL,OFFER_ONLY,NO,Способ обработки,"smoked, dried, boiled",WORKING_I3
+ATTR-008,storage_state,enum,,ALL,OFFER_ONLY,NO,Состояние хранения,"fresh, chilled, frozen",WORKING_I3
+ATTR-009,prepared_state,enum,,BEVERAGES|READY,PRODUCT_IDENTITY,YES,Готовый напиток vs сырьё,"ready_drink, dry_mix",WORKING_I3
+ATTR-010,fat_percent,number,%,DAIRY,OFFER_ONLY,NO,Жирность,3.2,WORKING_I3
+ATTR-011,net_weight,number,g|kg,ALL,OFFER_ONLY,NO,Масса нетто,500 g,WORKING_I3
+ATTR-012,net_volume,number,ml|l,ALL,OFFER_ONLY,NO,Объём,350 ml,WORKING_I3
+ATTR-013,pack_count,integer,pcs,ALL,OFFER_ONLY,NO,Количество в упаковке,10 шт,WORKING_I3
+ATTR-014,calibre,string,,SEAFOOD,OFFER_ONLY,NO,Калибр,16/20,WORKING_I3
+ATTR-015,shell,enum,,SHRIMP,OFFER_ONLY,NO,Панцирь,shell_on/off,WORKING_I3
+ATTR-016,head,enum,,SHRIMP,OFFER_ONLY,NO,Голова,with_head/without_head,WORKING_I3
+ATTR-017,cleaned,boolean,,SEAFOOD,OFFER_ONLY,NO,Очищен,true,WORKING_I3
+ATTR-018,deveined,boolean,,SHRIMP,OFFER_ONLY,NO,Удалён пищевой тракт,true,WORKING_I3
+ATTR-019,filling,string,,BAKERY|READY,OFFER_ONLY_BY_DEFAULT,NO,Начинка,"курица, сыр, картофель",WORKING_I3
+ATTR-020,flavor,string,,BEVERAGES|DESSERTS,OFFER_ONLY_BY_DEFAULT,NO,Вкус,манго-маракуйя,WORKING_I3
+ATTR-021,recipe_name,string,,READY_DISH,PRODUCT_IDENTITY_IF_STABLE,CONTEXT,Устойчивая рецептура,"Наполеон, Маргарита",WORKING_I3
+ATTR-022,marketing_name,string,,ALL,OFFER_ONLY_BY_DEFAULT,NO,Маркетинговое название линейки,"Элитная, Ностальжи",WORKING_I3
+ATTR-023,origin_country,string,,ALL,OFFER_ONLY,NO,Страна происхождения,Норвегия,WORKING_I3
+ATTR-024,package_type,string,,ALL,OFFER_ONLY,NO,Тип упаковки,"банка, вакуум",WORKING_I3
+ATTR-025,portion,string,,ALL,OFFER_ONLY,NO,Доля/порция,1/2 тушки,WORKING_I3
+ATTR-026,price,number,KZT,OFFER,OFFER_REQUIRED_TO_PUBLISH,NO,Цена предложения,4500,WORKING_I3
+ATTR-027,price_basis,enum,kg|pcs|pack|portion|unknown,OFFER,OFFER_ONLY,NO,База цены; не угадывать,kg,WORKING_I3
+ATTR-028,confidence,number,0..1,AI_METADATA,METADATA,NO,Уверенность AI,0.95,WORKING_I3
+ATTR-029,provenance,string,,AI_METADATA,METADATA,NO,Источник извлечённого факта,"raw_title, branch_catalog, OCR",WORKING_I3

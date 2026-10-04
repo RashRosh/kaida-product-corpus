@@ -1,0 +1,12 @@
+{
+  "sha256": "74cb60b07c970bd83151dd1cd226b06e11d2798c5d7bf6da53ae31807333213a",
+  "sheets": {
+    "ALIASES": 231,
+    "ATTRIBUTE_DEFINITIONS": 29,
+    "DECISION_LOG": 111,
+    "MAPPINGS": 1733,
+    "PRODUCTS": 868,
+    "RULES": 40
+  },
+  "workbook": "KAIDA_Master_KB_Iteration_3.xlsx"
+}
