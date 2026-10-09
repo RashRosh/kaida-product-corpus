@@ -7,6 +7,7 @@ import argparse
 import json
 import os
 import sys
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
@@ -73,6 +74,19 @@ def main():
     stamp=datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     dest=RAW/f"apify_instagram_{stamp}.json"
     dest.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
-    print(f"Saved {len(items)} items to {dest}. This is RAW data; run importer separately.")
+    print(f"Saved {len(items)} items to {dest}.")
+    # Rebuild from ALL historical exports, not just the latest run.
+    # Only do so after successfully persisting the raw dataset.
+    exports = sorted(set(RAW.glob("dataset_instagram*.json")) | set(RAW.glob("apify_instagram_*.json")))
+    if not exports:
+        print("No import inputs found; original raw file is preserved.", file=sys.stderr)
+        sys.exit(1)
+    importer = ROOT / "src" / "import_apify_instagram.py"
+    print(f"Rebuilding candidates from {len(exports)} saved exports...")
+    try:
+        subprocess.run([sys.executable, str(importer), *map(str, exports)], check=True, cwd=ROOT)
+    except subprocess.CalledProcessError:
+        print("Import failed. Raw JSON was saved; existing CSV may need rechecking.", file=sys.stderr)
+        sys.exit(1)
     print("Check actual charge in Apify Console.")
 if __name__=="__main__":main()
