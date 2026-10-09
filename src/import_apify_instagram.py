@@ -45,10 +45,15 @@ def import_files(paths):
             key=row["username"];old=found.get(key)
             if old:
                 row["source_files"]="; ".join(sorted(set(old["source_files"].split("; ")+[Path(path).name])))
-                for field in ("instagram_id","business_name","biography","category","followers","phones","whatsapp_urls","other_urls"):
+                for field in ("instagram_id","business_name","biography","category","followers"):
                     if not row[field] and old[field]:row[field]=old[field]
+                # Merge all publicly available contacts across observations.
+                # An empty or shorter new scrape must not discard old details.
+                for field in ("phones","whatsapp_urls","other_urls"):
+                    items=set(filter(None,old[field].split("; "))) | set(filter(None,row[field].split("; ")))
+                    row[field]="; ".join(sorted(items))
                 if row["city_status"]=="UNVERIFIED" and old["city_status"]!="UNVERIFIED":row["city_status"]=old["city_status"]
-                if old["contact_status"]=="PUBLIC_CONTACT":row["contact_status"]=old["contact_status"]
+                row["contact_status"]="PUBLIC_CONTACT" if any(row[f] for f in ("phones","whatsapp_urls","other_urls")) else "INSTAGRAM_ONLY"
             found[key]=row
     return found
 
