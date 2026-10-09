@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from import_apify_instagram import import_files, phone
-from run_apify_discovery import payload
+from run_apify_discovery import payload, fingerprint
 
 
 class InstagramPipelineTests(unittest.TestCase):
@@ -17,6 +17,11 @@ class InstagramPipelineTests(unittest.TestCase):
         self.assertEqual(phone("8 707 170 2972"), "+77071702972")
         self.assertEqual(phone("+7 (777) 283-18-14"), "+77772831814")
         self.assertEqual(phone("12345"), "")
+
+    def test_fingerprint_stable_and_sensitive_to_query(self):
+        a=fingerprint(["домашний хлеб Алматы"])
+        self.assertEqual(a,fingerprint(["домашний хлеб Алматы"]))
+        self.assertNotEqual(a,fingerprint(["домашний сыр Алматы"]))
 
     def test_payload_is_minimal_and_no_login(self):
         d = payload(["домашний хлеб Алматы"])
