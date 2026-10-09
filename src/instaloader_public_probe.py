@@ -31,6 +31,7 @@ def probe(names: list[str], output: Path) -> None:
         save_metadata=False,
         compress_json=False,
         quiet=True,
+        max_connection_attempts=1,
     )
     results = []
     for index, name in enumerate(names):
