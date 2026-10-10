@@ -16,7 +16,7 @@ from urllib.parse import urlencode, quote
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
-ACTOR = "prodiger~instagram-scraper"
+ACTOR = "apify~instagram-hashtag-scraper"
 RAW = ROOT / "data/raw"
 LEDGER = ROOT / "data/extracted/instagram_hashtag_ledger.json"
 BASE = ROOT / "data/extracted/instagram_seller_candidates.csv"
@@ -55,17 +55,17 @@ def author(item):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--hashtag", default="доставкаалматы")
-    p.add_argument("--limit", type=int, default=20)
+    p.add_argument("--hashtag", default="доставкаалматы,полуфабрикатыалматы,тортыалматы,домашняяедаалматы", help="Comma-separated hashtags")
+    p.add_argument("--limit", type=int, default=50, help="Posts per hashtag")
     p.add_argument("--max-usd", type=float)
     p.add_argument("--run", action="store_true")
     p.add_argument("--input-json", type=Path, help="Free offline inspection of existing Actor export")
     a = p.parse_args()
-    tag = a.hashtag.strip().lstrip("#").lower()
-    if not re.fullmatch(r"[\w]{2,80}", tag):
-        p.error("Hashtag must contain 2-80 letters, numbers, or underscores")
-    if not 1 <= a.limit <= 50:
-        p.error("--limit must be 1..50")
+    tags = list(dict.fromkeys(t.strip().lstrip("#").lower() for t in a.hashtag.split(",") if t.strip()))
+    if not tags or len(tags) > 10 or any(not re.fullmatch(r"[\w]{2,80}", t) for t in tags):
+        p.error("Provide 1..10 comma-separated hashtags (letters, numbers, underscores)")
+    if not 1 <= a.limit <= 100:
+        p.error("--limit must be 1..100")
     if a.run and a.input_json:
         p.error("Choose --run or --input-json, not both")
     known = baseline()
@@ -73,22 +73,20 @@ def main():
     if not isinstance(ledger, list):
         p.error("Ledger must be a list")
     # Documented schema: directUrls, resultsType, resultsLimit, onlyPostsNewerThan.
-    payload = {"directUrls": ["https://www.instagram.com/explore/tags/" + quote(tag) + "/"],
-               "resultsType": "posts", "resultsLimit": a.limit,
-               "onlyPostsNewerThan": "180 days"}
+    payload = {"hashtags": tags, "resultsType": "posts", "resultsLimit": a.limit}
     print("Actor:", ACTOR)
     print("Input:", json.dumps(payload, ensure_ascii=False))
     print("Known usernames:", len(known))
     if a.input_json:
         items = json.loads(a.input_json.read_text(encoding="utf-8-sig"))
     else:
-        if any(x.get("hashtag") == tag for x in ledger):
-            p.error("Hashtag already tested. Refusing repeat paid call; inspect ledger.")
+        if any(x.get("actor") == ACTOR and set(x.get("hashtags", [])) & set(tags) for x in ledger):
+            p.error("One or more hashtags already executed with this Actor; inspect local ledger.")
         if not a.run:
             print("DRY RUN. No paid request.")
             return
-        if a.max_usd is None or not 0.01 <= a.max_usd <= 0.10:
-            p.error("--run requires --max-usd between $0.01 and $0.10")
+        if a.max_usd is None or not 0.01 <= a.max_usd <= 0.50:
+            p.error("--run requires --max-usd between $0.01 and $0.50")
         if abs(round(a.max_usd * 100) / 100 - a.max_usd) > 1e-6:
             p.error("--max-usd must be expressed in whole cents")
         token = os.environ.get("APIFY_TOKEN", "").strip()
@@ -121,7 +119,7 @@ def main():
           "Already in corpus:", len(unique & known), "New authors:", len(fresh))
     print("New authors (NOT verified food producers):", ", ".join(fresh) or "(none)")
     if not a.input_json:
-        ledger.append({"hashtag": tag, "limit": a.limit, "posts": len(items),
+        ledger.append({"actor": ACTOR, "hashtags": tags, "limit": a.limit, "posts": len(items),
                        "unique_authors": len(unique), "new_authors": len(fresh),
                        "source_file": filename, "max_usd": a.max_usd,
                        "actual_usd": None, "checked_at": datetime.now(timezone.utc).isoformat()})
