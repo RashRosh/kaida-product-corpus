@@ -1,4 +1,4 @@
-"""Build an offline actionable review list from existing candidate/activity files.
+"""Build an offline KAIDA food-seller review list from existing candidate/activity files.
 
 Never calls Apify. All original files stay unchanged.
 """
@@ -13,6 +13,7 @@ ACTIVITY = DATA / "instagram_activity_review.csv"
 OUTPUT = DATA / "instagram_producer_review.csv"
 FOOD = re.compile(r"полуфаб|пельмен|манты|вареник|сырник|творог|сыровар|торт|кондитер|пекар|выпеч|десерт|сладост|мяс|колбас|деликатес|ферм|food|bakery|sweet|cake|tort|vkus|kuhnya|domash|lepit|nan|pirog|пирог|еда|питан", re.I)
 EXCLUDE = re.compile(r"парфюм|parfum|mebel|мебел|авто|такси|салон|ремонт", re.I)
+TRADE = re.compile(r"магазин|доставк|заказ|продаж|купить|продукт|еда|кухн|кафе|ресторан|суши|пицц|food|shop|market|delivery|zakaz|sushi|pizza|chicken|bakery|cake|tort|sweet|полуфаб|пекар|кондитер|мяс|рыб|сыр|торт", re.I)
 FIELDS = ["username", "instagram_url", "business_name", "biography", "category",
           "phones", "whatsapp_urls", "other_urls", "city_status", "last_post_at",
           "activity_status", "review_priority", "producer_status", "delivery_almaty",
@@ -32,10 +33,10 @@ def main():
         a = activity.get(user, {})
         text = " ".join(str(row.get(k) or "") for k in ("username", "business_name", "biography", "category"))
         excluded = bool(EXCLUDE.search(text))
-        related = bool(FOOD.search(text))
+        related = bool(FOOD.search(text) or TRADE.search(text))
         active = a.get("activity_status") == "ACTIVE_180D"
         if excluded:
-            priority = "EXCLUDE_LIKELY_REVIEW"
+            priority = "NONFOOD_LIKELY_REVIEW"
         elif active and related:
             priority = "HIGH_REVIEW"
         elif active:
@@ -60,7 +61,7 @@ def main():
             "review_status": "PENDING",
             "source_files": row.get("source_files", "")
         })
-    order = {"HIGH_REVIEW": 0, "MEDIUM_REVIEW": 1, "LOW_REVIEW": 2, "EXCLUDE_LIKELY_REVIEW": 3}
+    order = {"HIGH_REVIEW": 0, "MEDIUM_REVIEW": 1, "LOW_REVIEW": 2, "NONFOOD_LIKELY_REVIEW": 3}
     output.sort(key=lambda r: (order[r["review_priority"]], r["username"]))
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     with OUTPUT.open("w", encoding="utf-8-sig", newline="") as f:
@@ -72,7 +73,8 @@ def main():
     print("Activity:", dict(Counter(r["activity_status"] for r in output)))
     print("Review queues:", dict(Counter(r["review_priority"] for r in output)))
     print("Saved:", OUTPUT)
-    print("Priority is only a sorting heuristic; nobody was marked as a confirmed producer.")
+    print("Priority is a heuristic for food sellers, including resellers and takeaway/delivery kitchens.")
+    print("No account is marked as a confirmed suitable KAIDA seller.")
 
 if __name__ == "__main__":
     main()
