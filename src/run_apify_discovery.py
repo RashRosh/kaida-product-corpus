@@ -69,14 +69,16 @@ def main():
     p.add_argument("--run",action="store_true",help="Spend money and call Apify")
     p.add_argument("--max-usd",type=float,default=0.10)
     p.add_argument("--limit",type=int,default=2)
+    p.add_argument("--queries-file",type=Path,default=QUERIES,help="Search terms file, relative to repository root")
     p.add_argument("--allow-repeat", action="store_true", help="Explicitly allow previously recorded query batch")
     p.add_argument("--mode", choices=("profiles", "posts_and_reels"), default="profiles")
     p.add_argument("--time-range", choices=("day","week","month","year"), default=None)
     args=p.parse_args()
     if not 0 < args.max_usd <= 0.50: p.error("Cap must be >0 and <= $0.50")
     if not 1 <= args.limit <= 10: p.error("Limit must be 1-10")
-    if not QUERIES.exists(): p.error(f"Missing query list: {QUERIES}")
-    qs=list(dict.fromkeys(q.strip() for q in QUERIES.read_text(encoding="utf-8-sig").splitlines() if q.strip() and not q.startswith("#")))[:args.limit]
+    queries_path = args.queries_file if args.queries_file.is_absolute() else ROOT / args.queries_file
+    if not queries_path.exists(): p.error(f"Missing query list: {queries_path}")
+    qs=list(dict.fromkeys(q.strip() for q in queries_path.read_text(encoding="utf-8-sig").splitlines() if q.strip() and not q.strip().startswith("#")))[:args.limit]
     if not qs:p.error("No queries")
     data=payload(qs, args.mode, args.time_range)
     stamp_id=fingerprint(qs, args.mode, args.time_range)
@@ -84,6 +86,7 @@ def main():
     already=any(e.get("fingerprint")==stamp_id for e in ledger)
     if already:
         print("WARNING: This exact query batch and settings were already recorded.")
+    print("Query file:",queries_path)
     print("Actor:", ACTOR, "Queries:",qs,"Mode:",args.mode,"Time range:",args.time_range or "any","Cost ceiling:",args.max_usd)
     if not args.run:
         print(json.dumps(data,ensure_ascii=False,indent=2))
