@@ -1,5 +1,6 @@
 """Batch Instagram hashtag discovery. No 2GIS; local data only."""
 import argparse
+import json
 import subprocess
 import sys
 from pathlib import Path
@@ -7,6 +8,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DISCOVER = ROOT / "src/discover_instagram_hashtag.py"
 IMPORT = ROOT / "src/import_instagram_hashtag_authors.py"
+LEDGER = ROOT / "data/extracted/instagram_hashtag_ledger.json"
+ACTOR = "apify~instagram-hashtag-scraper"
 GROUPS = [
     "домашняяедаалматы,обедыалматы,обедыназаказалматы,домашниепельмениалматы,полуфабрикатыназаказалматы,заморозкаалматы,мантыназаказалматы,самсаалматы",
     "кондитерскаяалматы,тортыалматыназаказ,бентоалматы,бентотортыалматы,выпечкаалматы,пирогиалматы,хлебалматы,круассаныалматы",
@@ -24,8 +27,18 @@ def main():
     print("Batches:", len(GROUPS), "Maximum total charge USD:", round(len(GROUPS)*CAP, 2), flush=True)
     if not a.run:
         print("DRY RUN. No paid requests.", flush=True)
-    for i, tags in enumerate(GROUPS, 1):
-        print("Batch", i, "of", len(GROUPS), "hashtags:", tags, "cap USD:", CAP, flush=True)
+    entries = json.loads(LEDGER.read_text(encoding="utf-8-sig")) if LEDGER.exists() else []
+    used = {tag for entry in entries if entry.get("actor") == ACTOR
+            for tag in entry.get("hashtags", [])}
+    for i, group in enumerate(GROUPS, 1):
+        requested = group.split(",")
+        fresh = [tag for tag in requested if tag not in used]
+        if not fresh:
+            print("Batch", i, "skipped: all hashtags already in local ledger", flush=True)
+            continue
+        tags = ",".join(fresh)
+        print("Batch", i, "of", len(GROUPS), "new hashtags:", tags,
+              "skipped previously used:", len(requested)-len(fresh), "cap USD:", CAP, flush=True)
         cmd = [sys.executable, str(DISCOVER), "--hashtag", tags,
                "--limit", str(a.posts_per_tag), "--max-usd", str(CAP)]
         if a.run:
@@ -34,6 +47,7 @@ def main():
         if res.returncode:
             sys.exit("STOP: discovery failure, no further paid requests")
         if a.run:
+            used.update(fresh)
             res = subprocess.run([sys.executable, str(IMPORT)], cwd=ROOT)
             if res.returncode:
                 sys.exit("STOP: import failure, local raw file preserved")
