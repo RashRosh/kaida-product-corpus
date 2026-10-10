@@ -4,6 +4,7 @@ Requires APIFY_TOKEN in local environment. No Instagram credentials.
 Default is dry-run; execution requires --run.
 """
 import argparse
+import csv
 import json
 import os
 import sys
@@ -64,6 +65,20 @@ def write_ledger(entries):
     temp.replace(LEDGER)
 
 
+def candidate_usernames():
+    """Read only usernames; local seller data never enters the Git repository."""
+    path = ROOT / "data" / "extracted" / "instagram_seller_candidates.csv"
+    if not path.exists():
+        return set()
+    with path.open(encoding="utf-8-sig", newline="") as fh:
+        return {(row.get("username") or "").strip().lower()
+                for row in csv.DictReader(fh) if row.get("username")}
+
+
+def query_key(query):
+    return " ".join(query.casefold().split())
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--run",action="store_true",help="Spend money and call Apify")
@@ -84,6 +99,13 @@ def main():
     stamp_id=fingerprint(qs, args.mode, args.time_range)
     ledger=read_ledger()
     already=any(e.get("fingerprint")==stamp_id for e in ledger)
+    # Prior runs may have contained several queries. Conservatively block every
+    # previously paid query even if it appears in a different batch or order.
+    used = {query_key(q) for entry in ledger for q in entry.get("queries", [])
+            if isinstance(q, str)}
+    repeats = [q for q in qs if query_key(q) in used]
+    if repeats:
+        print("WARNING: Previously executed search phrases:", repeats)
     if already:
         print("WARNING: This exact query batch and settings were already recorded.")
     print("Query file:",queries_path)
@@ -92,8 +114,10 @@ def main():
         print(json.dumps(data,ensure_ascii=False,indent=2))
         print("DRY RUN. No paid request. Use --run to execute.")
         return
-    if already and not args.allow_repeat:
-        p.error("Duplicate paid search blocked. Change queries or explicitly use --allow-repeat.")
+    if (already or repeats) and not args.allow_repeat:
+        p.error("Paid search blocked: one or more phrases were already used. "
+                "Change queries or explicitly use --allow-repeat.")
+    before_users = candidate_usernames()
     token=os.environ.get("APIFY_TOKEN","").strip()
     if not token:p.error("Missing APIFY_TOKEN environment variable")
     # Sync endpoint returns items, or 408 after 300s. Never automatically retry.
@@ -122,7 +146,10 @@ def main():
                    "file":dest.name,"items":len(items),
                    "recorded_at":datetime.now(timezone.utc).isoformat(),
                    "max_usd":args.max_usd,
-                   "actual_usd":None})
+                   "actual_usd":None,
+                   "unique_before":len(before_users),
+                   "new_unique":None,
+                   "unique_after":None})
     write_ledger(ledger)
     print("Search recorded. Actual USD charge is unknown until verified in Apify Console.")
     if args.mode=="posts_and_reels":
@@ -141,5 +168,14 @@ def main():
     except subprocess.CalledProcessError:
         print("Import failed. Raw JSON was saved; existing CSV may need rechecking.", file=sys.stderr)
         sys.exit(1)
+    after_users = candidate_usernames()
+    new_users = after_users - before_users
+    ledger[-1]["unique_after"] = len(after_users)
+    ledger[-1]["new_unique"] = len(new_users)
+    write_ledger(ledger)
+    print(f"New unique profiles: {len(new_users)}; total unique: {len(after_users)}")
+    if len(qs) > 1:
+        print("NOTE: New-profile yield belongs to this batch, not to any individual query.")
+        print("Use --limit 1 for interpretable per-query experiments.")
     print("Check actual charge in Apify Console.")
 if __name__=="__main__":main()
