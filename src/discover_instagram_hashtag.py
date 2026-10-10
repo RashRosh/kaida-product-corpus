@@ -103,7 +103,23 @@ def main():
             with urlopen(req, timeout=200) as response:
                 items = json.load(response)
         except HTTPError as e:
-            sys.exit(f"HTTP {e.code}; outcome may be charged; do not retry without checking Console")
+            # Only report allowlisted fields; never print request headers or tokens.
+            try:
+                error_data = json.loads(e.read(8192).decode("utf-8", errors="replace"))
+            except (ValueError, UnicodeError):
+                error_data = {}
+            details = error_data.get("error", {}) if isinstance(error_data, dict) else {}
+            if not isinstance(details, dict):
+                details = {}
+            error_type = str(details.get("type") or "UNKNOWN")
+            error_type = re.sub(r"[^A-Za-z0-9_.-]", "", error_type)[:80]
+            message = str(details.get("message") or "")
+            message = message.replace(token, "[REDACTED]") if token else message
+            message = re.sub(r"(?i)(?:apify_api_[a-z0-9_\\-]+|bearer\\s+\\S+)", "[REDACTED]", message)
+            print("Apify HTTP:", e.code, "Error type:", error_type, file=sys.stderr)
+            if message:
+                print("Error message:", message[:500], file=sys.stderr)
+            sys.exit("STOP: no automatic retry; inspect Apify Console and billing.")
         except Exception as e:
             sys.exit(f"Unknown outcome ({type(e).__name__}); STOP, do not retry")
     if not isinstance(items, list):
