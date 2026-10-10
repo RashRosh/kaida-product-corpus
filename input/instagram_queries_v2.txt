@@ -1,0 +1,13 @@
+# Experiment B: narrower local food-producer intent, not yet validated.
+# Run with --queries-file input/instagram_queries_v2.txt
+# Compare new unique ALMATY_CLAIMED FOOD_LIKELY accounts, not raw profile count.
+домашние пельмени на заказ Алматы
+манты ручной лепки доставка Алматы
+домашние вареники заказ Алматы
+полуфабрикаты собственного производства Алматы
+сыроварня домашний сыр Алматы
+домашние соленья на заказ Алматы
+домашняя квашеная капуста Алматы
+домашняя выпечка на заказ Алматы
+хлеб на закваске пекарня Алматы
+фермерские молочные продукты доставка Алматы
