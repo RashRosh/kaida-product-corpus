@@ -22,11 +22,11 @@ RAW = ROOT / "data" / "raw"
 LEDGER = ROOT / "data" / "extracted" / "instagram_search_ledger.json"
 
 
-def payload(queries):
+def payload(queries, mode="profiles", time_range=None):
     return {
         "queries": queries,
         "emailDiscoveryMode": False,
-        "searchMode": "profiles",
+        "searchMode": mode,
         "queryMaxPages": 1,
         "searchCountry": "kz",
         "searchLanguage": "ru",
@@ -34,11 +34,17 @@ def payload(queries):
         "skipPostCount": True,
         "skipLatestPosts": True,
         "skipRelatedProfiles": True,
+    } if not time_range else {
+        "queries": queries, "emailDiscoveryMode": False,
+        "searchMode": mode, "searchTimeRange": time_range,
+        "queryMaxPages": 1, "searchCountry": "kz", "searchLanguage": "ru",
+        "scrapeFacebookProfile": False, "skipPostCount": True,
+        "skipLatestPosts": True, "skipRelatedProfiles": True,
     }
 
 
-def fingerprint(queries):
-    canonical = json.dumps(payload(queries), ensure_ascii=False, sort_keys=True)
+def fingerprint(queries, mode="profiles", time_range=None):
+    canonical = json.dumps(payload(queries, mode, time_range), ensure_ascii=False, sort_keys=True)
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
@@ -64,19 +70,21 @@ def main():
     p.add_argument("--max-usd",type=float,default=0.10)
     p.add_argument("--limit",type=int,default=2)
     p.add_argument("--allow-repeat", action="store_true", help="Explicitly allow previously recorded query batch")
+    p.add_argument("--mode", choices=("profiles", "posts_and_reels"), default="profiles")
+    p.add_argument("--time-range", choices=("day","week","month","year"), default=None)
     args=p.parse_args()
     if not 0 < args.max_usd <= 0.50: p.error("Cap must be >0 and <= $0.50")
     if not 1 <= args.limit <= 10: p.error("Limit must be 1-10")
     if not QUERIES.exists(): p.error(f"Missing query list: {QUERIES}")
     qs=list(dict.fromkeys(q.strip() for q in QUERIES.read_text(encoding="utf-8-sig").splitlines() if q.strip() and not q.startswith("#")))[:args.limit]
     if not qs:p.error("No queries")
-    data=payload(qs)
-    stamp_id=fingerprint(qs)
+    data=payload(qs, args.mode, args.time_range)
+    stamp_id=fingerprint(qs, args.mode, args.time_range)
     ledger=read_ledger()
     already=any(e.get("fingerprint")==stamp_id for e in ledger)
     if already:
         print("WARNING: This exact query batch and settings were already recorded.")
-    print("Actor:", ACTOR, "Queries:",qs,"Cost ceiling:",args.max_usd)
+    print("Actor:", ACTOR, "Queries:",qs,"Mode:",args.mode,"Time range:",args.time_range or "any","Cost ceiling:",args.max_usd)
     if not args.run:
         print(json.dumps(data,ensure_ascii=False,indent=2))
         print("DRY RUN. No paid request. Use --run to execute.")
@@ -107,12 +115,16 @@ def main():
     dest.write_text(json.dumps(items,ensure_ascii=False,indent=2),encoding="utf-8")
     print(f"Saved {len(items)} items to {dest}.")
     ledger.append({"fingerprint": stamp_id, "queries":qs,
+                   "mode":args.mode,"search_time_range":args.time_range,
                    "file":dest.name,"items":len(items),
                    "recorded_at":datetime.now(timezone.utc).isoformat(),
                    "max_usd":args.max_usd,
                    "actual_usd":None})
     write_ledger(ledger)
     print("Search recorded. Actual USD charge is unknown until verified in Apify Console.")
+    if args.mode=="posts_and_reels":
+        print("NOTICE: searchTimeRange limits search results, NOT confirmed Instagram publication dates.")
+        print("For date validation, export searchPostResults from the Apify run; default dataset alone is insufficient.")
     # Rebuild from ALL historical exports, not just the latest run.
     # Only do so after successfully persisting the raw dataset.
     exports = sorted(set(RAW.glob("dataset_instagram*.json")) | set(RAW.glob("apify_instagram_*.json")))
