@@ -23,6 +23,12 @@ class InstagramPipelineTests(unittest.TestCase):
         self.assertEqual(a,fingerprint(["домашний хлеб Алматы"]))
         self.assertNotEqual(a,fingerprint(["домашний сыр Алматы"]))
 
+    def test_recent_content_mode(self):
+        data=payload(["манты Алматы"], mode="posts_and_reels", time_range="month")
+        self.assertEqual(data["searchMode"],"posts_and_reels")
+        self.assertEqual(data["searchTimeRange"],"month")
+        self.assertNotEqual(fingerprint(["манты Алматы"]), fingerprint(["манты Алматы"],"posts_and_reels","month"))
+
     def test_payload_is_minimal_and_no_login(self):
         d = payload(["домашний хлеб Алматы"])
         self.assertEqual(d["searchCountry"], "kz")
